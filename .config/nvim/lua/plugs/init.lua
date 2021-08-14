@@ -135,7 +135,7 @@ return require( 'packer' ).startup(function( use )
     {
         "folke/trouble.nvim",
         config = [[ require "plugs.cfgs.trouble" ]],
-        cmd = "Trouble quickfix"
+        event = "QuickFixCmdPost"
     }
 
     use
