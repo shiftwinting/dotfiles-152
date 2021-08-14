@@ -1,0 +1,40 @@
+{
+    "long date": 
+    {
+        "prefix": ["long date"],
+        "body": "$CURRENT_MONTH_NAME $CURRENT_DATE, $CURRENT_YEAR",
+        "description": "The current date in long form"
+    },
+
+    "short date": 
+    {
+        "prefix": ["date", "short date"],
+        "body": "$CURRENT_MONTH/$CURRENT_DATE/$CURRENT_YEAR_SHORT",
+        "description": "The current date in short form"
+    },
+
+    "weekly schedule template": 
+    {
+        "prefix": ["week template"],
+        "body": 
+        [ 
+            "   week: Monday, ${1:date} $CURRENT_MONTH_NAME $CURRENT_YEAR - Sunday, dd $CURRENT_MONTH_NAME $CURRENT_YEAR",
+            "      - Monday:",
+            "      - Tuesday:",
+            "      - Wednesday: ",
+            "      - Thursday: ",
+            "      - Friday:",
+            "      - Saturday:",
+            "      - Sunday:"
+        ]
+    },
+
+    "time": 
+    {
+        "prefix": ["The current time"],
+        "body": 
+        [ 
+            "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+        ]
+    } 
+}

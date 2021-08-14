@@ -1,0 +1,59 @@
+{
+    "author annotation": 
+    {
+        "prefix": ["aann"],
+        "body": 
+        [
+            "$LINE_COMMENT--------------------------------------------------------------------------- ",
+            "$LINE_COMMENT Author : Jacob Penney ",
+            "$LINE_COMMENT Purpose: $1",
+            "$LINE_COMMENT Process: ",
+            "$LINE_COMMENT Notes  : ",
+            "$LINE_COMMENT--------------------------------------------------------------------------- "
+        ],
+        "description": "Annotation discussing file info"
+    },
+
+    "function annotation":
+    {
+        "prefix": ["fann"],
+        "body": 
+        [
+            "$LINE_COMMENT--------------------------------------------------------------------------- ",
+            "$LINE_COMMENT Name   : $1",
+            "$LINE_COMMENT Context: ",
+            "$LINE_COMMENT Process: ",
+            "$LINE_COMMENT Params : ",
+            "$LINE_COMMENT Output : ",
+            "$LINE_COMMENT Notes  : ",
+            "$LINE_COMMENT Docs   : ",
+            "$LINE_COMMENT--------------------------------------------------------------------------- "
+        ],
+        "description": "Annotation discussing function info"
+    },
+
+    "parameter annotation":
+    {
+        "prefix": ["pann"],
+        "body": 
+        [
+            "$LINE_COMMENT",
+            "$LINE_COMMENT          $1",
+            "$LINE_COMMENT           - type: ",
+            "$LINE_COMMENT           - desc: ",
+            "$LINE_COMMENT"
+        ],
+        "description": "\"Function Annotation\" \"Parameter\" field template"
+    }, 
+
+    "Other Docs annotation":
+    {
+        "prefix": ["dann"],
+        "body": 
+        [
+            "$LINE_COMMENT                 - topic : $1",
+            "$LINE_COMMENT                   - link: "
+        ],
+        "description": "\"Function Annotation\" \"Other Docs\" field template" 
+    }  
+}

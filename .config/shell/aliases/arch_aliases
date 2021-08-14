@@ -1,0 +1,113 @@
+#  █████╗ ██╗     ██╗ █████╗ ███████╗███████╗███████╗
+# ██╔══██╗██║     ██║██╔══██╗██╔════╝██╔════╝██╔════╝
+# ███████║██║     ██║███████║███████╗█████╗  ███████╗
+# ██╔══██║██║     ██║██╔══██║╚════██║██╔══╝  ╚════██║
+# ██║  ██║███████╗██║██║  ██║███████║███████╗███████║
+# ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+
+# dirs
+alias dots="cd ~/git/personal/dotfiles"
+alias fonts="cd /usr/share/fonts"
+alias plugs="cd /home/j/.local/share/nvim/site/pack/packer/start/"
+alias shs="cd ~/.config/shell/scripts"
+alias vimrc="cd ~/.config/nvim"
+alias work="cd ~/git/"
+
+
+# files - configuration
+alias aliases="nvim ~/.config/shell/aliases/arch_aliases"
+alias bashrc="nvim ~/.bashrc"
+alias dunstrc="nvim ~/.config/dunst/dunstrc"
+alias ffconf="nvim ~/.mozilla/firefox/ypyoyy4d.default-release-1612452955881/chrome/userChrome.css"
+alias i3conf="nvim ~/.config/i3/config"
+alias inputrc="sudo nvim /etc/inputrc"
+alias mimeapps="nvim ~/.config/mimeapps.list"
+alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
+alias picomconf="nvim ~/.config/picom.conf"
+alias sudoers="sudo EDITOR=nvim visudo"
+alias termconf="nvim ~/.config/alacritty/alacritty.yml"
+alias tstconf="nvim ~/.config/firefox/tst.css"
+alias vimrc="cd ~/.config/nvim"
+alias xresources="nvim ~/.Xresources"
+alias zathurarc="nvim ~/.config/zathura/zathurarc"
+
+
+# files - other
+alias scratch="nvim ~/docs/notes/scratch.txt"
+alias todo="nvim ~/docs/TODO.txt"
+
+
+# functions
+alias ..="cd .."
+alias ...="cd ../.."
+alias boottime="systemd-analyze && systemd-analyze blame"
+alias calc="python ~/.config/shell/scripts/calculator.py"
+alias cfg="/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME"
+alias ci="clear"
+alias clean="detox"
+alias compress="sh ~/.config/shell/scripts/compression/compress.sh"
+alias fz="fzf --preview --preview-window"
+alias ir="ls -1AbFX"
+alias mixer="pulsemixer"
+alias mk="mkdir -p"
+alias notebook="jupyter notebook"
+alias output="sh ~/.config/shell/scripts/screenConfig.sh"
+alias rm="rem"
+alias reload=". ~/.bashrc"
+alias screenshot="flameshot gui"
+alias sv="sudo nvim"
+alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
+alias zoom="zoom &"
+
+
+# git
+alias addit="git add ."
+alias branches="git branch -vv"
+alias clone="git clone"
+alias commitit="git commit"
+alias pushit="git push"
+alias rebase="git rebase -i HEAD~2"
+alias unstage="git restore --staged"
+
+
+# package management
+alias lsfonts="fc-list : family style"
+alias install="sudo pacman -S"
+alias lspacs="pacman -Qe"
+alias mkpkg="makepkg -cri"
+alias paclog="cat /var/log/pacman.log | grep 'install\|remove'"
+alias pacs="pacman -Q | wc -l"
+alias uninstall="sudo pacman -Rsn"
+alias update="sh ~/.config/shell/scripts/pacmanScripts/update.sh"
+
+
+# power options 
+alias reboot="sudo systemctl reboot"
+alias shutdown="sudo systemctl poweroff"
+alias suspend="sudo systemctl suspend" 
+alias uefi="sudo systemctl reboot --firmware-setup"
+ 
+
+# services
+alias disable="sudo systemctl disable"
+alias enable="sudo systemctl enable"
+alias start="sudo systemctl start"
+alias status="sudo systemctl status"
+alias stop="sudo systemctl stop"
+
+
+# snapshots
+alias snaphome="sudo btrfs subvolume snapshot /home /.snapshots/home-$(date +%m-%d-%y-%I:%M:%S%p)"
+alias snaproot="sudo btrfs subvolume snapshot / /.snapshots/root-$(date +%m-%d-%y-%I:%M:%S%p)"
+
+
+# theme
+alias theme="sh ~/.config/shell/scripts/theme/theme_change.sh"
+
+
+# DOOM
+alias doom="cd /home/j/DOOM/inis && /home/j/DOOM/zdl &"
+
+
+# journal
+alias journal="cd ~/docs/journal"

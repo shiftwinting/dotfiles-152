@@ -1,0 +1,68 @@
+[]:
+
+What:
+
+# Why:
+
+
+###########################################################################################################
+#   ,----..                     ____            ____             ___     
+# /   /   \                  ,'  , `.        ,'  , `.  ,--,   ,--.'|_   
+#|   :     :  ,---.       ,-+-,.' _ |     ,-+-,.' _ |,--.'|   |  | :,'  
+#.   |  ;. / '   ,'\   ,-+-. ;   , ||  ,-+-. ;   , |||  |,    :  : ' :  
+#.   ; /--` /   /   | ,--.'|'   |  || ,--.'|'   |  ||`--'_  .;__,'  /   
+#;   | ;   .   ; ,. :|   |  ,', |  |,|   |  ,', |  |,,' ,'| |  |   |    
+#|   : |   '   | |: :|   | /  | |--' |   | /  | |--' '  | | :__,'| :    
+#.   | '___'   | .; :|   : |  | ,    |   : |  | ,    |  | :   '  : |__  
+#'   ; : .'|   :    ||   : |  |/     |   : |  |/     '  : |__ |  | '.'| 
+#'   | '/  :\   \  / |   | |`-'      |   | |`-'      |  | '.'|;  :    ; 
+#|   :    /  `----'  |   ;/          |   ;/          ;  :    ;|  ,   /  
+# \   \ .'           '---'           '---'           |  ,   /  ---`-'   
+#  `---`                                              ---`-'            
+#
+#
+# -- SUBJECT --
+#   - Max 50 char
+#
+# [<type>]: <subject>
+# to resolve associated issues automagically:
+#
+#       : <KEYWORD> <ISSUE #>
+#   
+#       [fix]: fixes #1033
+#
+#   Keywords: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolve 
+#
+# - Types:                                                                                                 
+#   - \"build:\"    build related changes, such as modifying dependencies                                  
+#   - \"chore\":    a code change that external user won't see, such as modifying .gitignore               
+#   - \"docs\":     documentation related changes                                                          
+#   - \"feat\":     a new feature                                                                          
+#   - \"fix\":      a bug fix                                                                              
+#   - \"init\":     project initialization                                                                 
+#   - \"perf\":     performance improvements                                                               
+#   - \"refac\": for non-functional modifications to code, such as changing a variable or function name 
+#   - \"style\":    stylistic changes                                                                      
+#   - \"test\":     modifications to testing features                                                       
+#
+#
+# -- BODY --
+#   - Max 72 char, each line
+#
+#   Include explanation of why and some context ("Because:") and additional details
+#
+#       - What:
+#           - What changes have been made
+#
+#       - Why:
+#           - Why these changes have been made
+#           - Context to changes, such as:
+#               - what it does
+#               - thought process
+#               - bugs it addresses
+#
+#       - Details:
+#           - authors if necessary
+#           - notes
+#           - links
+ 

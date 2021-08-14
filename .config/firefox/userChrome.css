@@ -1,0 +1,168 @@
+/* THIS IS A COPY OF THE ORIGINAL FILE */
+
+/*
+██╗   ██╗███████╗███████╗██████╗  ██████╗██╗  ██╗██████╗  ██████╗ ███╗   ███╗███████╗
+██║   ██║██╔════╝██╔════╝██╔══██╗██╔════╝██║  ██║██╔══██╗██╔═══██╗████╗ ████║██╔════╝
+██║   ██║███████╗█████╗  ██████╔╝██║     ███████║██████╔╝██║   ██║██╔████╔██║█████╗  
+██║   ██║╚════██║██╔══╝  ██╔══██╗██║     ██╔══██║██╔══██╗██║   ██║██║╚██╔╝██║██╔══╝  
+╚██████╔╝███████║███████╗██║  ██║╚██████╗██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
+ ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+*/
+
+/* useful files
+ *    1. https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox
+ *    2. https://github.com/mohabaks/dotfiles/blob/master/mozilla/.mozilla/firefox/profile.default/chrome/userChrome.css
+ * */
+
+/* To enable the usage of userChrome in Firefox:
+ *    1. Search about:config in url bar
+ *    2. Search toolkit.legacyUserProfileCustomizations.stylesheets in page
+ *    3. Set to true
+ * */
+
+/* Items that may be changed with css but that can be changed in about:config
+ *    I have opted to use about:config to modify some of these features 
+ *    for the sake of convenience. I will denote which ones I have chosen
+ *    to use and which ones I have simply discovered during research
+ *
+ *  I use:
+ *    1. remove rich search results: browser.urlbar.maxRichResults set to 0 (css for this can be found at the bottom of "useful files" #2)
+ *
+ *
+ *  I have found and not tested:
+ *    1. remove expanding url bar (source: https://www.reddit.com/r/firefox/comments/gwfn3l/new_working_method_to_disable_enlarging_address/ ) 
+ * */
+
+
+
+
+/* CSS */
+
+/* Must be first to be executed */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+/*** Miscellaneous modifications ***/
+
+/* Hides status panel */
+/* 
+ * The status panel is the small box in 
+ * the bottom left corner of the window  
+ * that displays website connection
+ * information.
+ *
+ * source: https://stackoverflow.com/questions/37084010/how-to-hide-the-status-bar-showing-link-urls-in-firefox
+ *  see second answer, from Greg M.
+ * */
+#statuspanel {display:none!important;}
+
+
+
+
+/*** Toolbar ***/
+/* 
+ * This section contains codes to modify the toolbar generally.
+ * Some subsections fall under this broad category, such as the:
+ *    tab bar
+ *    url bar
+ *    overflow menu
+ *    buttons on the toolbar
+ * */   
+
+/* Tab bar */
+/* removes tab bar completely */
+#tabbrowser-tabs {
+  visibility: collapse !important;
+}
+
+
+
+/** Buttons **/
+
+/* Remove Back button when there's nothing to go back to */
+#back-button[disabled="true"] { display: none; }
+
+
+/* Remove Forward button when there's nothing to go forward to */
+#forward-button[disabled="true"] { display: none; }
+
+
+
+/** Url bar **/
+
+/* Remove blue border around urlbar when focused */
+/* could also likely use this id to change urlbar 
+ * border color. I wrote this one myself, using the
+ * inspector. Instructions to set up can be found in 
+ * link #1 in the "useful files" subheading at the top
+ * */
+#urlbar-background {
+  border: none !important;
+}
+
+
+/* Removes placeholder text from urlbar */
+/* This code was hard to find. I attempted 
+ * to write it myself, to no avail. I'm not
+ * very skilled with css. There are a 
+ * variety of codes on the mozilla forums
+ * that attempt to do the same thing but didn't
+ * work for me. If this doesn't work for you 
+ * look at the forums and keep an eye out for 
+ * the moderator named "cor-el".
+ *
+ * source: https://support.mozilla.org/en-US/questions/1293159
+ * */
+#urlbar *|input::placeholder {opacity:0 !important;}
+#urlbar *|input:focus::placeholder {opacity:0 !important}
+
+
+/* Stop url bar from expanding on focus */
+/* 
+ * The code below functions but seems larger 
+ * than the one I was using before. A smaller
+ * may exist but I'm taking these offline and 
+ * I'm too lazy to write them myself.
+ *
+ * source: https://support.mozilla.org/en-US/questions/1284030#answer-1304125 
+ * */ 
+#urlbar[breakout],
+#urlbar[breakout][breakout-extend] {
+  --urlbar-height: 28px !important;
+  --urlbar-toolbar-height: 30px !important;
+
+  width: 100% !important;
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  left: 0 !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container,
+#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  width: 100% !important;
+  padding-block: unset !important;
+  padding-inline: unset !important;
+  transition: none !important;
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  box-shadow: 0 1px 4px rgba(0,0,0,0) !important;
+  animation: none !important;
+}
+
+
+/* Remove magnifying glass identity icon */ 
+#identity-box[pageproxystate="invalid"]> #identity-icon {
+  display: none !important;
+}
+
+
+
+
+/*** Sidebar ***/
+
+/* Removes header and original splitter from sidebar */
+#sidebar-header, #sidebar-box ~ #sidebar-splitter {
+  display: none;
+}
+
