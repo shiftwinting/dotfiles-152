@@ -1,4 +1,3 @@
--- stolen from WBThomason
 local to_disable =
 {
     '2html_plugin',

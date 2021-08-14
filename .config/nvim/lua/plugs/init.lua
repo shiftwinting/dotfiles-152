@@ -1,5 +1,10 @@
+-- plugs
+-- Sources
+--  1. packer events are just neovim events: https://neovim.io/doc/user/autocmd.html#events
+
+
 -- disable builtins
-require( "plugs.disable" )
+require "plugs.disable"
 
 
 -- directory where subdirs related to plugins and options live
@@ -18,90 +23,36 @@ return require( 'packer' ).startup(function( use )
     use
     {
         'hrsh7th/nvim-compe',
-        config = function()
-            -- configs
-            require( 'compe' ).setup
-            {
-                enabled = true,
-                autocomplete = true,
-                debug = false,
-                min_length = 1,
-                preselect = 'enable',
-                throttle_time = 80,
-                source_timeout = 100,
-                incomplete_delay = 100,
-                max_abbr_width = 100,
-                max_kind_width = 100,
-                max_menu_width = 100,
-
-                -- pmenu apperance
-                documentation =
-                {
-                   border = "none",
-                   max_width = 120,
-                   max_height = math.floor(vim.o.lines * 0.3),
-                   pad_bottom = 2,
-                   pad_top = 2
-                };
-
-
-                -- completion sources
-                source =
-                {
-                    buffer =
-                    {
-                        enable = true;
-                        priority = 99;
-                    },
-                    calc     = true;
-      			    emoji    = true;
-                    nvim_lsp =
-                    {
-                        enable = true;
-                        priority = 98;
-                    },
-                    nvim_lua = true,
-                    -- orgmode  = true,
-                    path     = true;
-                    spell    = false;
-                    vsnip    = true;
-                }
-            }
-        end
+        event = "InsertEnter",
+        config = [[ require "plugs.cfgs.compe" ]]
     }
 
     -- functionality mods
     use 'rhysd/committia.vim'
 
-    use 'McAuleyPenney/expand.lua'
+    use
+    {
+        'McAuleyPenney/expand.lua',
+        event = "InsertEnter"
+    }
 
     use
     {
         'rmagatti/goto-preview',
-        config = function()
-            require('goto-preview').setup {
-                width = 85, -- Width of the floating window
-                height = 45, -- Height of the floating window
-                default_mappings = false; -- Bind default mappings
-                debug = false; -- Print debug information
-                opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
-                post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
-            }
-
-        end
+        config = [[ require "plugs.cfgs.goto-preview" ]]
     }
 
-    use 'b3nj5m1n/kommentary'
+    use
+    {
+        'b3nj5m1n/kommentary',
+        keys = "F14"
+    }
 
     use
     {
         'norcalli/nvim-colorizer.lua',
-        require 'colorizer'.setup{
-            'css',
-            'lua',
-            'text',
-            'vim',
-        }
+        ft = { "css", "lua", "text", "vim" },
+        config = [[ require "plugs.cfgs.colorizer" ]]
     }
 
     use 'vim-scripts/restore_view.vim'
@@ -118,6 +69,7 @@ return require( 'packer' ).startup(function( use )
     use
     {
         'rrethy/vim-illuminate',
+        event = { "CursorHold" },
         config = function()
             vim.g.Illuminate_delay = 300
             vim.g.Illuminate_highlightUnderCursor = 0
@@ -135,6 +87,7 @@ return require( 'packer' ).startup(function( use )
     use
     {
         'simnalamburt/vim-mundo',
+        cmd = "MundoToggle",
         config = function()
             vim.g.mundo_auto_preview_delay = 100
       	    vim.g.mundo_header = 0
@@ -143,8 +96,6 @@ return require( 'packer' ).startup(function( use )
       	    vim.g.mundo_width = 85
         end
     }
-
-    use 'mptre/vim-printf'
 
     use
     {
@@ -174,94 +125,29 @@ return require( 'packer' ).startup(function( use )
     use
     {
         'edluffy/specs.nvim',
-         require('specs').setup{
-             show_jumps  = true,
-             min_jump = 10,
-             popup =
-             {
-                 delay_ms = 50, -- delay before popup displays
-                 inc_ms = 12,   -- time increments used for fade/resize effects
-                 blend = 45,    -- starting blend, between 0-100 (fully transparent), see :h winblend
-                 width = 13,
-                 winhl = "specsBG",
-                 fader = require('specs').empty_fader,
-                 resizer = require('specs').shrink_resizer
-             },
-             ignore_filetypes = {},
-             ignore_buftypes =
-             {
-                 nofile = true,
-             },
-         }
+        config = [[ require "plugs.cfgs.specs" ]],
+        event = "WinScrolled"
     }
 
-    use
-    {
-        "simrat39/symbols-outline.nvim"
-    }
-
-    vim.g.symbols_outline = {
-        highlight_hovered_item = true,
-        show_guides = true,
-        auto_preview = false,
-        position = 'right',
-        show_numbers = false,
-        show_relative_numbers = false,
-        show_symbol_details = true,
-        keymaps =
-        {
-            close = "<Esc>",
-            goto_location = "<Cr>",
-            focus_location = "o",
-            hover_symbol = "<C-space>",
-            rename_symbol = "r",
-            code_actions = "a",
-        },
-        symbols =
-        {
-            Function = {icon = "ƒ", hl = "TSFunction"},
-        },
-        lsp_blacklist = {},
-    }
+    use "simrat39/symbols-outline.nvim"
 
     use
     {
         "folke/trouble.nvim",
-        config = function()
-            require("trouble").setup {
-                height      = 7,
-                action_keys =
-                {
-                    toggle_fold = ";"
-                },
-
-                signs =
-                {
-                    error = "error",
-                    warning = "warn",
-                    hint = "hint",
-                    information = "info"
-                },
-
-                fold_closed  = ">", -- icon used for closed folds
-                fold_open    = "v", -- icon used for open folds
-                icons        = false,
-                indent_lines = false,
-                mode         = "quickfix",
-                use_lsp_diagnostic_signs = true
-            }
-        end
+        config = [[ require "plugs.cfgs.trouble" ]],
+        cmd = "Trouble quickfix"
     }
 
-    use 'jrudess/vim-foldtext'
+    use
+    {
+        'jrudess/vim-foldtext',
+        keys = "za"
+    }
 
     use
     {
         "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup {
-            }
-        end
+        cmd = "ZenMode"
     }
 
 
@@ -270,6 +156,7 @@ return require( 'packer' ).startup(function( use )
     {
         'iamcco/markdown-preview.nvim',
         run = ':call mkdp#util#install()',
+        ft = "markdown",
         config =  function()
       	  vim.g.mkdp_auto_start = 1
       	  vim.g.mkdp_auto_close = 1

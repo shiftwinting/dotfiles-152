@@ -4,7 +4,7 @@
 
 ### options ###
 focus_follows_mouse no
-mouse_warping output
+mouse_warping none
 
 
 ### window qualities ###

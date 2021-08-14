@@ -1,54 +1,55 @@
 # Aliases
 
+
 # dirs
-alias dots="cd ~/git/personal/dotfiles"
+alias dots="cd $HOME/git/personal/dotfiles"
 alias fonts="cd /usr/share/fonts"
 alias plugs="cd /home/j/.local/share/nvim/site/pack/packer/start/"
-alias shs="cd ~/.config/shell/scripts"
-alias vimrc="cd ~/.config/nvim"
-alias work="cd ~/git/"
+alias shs="cd $HOME/.config/shell/scripts"
+alias vimrc="cd $HOME/.config/nvim"
+alias work="cd $HOME/git/"
 
 
 # files - configuration
-alias aliases="nvim ~/.config/shell/aliases"
-alias bashrc="nvim ~/.bashrc"
-alias dunstrc="nvim ~/.config/dunst/dunstrc"
-alias ffconf="nvim ~/.mozilla/firefox/ypyoyy4d.default-release-1612452955881/chrome/userChrome.css"
-alias i3conf="nvim ~/.config/i3/config"
+alias aliases="nvim $HOME/.config/shell/aliases"
+alias bashrc="nvim $HOME/.bashrc"
+alias dunstrc="nvim $HOME/.config/dunst/dunstrc"
+alias ffconf="nvim /home/j/.mozilla/firefox/f3fx7i0t.default-release/chrome/userChrome.css"
+alias i3conf="nvim $HOME/.config/i3/config"
 alias inputrc="sudo nvim /etc/inputrc"
-alias mimeapps="nvim ~/.config/mimeapps.list"
+alias mimeapps="nvim $HOME/.config/mimeapps.list"
 alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
-alias picomconf="nvim ~/.config/picom.conf"
+alias picomconf="nvim $HOME/.config/picom.conf"
 alias sudoers="sudo EDITOR=nvim visudo"
-alias termconf="nvim ~/.config/alacritty/alacritty.yml"
-alias tstconf="nvim ~/.config/firefox/tst.css"
-alias vimrc="cd ~/.config/nvim"
-alias xresources="nvim ~/.Xresources"
-alias zathurarc="nvim ~/.config/zathura/zathurarc"
+alias termconf="nvim $HOME/.config/alacritty/alacritty.yml"
+alias tstconf="nvim $HOME/.config/firefox/tst.css"
+alias vimrc="cd $HOME/.config/nvim"
+alias xresources="nvim $HOME/.Xresources"
+alias zathurarc="nvim $HOME/.config/zathura/zathurarc"
 
 
 # files - other
-alias scratch="nvim ~/docs/notes/scratch.txt"
-alias todo="nvim ~/docs/TODO.txt"
+alias scratch="nvim $HOME/docs/notes/scratch.txt"
+alias todo="nvim $HOME/docs/TODO.txt"
 
 
 # functions
 alias ..="cd .."
 alias ...="cd ../.."
 alias boottime="systemd-analyze && systemd-analyze blame"
-alias calc="python ~/.config/shell/scripts/calculator.py"
+alias calc="python $HOME/.config/shell/scripts/calculator.py"
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME"
 alias ci="clear"
 alias clean="detox"
-alias compress="sh ~/.config/shell/scripts/compression/compress.sh"
+alias compress="sh $HOME/.config/shell/scripts/compression/compress.sh"
 alias fz="fzf --preview --preview-window"
 alias ir="ls -1AbFX"
 alias mixer="pulsemixer"
 alias mk="mkdir -p"
 alias notebook="jupyter notebook"
-alias output="sh ~/.config/shell/scripts/screenConfig.sh"
+alias output="sh $HOME/.config/shell/scripts/screenConfig.sh"
 alias rm="sudo rm -rv"
-alias reload=". ~/.bashrc"
+alias reload=". $HOME/.bashrc"
 alias screenshot="flameshot gui"
 alias sv="sudo nvim"
 alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
@@ -72,7 +73,7 @@ alias mkpkg="makepkg -cri"
 alias paclog="cat /var/log/pacman.log | grep 'install\|remove'"
 alias pacs="pacman -Q | wc -l"
 alias uninstall="sudo pacman -Rsn"
-alias update="sh ~/.config/shell/scripts/pacmanScripts/update.sh"
+alias update="sh $HOME/.config/shell/scripts/pacmanScripts/update.sh"
 
 
 # power options 
@@ -96,7 +97,7 @@ alias snaproot="sudo btrfs subvolume snapshot / /.snapshots/root-$(date +%m-%d-%
 
 
 # theme
-alias theme="sh ~/.config/shell/scripts/theme/theme_change.sh"
+alias theme="sh $HOME/.config/shell/scripts/theme/theme_change.sh"
 
 
 # DOOM
@@ -104,4 +105,4 @@ alias doom="cd /home/j/DOOM/inis && /home/j/DOOM/zdl &"
 
 
 # journal
-alias journal="cd ~/docs/journal"
+alias journal="cd $HOME/docs/journal"
