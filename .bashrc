@@ -1,15 +1,10 @@
+# bashrc
 
-# ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗
-# ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
-# ██████╔╝███████║███████╗███████║██████╔╝██║     
-# ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     
-# ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
-# ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+CONFIG="$HOME/.config"
 
-
-. $HOME/.config/shell/scripts/shell_functions.sh
-. $HOME/.config/shell/aliases
-. $HOME/.config/fzf/settings.sh
+. $CONFIG/shell/scripts/shell_functions.sh
+. $CONFIG/shell/aliases
+. $CONFIG/fzf/settings.sh
 
 
 #---------------------------------------------------------------
@@ -21,7 +16,7 @@ export EDITOR="$VISUAL"
 
 
 # history
-export HISTFILE=$HOME/.config/shell/shell_hist
+export HISTFILE=$CONFIG/shell/shell_hist
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000

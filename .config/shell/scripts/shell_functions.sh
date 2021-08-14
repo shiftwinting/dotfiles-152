@@ -1,35 +1,9 @@
 #!/bin/sh
 
 # Sources:
-#   on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
+#   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
 
 
-cd() 
-{ 
-    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
-}
-
-
-compress()
-{
-    printf "1) tar.gz\n"
-    printf "2) zip\n"
-    printf "\n"
-    read -p ": " compressType
-    printf "\n"
-    
-    read -p "Output name: " filename
-    
-    if [[ $compressType == "1" ]]; then
-        tar -czvf $filename.tar.gz $1
-
-    elif test $compressType == "2"
-    then
-        zip $filename $1
-    fi 
-}
-
-# copy working dir to clipboard
 cppwd()
 {
     if command -v xsel &> /dev/null
@@ -77,11 +51,39 @@ open()
     if test -f $1
     then
         case $1 in
-            *.jpg|*.png|*.gif)                  sxiv -b $1           ;;&
-            *.pdf)                              zathura --fork $1    ;;& 
-            *.doc|*.docx|*.odt|*.xls|*.xlsx)    libreoffice $1       ;;& 
+            *.jpg|*.png|*.gif)                  sxiv -b $1 &            ;;&
+            *.pdf)                              zathura --fork $1 &     ;;& 
+            *.doc|*.docx|*.odt|*.xls|*.xlsx)    libreoffice $1 &        ;;& 
         esac
     fi
+}
+
+
+cd() 
+{ 
+    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
+}
+
+
+seal()
+{
+    # replace with case
+
+    printf "1) tar.gz\n"
+    printf "2) zip\n"
+    printf "\n"
+    read -p ": " compressType
+    printf "\n"
+    
+    read -p "Output name: " filename
+    
+    if [[ $compressType == "1" ]]; then
+        tar -czvf $filename.tar.gz $1
+
+    elif test $compressType == "2"
+    then
+        zip $filename $1
+    fi 
 }
 
 
