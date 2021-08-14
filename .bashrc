@@ -6,9 +6,10 @@
 # ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
 # ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 
-# source functions
-. ~/.config/shell/scripts/shell_functions.sh
-. ~/.config/shell/aliases/arch_aliases
+
+. $HOME/.config/shell/scripts/shell_functions.sh
+. $HOME/.config/shell/aliases
+. $HOME/.config/fzf/settings.sh
 
 
 #---------------------------------------------------------------
@@ -19,13 +20,8 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 
-# PATH
-# trash-cli is located there
-export PATH=~/.local/bin:"$PATH"
-
-
 # history
-export HISTFILE=~/.config/shell/shell_hist
+export HISTFILE=$HOME/.config/shell/shell_hist
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -80,39 +76,9 @@ branch='$(git branch --show-current 2>/dev/null)'
 colorized_branch="${branch_col} ${branch} ${txtrst}"
 cur_dir=' \w  '
 workingdir="${cur_dir}${colorized_branch}\n"
-prompt_top="\n${tlcorner_thin}${hline}${workingdir}"
-prompt_bot="${blcorner}${hline}${arrow}"
+prompt_top="\n${tlcorner_thin}[${workingdir}"
+prompt_bot="${blcorner}${hnode} "
 
 # prompt
 PS1="${prompt_top}${prompt_bot}" 
 
-
-#---------------------------------------------------------------
-# fzf
-
-# enable autocompletion
-[[ $- == *i* ]] && source "/home/j/.config/fzf/shell/completion.bash" 2> /dev/null
-
-
-# enable key bindings
-source "/home/j/.config/fzf/shell/key-bindings.bash"
- 
-
-#### fzf #### 
-# include fzf in path
-if [[ ! "$PATH" == */home/j/.config/fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}/home/j/.config/fzf/bin"
-fi
- 
-
-# define default fzf operation
-export FZF_DEFAULT_OPTS='--border --cycle --height 40% --layout=reverse --no-bold --padding 1,3
-                         --color 'bg+:#d1d7de' --color 'fg+:#8e4585' --color 'hl:#d94e4e' --color 'hl+:#d94e4e' --color 'info:#000000''
-
-
-# this assumes the default "find" tool 
-# as the backend of fzf. In the future,
-# we should try another backend tool which
-# is considered faster
-export FZF_DEFAULT_COMMAND='find / .'                                        
-export FZF_CTRL_F_COMMAND='find ~ .'                                         
