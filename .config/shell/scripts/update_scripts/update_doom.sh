@@ -1,17 +1,18 @@
 # see https://zdoom.org/wiki/Compile_GZDoom_on_Linux
 
+
+GZDOOM_DIR="/home/j/gzdoom_build" 
+
+
 main()
 {
-    gzdoom_dir="/home/j/gzdoom_build" 
-
-    if test -d $gzdoom_dir
+    if test -d $GZDOOM_DIR
     then
-        printf "\n"
-        sudo rm -rv $gzdoom_dir
+        sudo rm -r $GZDOOM_DIR
     fi
 
-    mkdir $gzdoom_dir
-    cd $gzdoom_dir
+    mkdir $GZDOOM_DIR
+    cd $GZDOOM_DIR
 
     printf "\n"
     git clone git://github.com/coelckers/gzdoom.git
@@ -33,7 +34,7 @@ main()
     cmake .. -DCMAKE_BUILD_TYPE=Release $f &&
     make -j$c
 
-    printf "\nOperation complete 🌈\n" 
+    printf "\nOperation complete\n" 
 } 
 
 

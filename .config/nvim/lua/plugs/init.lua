@@ -20,14 +20,8 @@ return require( 'packer' ).startup(function( use )
     -- lsp
     use 'neovim/nvim-lspconfig'
 
-    use
-    {
-        'hrsh7th/nvim-compe',
-        event = "InsertEnter",
-        config = [[ require "plugs.cfgs.compe" ]]
-    }
 
-    -- functionality mods
+-- functionality mods
     use 'rhysd/committia.vim'
 
     use
@@ -53,6 +47,24 @@ return require( 'packer' ).startup(function( use )
         'norcalli/nvim-colorizer.lua',
         ft = { "css", "lua", "text", "vim" },
         config = [[ require "plugs.cfgs.colorizer" ]]
+    }
+
+    use
+    {
+        'hrsh7th/nvim-compe',
+        event = "InsertEnter",
+        config = [[ require "plugs.cfgs.compe" ]],
+        requires = {
+            { 'hrsh7th/vim-vsnip-integ', event = "InsertEnter" },
+            {
+                'hrsh7th/vim-vsnip',
+                event = "InsertEnter",
+                config = function()
+                    vim.g.vsnip_snippet_dir = OPT_DIR .. "snips"
+                    vim.g.vsnip_filetyes = {}
+                end
+            }
+        }
     }
 
     use 'vim-scripts/restore_view.vim'
@@ -97,21 +109,10 @@ return require( 'packer' ).startup(function( use )
         end
     }
 
-    use
-    {
-        'hrsh7th/vim-vsnip',
-        config = function()
-            vim.g.vsnip_snippet_dir = OPT_DIR .. "snips"
-            vim.g.vsnip_filetyes = {}
-        end
-    }
-
-    use 'hrsh7th/vim-vsnip-integ'
-
     use 'machakann/vim-swap'
 
 
-    -- UI mods
+-- UI mods
     use 'McAuleyPenney/Cacophony-theme-nvim'
 
     use
@@ -135,7 +136,7 @@ return require( 'packer' ).startup(function( use )
     {
         "folke/trouble.nvim",
         config = [[ require "plugs.cfgs.trouble" ]],
-        event = "QuickFixCmdPost"
+        event = "QuickFixCmdPre"
     }
 
     use
@@ -151,12 +152,11 @@ return require( 'packer' ).startup(function( use )
     }
 
 
-    -- filetype-specific mods
+-- filetype-specific mods
     use
     {
         'iamcco/markdown-preview.nvim',
         run = ':call mkdp#util#install()',
-        ft = "markdown",
         config =  function()
       	  vim.g.mkdp_auto_start = 1
       	  vim.g.mkdp_auto_close = 1

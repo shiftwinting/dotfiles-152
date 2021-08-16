@@ -13,6 +13,8 @@ require("trouble").setup {
         information = "info"
     },
 
+    auto_open    = true,
+    auto_close   = true,
     fold_closed  = ">", -- icon used for closed folds
     fold_open    = "v", -- icon used for open folds
     icons        = false,

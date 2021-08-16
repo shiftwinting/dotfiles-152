@@ -1,6 +1,6 @@
 -- aucmds
 --  for event types, see https://neovim.io/doc/user/autocmd.html#events
---  for updates on the Lua aucmds interface, see https://github.com/neovim/neovim/pull/12378
+--  for updates on the Lua aucmds interface, see https://github.com/neovim/neovim/pull/14661
 
     -- use a template file if one exists for that filetype. See templates dir below
     -- stolen from somewhere

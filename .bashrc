@@ -54,25 +54,13 @@ branch_bg='250;166;26'
 branch_fg='5;0'
 branch_col='\033[1;38;${branch_fg};48;2;${branch_bg}m'
 
-# symbols #
-#   see https://unicode-table.com/en/ 
-#   for unicode characters. I can't 
-#   find a list of the type of escape
-#   sequences from below.
-arrow='→ '
-blcorner='\342\224\224'
-hline='\342\224\200'
-hnode='\342\225\274'
-tlcorner_thin='\342\224\214'
-tlcorner_thick='\342\224\215'
-
 # prompt variables 
 branch='$(git branch --show-current 2>/dev/null)'
 colorized_branch="${branch_col} ${branch} ${txtrst}"
-cur_dir=' \w  '
-workingdir="${cur_dir}${colorized_branch}\n"
-prompt_top="\n${tlcorner_thin}[${workingdir}"
-prompt_bot="${blcorner}${hnode} "
+cur_dir='\w   '
+prompt_top="\n${cur_dir}${colorized_branch}\n"
+prompt_bot='» '
+
 
 # prompt
 PS1="${prompt_top}${prompt_bot}" 

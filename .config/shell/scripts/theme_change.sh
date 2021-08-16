@@ -1,9 +1,6 @@
 
 #!/bin/sh
 
-# TODO: 
-#   change logic for nvim theme
-
 
 main()
 {

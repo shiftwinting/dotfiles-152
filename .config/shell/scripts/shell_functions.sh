@@ -4,6 +4,12 @@
 #   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
 
 
+cd() 
+{ 
+    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
+} 
+
+
 cppwd()
 {
     if command -v xsel &> /dev/null
@@ -59,31 +65,21 @@ open()
 }
 
 
-cd() 
-{ 
-    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
-}
-
-
 seal()
 {
-    # replace with case
-
+    printf "\n"
     printf "1) tar.gz\n"
     printf "2) zip\n"
     printf "\n"
-    read -p ": " compressType
-    printf "\n"
-    
-    read -p "Output name: " filename
-    
-    if [[ $compressType == "1" ]]; then
-        tar -czvf $filename.tar.gz $1
 
-    elif test $compressType == "2"
-    then
-        zip $filename $1
-    fi 
+    read -p "Compression type: " compressType
+    read -p "Output name     : " filename
+
+
+    case $compressType in
+        "1")    tar -czvf $filename.tar.gz "$@"   ;;
+        "2")    zip $filename "$@" ;;
+    esac
 }
 
 

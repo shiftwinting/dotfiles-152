@@ -1,12 +1,15 @@
 -- options --
 
 -- Sources:
---  for options,    see https://vimhelp.org/options.txt.html
---  for opt syntax, see https://github.com/neovim/neovim/pull/13479#event-4813249467
---  for defaults,   see https://neovim.io/doc/user/vim_diff.html
+--  Options:
+--      1. https://neovim.io/doc/user/options.html
+--      2. https://vimhelp.org/options.txt.html
+--
+--  nvim defaults:  https://neovim.io/doc/user/vim_diff.html
+--  opt syntax:     https://github.com/neovim/neovim/pull/13479#event-4813249467
 
 
-require( 'options.providers' )
+require "options.providers"
 
 
 -- alias syntax

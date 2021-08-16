@@ -3,10 +3,10 @@
 --  1: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
 
 -- colemak nav
-require( 'mappings.colemak_nav' )
+require "mappings.colemak_nav"
 
 -- import functions for mappings
-require( 'mappings.functions' )
+require "mappings.functions"
 
 
 -- local vars and abbrev
@@ -18,10 +18,8 @@ local na    = {}
 local nore  = { noremap = true }
 
 
-
 -- leader --
 vim.g.mapleader = 'm'
-
 
 
 -- utility bindings --
@@ -51,7 +49,7 @@ map( 'n', '<C-n>', 'v:lua.num_toggle()', expr )
 map( 'n', '/', ':silent grep  %<left><left>', na )
 
 -- open URLs
--- taken from source 1
+--  taken from source 1
 map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 
 
@@ -70,16 +68,12 @@ map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)
 map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
 
 -- compe
-map( 'i', '<Tab>',  'v:lua.tab_compe()',  expr )
 map( 'i', '<up>',   'v:lua.arrow_up()',   expr )
 map( 'i', '<down>', 'v:lua.arrow_down()', expr )
+map( 'i', '<Tab>',  'v:lua.tab_complete()',  expr )
 
 -- goto-preview
 map( 'n', 'gd', "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", na )
-
--- lightspeed
-map( 'n', '<C-PageUp>',   '<Plug>Lightspeed_S', na )
-map( 'n', '<C-PageDown>', '<Plug>Lightspeed_s', na )
 
 -- nvim comment
 map( 'i', '<F14>', '<esc><Plug>kommentary_line_default', na )
@@ -97,10 +91,6 @@ map( 'v', '<left>',  '<C-h>', na )
 map( 'v', '<down>',  '<C-j>', na )
 map( 'v', '<up>',    '<C-k>', na )
 map( 'v', '<right>', '<C-l>', na )
-
--- vim printf
-map( 'n', '<leader>p', '<cmd>Printf<cr>', cmd )
-map( 'v', '<leader>p', '<cmd>Printf<cr>', cmd )
 
 -- vim-swap
 map( 'n', '<left>',  'g<', na )

@@ -1,6 +1,5 @@
 # Aliases
 
-
 # dirs
 alias dots="cd $HOME/git/personal/dotfiles"
 alias fonts="cd /usr/share/fonts"
@@ -47,7 +46,7 @@ alias ir="ls -1AbFX"
 alias mixer="pulsemixer"
 alias mk="mkdir -p"
 alias notebook="jupyter notebook"
-alias output="sh $HOME/.config/shell/scripts/screenConfig.sh"
+alias output="sh $HOME/.config/shell/scripts/screen_config.sh"
 alias rm="sudo rm -rv"
 alias reload=". $HOME/.bashrc"
 alias screenshot="flameshot gui"
@@ -73,7 +72,7 @@ alias mkpkg="makepkg -cri"
 alias paclog="cat /var/log/pacman.log | grep 'install\|remove'"
 alias pacs="pacman -Q | wc -l"
 alias uninstall="sudo pacman -Rsn"
-alias update="sh $HOME/.config/shell/scripts/pacmanScripts/update.sh"
+alias update="sh $HOME/.config/shell/scripts/update_scripts/update_pacman.sh"
 
 
 # power options 

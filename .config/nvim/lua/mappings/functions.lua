@@ -5,6 +5,7 @@ local send_keys = function(str)
 end
 
 
+-- functions
 _G.num_toggle = function()
 
     local set_opt = vim.api.nvim_win_set_option
@@ -34,7 +35,7 @@ end
 
 
 
--- compe
+    -- compe
 _G.arrow_down = function()
     return vim.fn.pumvisible() == 1 and send_keys "<C-n>" or send_keys "<down>"
 end
@@ -45,6 +46,6 @@ _G.arrow_up = function()
 end
 
 
-_G.tab_compe = function()
-     return vim.fn.pumvisible() == 1 and vim.fn['compe#confirm']( {keys = '<Tab>', select = true} ) or send_keys "<Tab>"
+_G.tab_complete = function()
+    return vim.fn.pumvisible() == 1 and vim.fn['compe#confirm']( {keys = '<Tab>', select = true} ) or send_keys "<Tab>"
 end
