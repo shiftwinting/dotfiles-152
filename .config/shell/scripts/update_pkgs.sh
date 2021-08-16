@@ -24,7 +24,7 @@ main()
 
 exe_menus()
 {
-    read -p "Check Arch news before updating Pacman? " newsconf
+    read -p "Check Arch news before updating pkgs? " newsconf
 
     if [[ $newsconf == "y" || $newsconf == "yes" ]]; then
         open_news
@@ -67,7 +67,7 @@ print_pacman_update_time()
     day_diff=$(( $time_diff / 86400 ))
     hour_diff=$(( ($time_diff - 86400 * $day_diff) / 3600 ))
 
-    printf "Pacman upgraded ${day_diff} days, ${hour_diff} hours ago."
+    printf "Last pkgs update: ${day_diff} days, ${hour_diff} hours ago..."
 }
 
 

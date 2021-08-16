@@ -181,7 +181,7 @@ colors:
   # Default colors
   primary:
     background: '#38404B' #bgColorFlag
-    foreground: '#FBFAF5' #fgColorFlag
+    foreground: '#FDFDFB' #fgColorFlag
     
     
     # Bright and dim foreground colors

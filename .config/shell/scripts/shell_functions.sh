@@ -3,7 +3,6 @@
 # Sources:
 #   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
 
-
 cd() 
 { 
     test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
@@ -44,10 +43,10 @@ extract()
             *.tgz)       tar xzf $1     ;;
             *.zip)       unzip $1       ;;
             *.Z)         uncompress $1  ;;
-            *)           echo "'$1' is not a defined extractable type" ;;
+            *)           echo "\"$1\" is not a valid archive" ;;
         esac
     else
-        echo "'$1' is not a valid file"
+        echo "\"$1\" is not a valid archive"
     fi 
 } 
 

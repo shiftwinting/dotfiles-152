@@ -23,6 +23,7 @@ main()
     git config --local --add remote.origin.fetch +refs/tags/*:refs/tags/*
     git pull
 
+    # compile
     a='' && [ "$(uname -m)" = x86_64 ] && a=64
     c="$(lscpu -p | grep -v '#' | sort -u -t , -k 2,4 | wc -l)" ; [ "$c" -eq 0 ] && c=1
     cd ~/gzdoom_build/gzdoom/build &&

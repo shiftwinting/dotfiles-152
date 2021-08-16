@@ -1,68 +1,61 @@
-# Aliases
+#!/bin/bash
+
+# aliases
+
+# vars
+CONF="/home/j/.config"
+SCRIPTS="/home/j/.config/shell/scripts"
 
 # dirs
-alias dots="cd $HOME/git/personal/dotfiles"
 alias fonts="cd /usr/share/fonts"
-alias plugs="cd /home/j/.local/share/nvim/site/pack/packer/start/"
-alias shs="cd $HOME/.config/shell/scripts"
-alias vimrc="cd $HOME/.config/nvim"
+alias plugs="cd $HOME/.local/share/nvim/site/pack/packer/start/"
+alias shs="cd $SCRIPTS"
+alias vimrc="cd $CONF/nvim"
 alias work="cd $HOME/git/"
 
-
 # files - configuration
-alias aliases="nvim $HOME/.config/shell/aliases"
+alias aliases="nvim $CONF/shell/aliases.sh"
 alias bashrc="nvim $HOME/.bashrc"
-alias dunstrc="nvim $HOME/.config/dunst/dunstrc"
-alias ffconf="nvim /home/j/.mozilla/firefox/f3fx7i0t.default-release/chrome/userChrome.css"
-alias i3conf="nvim $HOME/.config/i3/config"
+alias dunstrc="nvim $CONF/dunst/dunstrc"
+alias ffconf="nvim $HOME/.mozilla/firefox/f3fx7i0t.default-release/chrome/userChrome.css"
+alias i3conf="nvim $CONF/i3/config"
 alias inputrc="sudo nvim /etc/inputrc"
-alias mimeapps="nvim $HOME/.config/mimeapps.list"
+alias mimeapps="nvim $CONF/mimeapps.list"
 alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
-alias picomconf="nvim $HOME/.config/picom.conf"
+alias picomconf="nvim $CONF/picom.conf"
 alias sudoers="sudo EDITOR=nvim visudo"
-alias termconf="nvim $HOME/.config/alacritty/alacritty.yml"
-alias tstconf="nvim $HOME/.config/firefox/tst.css"
-alias vimrc="cd $HOME/.config/nvim"
-alias xresources="nvim $HOME/.Xresources"
-alias zathurarc="nvim $HOME/.config/zathura/zathurarc"
-
+alias termconf="nvim $CONF/alacritty/alacritty.yml"
+alias zathurarc="nvim $CONF/zathura/zathurarc"
 
 # files - other
 alias scratch="nvim $HOME/docs/notes/scratch.txt"
 alias todo="nvim $HOME/docs/TODO.txt"
 
-
 # functions
 alias ..="cd .."
 alias ...="cd ../.."
 alias boottime="systemd-analyze && systemd-analyze blame"
-alias calc="python $HOME/.config/shell/scripts/calculator.py"
-alias cfg="/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME"
+alias calc="python $SCRIPTS/calculator.py"
 alias ci="clear"
 alias clean="detox"
-alias compress="sh $HOME/.config/shell/scripts/compression/compress.sh"
 alias fz="fzf --preview --preview-window"
 alias ir="ls -1AbFX"
 alias mixer="pulsemixer"
-alias mk="mkdir -p"
 alias notebook="jupyter notebook"
-alias output="sh $HOME/.config/shell/scripts/screen_config.sh"
+alias output="sh $SCRIPTS/config_screen.sh"
 alias rm="sudo rm -rv"
 alias reload=". $HOME/.bashrc"
-alias screenshot="flameshot gui"
-alias sv="sudo nvim"
 alias valgrind="valgrind --leak-check=full --show-leak-kinds=all -s --track-origins=yes"
-alias zoom="zoom &"
-
 
 # git
 alias add="git add"
 alias branches="git branch -vv"
+alias cfg="/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME"
 alias clone="git clone"
+alias commit="git commit"
 alias push="git push"
 alias rebase="git rebase -i HEAD~2"
 alias unstage="git restore --staged"
-
 
 # package management
 alias lsfonts="fc-list : family style"
@@ -72,15 +65,12 @@ alias mkpkg="makepkg -cri"
 alias paclog="cat /var/log/pacman.log | grep 'install\|remove'"
 alias pacs="pacman -Q | wc -l"
 alias uninstall="sudo pacman -Rsn"
-alias update="sh $HOME/.config/shell/scripts/update_scripts/update_pacman.sh"
-
+alias update="sh $SCRIPTS/update_pkgs.sh"
 
 # power options 
 alias reboot="sudo systemctl reboot"
 alias shutdown="sudo systemctl poweroff"
-alias suspend="sudo systemctl suspend" 
 alias uefi="sudo systemctl reboot --firmware-setup"
- 
 
 # services
 alias disable="sudo systemctl disable"
@@ -89,19 +79,12 @@ alias start="sudo systemctl start"
 alias status="sudo systemctl status"
 alias stop="sudo systemctl stop"
 
-
 # snapshots
 alias snaphome="sudo btrfs subvolume snapshot /home /.snapshots/home-$(date +%m-%d-%y-%I:%M:%S%p)"
 alias snaproot="sudo btrfs subvolume snapshot / /.snapshots/root-$(date +%m-%d-%y-%I:%M:%S%p)"
 
-
 # theme
-alias theme="sh $HOME/.config/shell/scripts/theme/theme_change.sh"
-
+alias theme="sh $SCRIPTS/change_theme.sh"
 
 # DOOM
-alias doom="cd /home/j/DOOM/inis && /home/j/DOOM/zdl &"
-
-
-# journal
-alias journal="cd $HOME/docs/journal"
+alias doom="$HOME/DOOM/zdl &"

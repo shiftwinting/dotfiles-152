@@ -1,10 +1,10 @@
 # bashrc
 
-CONFIG="$HOME/.config"
+CONF="$HOME/.config"
 
-. $CONFIG/shell/scripts/shell_functions.sh
-. $CONFIG/shell/aliases
-. $CONFIG/fzf/settings.sh
+. $CONF/shell/scripts/shell_functions.sh
+. $CONF/shell/aliases.sh
+. $CONF/fzf/settings.sh
 
 
 #---------------------------------------------------------------
@@ -16,7 +16,7 @@ export EDITOR="$VISUAL"
 
 
 # history
-export HISTFILE=$CONFIG/shell/shell_hist
+export HISTFILE=$CONF/shell/shell_hist
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=100000
 export HISTFILESIZE=100000
@@ -44,21 +44,15 @@ shopt -s histappend
 #	    2) True color escape sequences:
 #	        see https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
 
-
-# colors #
-# Text Reset
 txtrst='\[\e[0m\]'       
 
-# Custom color
 branch_bg='250;166;26'
 branch_fg='5;0'
 branch_col='\033[1;38;${branch_fg};48;2;${branch_bg}m'
 
-# prompt variables 
 branch='$(git branch --show-current 2>/dev/null)'
-colorized_branch="${branch_col} ${branch} ${txtrst}"
-cur_dir='\w   '
-prompt_top="\n${cur_dir}${colorized_branch}\n"
+color_branch="${branch_col} ${branch} ${txtrst}"
+prompt_top="\n\w   ${color_branch}\n"
 prompt_bot='» '
 
 

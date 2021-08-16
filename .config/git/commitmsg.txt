@@ -1,34 +1,39 @@
 []:
 
-What:
+# What:
 
 # Why:
 
 
 ###########################################################################################################
 # -- SUBJECT --
-#   - Max 50 char
+#   - max 50 char
 #
-# [<type>]: <subject>
-# to resolve associated issues automagically:
+#   - Types of commits:
+#     - \"build\": build related changes, such as modifying dependencies                                  
+#     - \"chore\": a code change that external user won't see, such as modifying .gitignore               
+#     - \"docs\" : documentation related changes                                                          
+#     - \"feat\" : a new feature                                                                          
+#     - \"fix\"  : a bug fix                                                                              
+#     - \"init\" : project initialization                                                                 
+#     - \"perf\" : performance improvements                                                               
+#     - \"refac\": for non-functional code quality changes 
+#     - \"style\": stylistic changes                                                                      
+#     - \"test\" : modifications to testing features                                                        
 #
-#       : <KEYWORD> <ISSUE #>
+#   - Use keywords in subject to automatically modify issues
+#
+#       Keywords: 
+#           -  close, closes, closed
+#           -  fix, fixes, fixed 
+#           -  resolve, resolves, resolved 
+#
+#       - format
+#           :<KEYWORD> <ISSUE #>
+#
+#               e.g.
 #   
-#       [fix]: fixes #1033
-#
-#   Keywords: close, closes, closed, fix, fixes, fixed, resolve, resolves, resolve 
-#
-# - Types:                                                                                                 
-#   - \"build:\"    build related changes, such as modifying dependencies                                  
-#   - \"chore\":    a code change that external user won't see, such as modifying .gitignore               
-#   - \"docs\":     documentation related changes                                                          
-#   - \"feat\":     a new feature                                                                          
-#   - \"fix\":      a bug fix                                                                              
-#   - \"init\":     project initialization                                                                 
-#   - \"perf\":     performance improvements                                                               
-#   - \"refac\":    for non-functional modifications to code, such as changing a variable or function name 
-#   - \"style\":    stylistic changes                                                                      
-#   - \"test\":     modifications to testing features                                                       
+#           :fixes #1033
 #
 #
 # -- BODY --
