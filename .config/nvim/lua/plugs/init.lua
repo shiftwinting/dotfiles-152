@@ -2,35 +2,27 @@
 -- Sources
 --  1. packer events are just neovim events: https://neovim.io/doc/user/autocmd.html#events
 
-
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
 
 
-
-LSP_LANGS   = { 'c', "lua", "python" }
+LSP_LANGS = { 'c', "lua", "python" }
 
 
 return require( "packer" ).startup(function( use )
 
+-- base
     use "wbthomason/packer.nvim"
 
     use "neovim/nvim-lspconfig"
 
-    use
-    {
-        "nvim-treesitter/nvim-treesitter",
-        config = [[ require "plugs.cfgs.treesitter" ]]
-    }
+    use{ "nvim-treesitter/nvim-treesitter", config = [[ require "plugs.cfgs.treesitter" ]] }
+
 
 -- functionality mods
     use "rhysd/committia.vim"
 
-    use
-    {
-        "McAuleyPenney/expand.lua",
-        event = "InsertEnter"
-    }
+    use{ "McAuleyPenney/expand.lua", event = "InsertEnter" }
 
     use
     {
@@ -39,18 +31,11 @@ return require( "packer" ).startup(function( use )
         config = [[ require "plugs.cfgs.goto-preview" ]]
     }
 
-    use
-    {
-        "b3nj5m1n/kommentary",
-        keys = "F14"
-    }
+    use{ "b3nj5m1n/kommentary", keys = "F14" }
 
-   use
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = [[ require "plugs.cfgs.colorizer" ]]
-    }
+    use{ "iamcco/markdown-preview.nvim", run = ":call mkdp#util#install()" }
 
+    use{ "norcalli/nvim-colorizer.lua", config = [[ require "plugs.cfgs.colorizer" ]] }
 
     use
     {
@@ -60,76 +45,31 @@ return require( "packer" ).startup(function( use )
         requires =
         {
             { "hrsh7th/vim-vsnip-integ", event = "InsertEnter" },
-            { "hrsh7th/vim-vsnip", event = "InsertEnter " }
+            { "hrsh7th/vim-vsnip", event = "InsertEnter" }
         }
     }
 
-    use
-    {
-        'kristijanhusak/orgmode.nvim',
-        config = [[ require "plugs.cfgs.orgmode" ]]
-    }
+    use{ 'kristijanhusak/orgmode.nvim', config = [[ require "plugs.cfgs.orgmode" ]] }
 
     use "vim-scripts/restore_view.vim"
 
-    use
-    {
-        "itchyny/vim-highlighturl",
-        config = function()
-            local blurp = "#7289DA"
-            vim.g.highlighturl_guifg = blurp
-        end
-    }
+    use "itchyny/vim-highlighturl"
 
-    use
-    {
-        "rrethy/vim-illuminate",
-        event = { "CursorHold" },
-        config = function()
-            vim.g.Illuminate_delay = 300
-            vim.g.Illuminate_highlightUnderCursor = 0
-        end
-    }
+    use{ "rrethy/vim-illuminate", event = { "CursorHold" }}
 
-    use
-    {
-        "matze/vim-move",
-        config = function()
-            vim.g.move_key_modifier = "C"
-        end
-    }
+    use "matze/vim-move"
 
-    use
-    {
-        "simnalamburt/vim-mundo",
-        cmd = "MundoToggle"
-    }
+    use{ "simnalamburt/vim-mundo", cmd = "MundoToggle" }
 
-    use
-    {
-        "machakann/vim-swap",
-        keys = { "g<", "g>" }
-    }
+    use{ "machakann/vim-swap", keys = { "g<", "g>" }}
 
 
 -- UI mods
     use "McAuleyPenney/Cacophony-theme-nvim"
 
-    use
-    {
-        "romgrk/nvim-treesitter-context",
-        require'treesitter-context'.setup{
-            throttle = true
-        }
-    }
+    use{ "romgrk/nvim-treesitter-context", require'treesitter-context'.setup{ throttle = true }}
 
-    use
-    {
-        "tversteeg/registers.nvim",
-        config = function()
-            vim.g.registers_window_border = "single"
-        end
-    }
+    use{ "tversteeg/registers.nvim", keys = '"' }
 
     use
     {
@@ -138,11 +78,7 @@ return require( "packer" ).startup(function( use )
         config = [[ require "plugs.cfgs.specs" ]]
     }
 
-    use
-    {
-        "simrat39/symbols-outline.nvim",
-        ft = LSP_LANGS
-    }
+    use{ "simrat39/symbols-outline.nvim", ft = LSP_LANGS }
 
     use
     {
@@ -153,18 +89,6 @@ return require( "packer" ).startup(function( use )
 
     use "jrudess/vim-foldtext"
 
-    use
-    {
-        "folke/zen-mode.nvim",
-        cmd = "ZenMode"
-    }
-
-
--- filetype-specific mods
-    use
-    {
-        "iamcco/markdown-preview.nvim",
-        run = ":call mkdp#util#install()"
-    }
+    use{ "folke/zen-mode.nvim", cmd = "ZenMode" }
 
 end)

@@ -1,6 +1,6 @@
 #!/bin/bash
-
 # aliases
+
 
 # vars
 CONF="/home/j/.config"
@@ -30,11 +30,13 @@ alias zathurarc="nvim $CONF/zathura/zathurarc"
 
 # files - other
 alias note="nvim $HOME/docs/notes/note.txt"
-alias todo="nvim $HOME/docs/TODO.txt"
+alias todo="nvim $CONF/nvim/utils/org/refile.org"
 
 # functions
+# TODO just use push and pop instead of ..
 alias ..="cd .."
-alias ...="cd ../.."
+alias .2="cd ../.."
+alias .3="cd ../../.."
 alias boottime="systemd-analyze && systemd-analyze blame"
 alias calc="python $SCRIPTS/calculator.py"
 alias ci="clear"
@@ -68,7 +70,7 @@ alias pacs="pacman -Q | wc -l"
 alias uninstall="sudo pacman -Rsn"
 alias update="sh $SCRIPTS/update_pkgs.sh"
 
-# power options 
+# power options
 alias reboot="sudo systemctl reboot"
 alias shutdown="sudo systemctl poweroff"
 alias uefi="sudo systemctl reboot --firmware-setup"

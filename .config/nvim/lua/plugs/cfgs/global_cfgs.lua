@@ -1,5 +1,13 @@
 local snips = "/home/j/.config/nvim/utils/snips"
 
+-- highlight url
+vim.g.highlighturl_guifg = "#7289DA"
+
+-- illuminate
+vim.g.Illuminate_delay = 300
+vim.g.Illuminate_highlightUnderCursor = 0
+
+
 -- markdown preview
 vim.g.mkdp_auto_start = 1
 vim.g.mkdp_auto_close = 1
@@ -14,6 +22,8 @@ vim.g.mundo_preview_height = 50
 vim.g.mundo_right = 1
 vim.g.mundo_width = 85
 
+-- registers
+vim.g.registers_window_border = "none"
 
 -- symbols_outline
 vim.g.symbols_outline = {

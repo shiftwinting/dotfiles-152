@@ -70,7 +70,6 @@ map('n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', cmd )
 map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)
 
 
-
 -- plugin bindings --
 -- mundo
 map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
@@ -90,7 +89,6 @@ map( 'v', '<F14>', '<Plug>kommentary_visual_default',    na )
 
 -- orgmode
 map( 'n', '<leader>ci', 'i-[]<esc>', nore )
-
 
 -- symbols-outline.nvim
 map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )

@@ -1,12 +1,49 @@
 {
+    "ARCHIVED":
+    {
+        "prefix": [ "ARCHIVED" ],
+        "body":
+        [
+            "ARCHIVED:[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
+        ]
+    },
+
+    "DEADLINE":
+    {
+        "prefix": [ "DEADLINE" ],
+        "body":
+        [
+            "DEADLINE: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>"
+        ]
+    },
+
+    "STAMP":
+    {
+        "prefix": [ "STAMP" ],
+        "body":
+        [
+            "CREATED:[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
+        ]
+    },
+
+    "SCHEDULED":
+    {
+        "prefix": [ "SCHEDULED" ],
+        "body":
+        [
+            "SCHEDULED: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>"
+        ]
+    },
+
     "TASK":
     {
         "prefix": [ "TASK" ],
-        "body": 
+        "body":
         [
             "* TODO ${1}",
+            "[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]",
             "SCHEDULED: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>",
             "DEADLINE: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>"
         ]
-    } 
+    }
 }

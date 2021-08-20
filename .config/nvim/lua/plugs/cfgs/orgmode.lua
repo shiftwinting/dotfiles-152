@@ -1,15 +1,15 @@
--- see https://github.com/akinsho/dotfiles/blob/main/.config/nvim/lua/as/plugins/orgmode.lua
+-- docs: https://github.com/kristijanhusak/orgmode.nvim/blob/master/DOCS.md
 
 
-local util_dirs = "/home/j/.config/nvim/utils/"
+local org_dir = "/home/j/.config/nvim/utils/org"
 
-ORG_AGENDAS = util_dirs .. "org/agendas/*"
-ORG_NOTE    = util_dirs .. "org/notes.org"
+AGENDAS = org_dir .. "agendas/*"
+REFILE  = org_dir .. "refile.org"
 
 
 require("orgmode").setup({
-    org_agenda_files       = ORG_AGENDAS,
-    org_default_notes_file = ORG_NOTE,
+    org_agenda_files       = AGENDAS,
+    org_default_notes_file = REFILE,
     org_todo_keywords = { "TODO(t)", "IN PROGRESS", "BLOCKED", '|', "DONE", "CANCELLED" },
     org_hide_emphasis_markers = true,
     org_hide_leading_stars = true,
