@@ -3,4 +3,4 @@ require 'colorizer'.setup{
     'lua',
     'text',
     'vim',
-} 
+}

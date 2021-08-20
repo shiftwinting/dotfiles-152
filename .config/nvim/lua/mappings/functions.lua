@@ -34,8 +34,7 @@ _G.num_toggle = function()
 end
 
 
-
-    -- compe
+-- compe
 _G.arrow_down = function()
     return vim.fn.pumvisible() == 1 and send_keys "<C-n>" or send_keys "<down>"
 end

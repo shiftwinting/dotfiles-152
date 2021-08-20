@@ -41,10 +41,10 @@ shopt -s histappend
 #   docs:
 #       1) Buggy bash history may be because of incorrectly escaped coloration
 #           see: https://unix.stackexchange.com/questions/28827/why-is-my-bash-prompt-getting-bugged-when-i-browse-the-history
-#	    2) True color escape sequences:
-#	        see https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
+#       2) True color escape sequences:
+#           see https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
 
-txtrst='\[\e[0m\]'       
+txtrst='\[\e[0m\]'
 
 branch_bg='250;166;26'
 branch_fg='5;0'
@@ -57,5 +57,4 @@ prompt_bot='» '
 
 
 # prompt
-PS1="${prompt_top}${prompt_bot}" 
-
+PS1="${prompt_top}${prompt_bot}"

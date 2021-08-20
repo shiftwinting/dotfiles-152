@@ -3,84 +3,87 @@
 --  1. packer events are just neovim events: https://neovim.io/doc/user/autocmd.html#events
 
 
--- disable builtins
 require "plugs.disable"
+require "plugs.cfgs.global_cfgs"
 
 
--- directory where subdirs related to plugins and options live
-OPT_DIR = "/home/j/.config/nvim/opt_dirs/"
+
+LSP_LANGS   = { 'c', "lua", "python" }
 
 
--- Plugin configuration
-return require( 'packer' ).startup(function( use )
+return require( "packer" ).startup(function( use )
 
-    -- packer
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
 
-    -- lsp
-    use 'neovim/nvim-lspconfig'
-
-
--- functionality mods
-    use 'rhysd/committia.vim'
+    use "neovim/nvim-lspconfig"
 
     use
     {
-        'McAuleyPenney/expand.lua',
+        "nvim-treesitter/nvim-treesitter",
+        config = [[ require "plugs.cfgs.treesitter" ]]
+    }
+
+-- functionality mods
+    use "rhysd/committia.vim"
+
+    use
+    {
+        "McAuleyPenney/expand.lua",
         event = "InsertEnter"
     }
 
     use
     {
-        'rmagatti/goto-preview',
+        "rmagatti/goto-preview",
+        ft = LSP_LANGS,
         config = [[ require "plugs.cfgs.goto-preview" ]]
     }
 
     use
     {
-        'b3nj5m1n/kommentary',
+        "b3nj5m1n/kommentary",
         keys = "F14"
     }
 
-    use
+   use
     {
-        'norcalli/nvim-colorizer.lua',
-        ft = { "css", "lua", "text", "vim" },
+        "norcalli/nvim-colorizer.lua",
         config = [[ require "plugs.cfgs.colorizer" ]]
     }
 
+
     use
     {
-        'hrsh7th/nvim-compe',
+        "hrsh7th/nvim-compe",
         event = "InsertEnter",
         config = [[ require "plugs.cfgs.compe" ]],
-        requires = {
-            { 'hrsh7th/vim-vsnip-integ', event = "InsertEnter" },
-            {
-                'hrsh7th/vim-vsnip',
-                event = "InsertEnter",
-                config = function()
-                    vim.g.vsnip_snippet_dir = OPT_DIR .. "snips"
-                    vim.g.vsnip_filetyes = {}
-                end
-            }
+        requires =
+        {
+            { "hrsh7th/vim-vsnip-integ", event = "InsertEnter" },
+            { "hrsh7th/vim-vsnip", event = "InsertEnter " }
         }
     }
 
-    use 'vim-scripts/restore_view.vim'
+    use
+    {
+        'kristijanhusak/orgmode.nvim',
+        config = [[ require "plugs.cfgs.orgmode" ]]
+    }
+
+    use "vim-scripts/restore_view.vim"
 
     use
     {
-        'itchyny/vim-highlighturl',
+        "itchyny/vim-highlighturl",
         config = function()
-            local dissonance = "#7289DA"
-            vim.g.highlighturl_guifg = dissonance
+            local blurp = "#7289DA"
+            vim.g.highlighturl_guifg = blurp
         end
     }
 
     use
     {
-        'rrethy/vim-illuminate',
+        "rrethy/vim-illuminate",
         event = { "CursorHold" },
         config = function()
             vim.g.Illuminate_delay = 300
@@ -90,30 +93,35 @@ return require( 'packer' ).startup(function( use )
 
     use
     {
-        'matze/vim-move',
+        "matze/vim-move",
         config = function()
-            vim.g.move_key_modifier = 'C'
+            vim.g.move_key_modifier = "C"
         end
     }
 
     use
     {
-        'simnalamburt/vim-mundo',
-        cmd = "MundoToggle",
-        config = function()
-            vim.g.mundo_auto_preview_delay = 100
-      	    vim.g.mundo_header = 0
-      	    vim.g.mundo_preview_height = 50
-            vim.g.mundo_right = 1
-      	    vim.g.mundo_width = 85
-        end
+        "simnalamburt/vim-mundo",
+        cmd = "MundoToggle"
     }
 
-    use 'machakann/vim-swap'
+    use
+    {
+        "machakann/vim-swap",
+        keys = { "g<", "g>" }
+    }
 
 
 -- UI mods
-    use 'McAuleyPenney/Cacophony-theme-nvim'
+    use "McAuleyPenney/Cacophony-theme-nvim"
+
+    use
+    {
+        "romgrk/nvim-treesitter-context",
+        require'treesitter-context'.setup{
+            throttle = true
+        }
+    }
 
     use
     {
@@ -125,25 +133,25 @@ return require( 'packer' ).startup(function( use )
 
     use
     {
-        'edluffy/specs.nvim',
-        config = [[ require "plugs.cfgs.specs" ]],
-        event = "WinScrolled"
+        "edluffy/specs.nvim",
+        event = "WinScrolled",
+        config = [[ require "plugs.cfgs.specs" ]]
     }
 
-    use "simrat39/symbols-outline.nvim"
+    use
+    {
+        "simrat39/symbols-outline.nvim",
+        ft = LSP_LANGS
+    }
 
     use
     {
         "folke/trouble.nvim",
-        config = [[ require "plugs.cfgs.trouble" ]],
-        event = "QuickFixCmdPre"
+        event = "QuickFixCmdPre",
+        config = [[ require "plugs.cfgs.trouble" ]]
     }
 
-    use
-    {
-        'jrudess/vim-foldtext',
-        keys = "za"
-    }
+    use "jrudess/vim-foldtext"
 
     use
     {
@@ -155,14 +163,8 @@ return require( 'packer' ).startup(function( use )
 -- filetype-specific mods
     use
     {
-        'iamcco/markdown-preview.nvim',
-        run = ':call mkdp#util#install()',
-        config =  function()
-      	  vim.g.mkdp_auto_start = 1
-      	  vim.g.mkdp_auto_close = 1
-      	  vim.g.mkdp_browser = 'firefox'
-      	  vim.g.mkdp_page_title = '${name}.md'
-        end
+        "iamcco/markdown-preview.nvim",
+        run = ":call mkdp#util#install()"
     }
 
 end)

@@ -1,6 +1,7 @@
 -- mappings --
 -- Sources
---  1: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
+--  default mappings: https://hea-www.harvard.edu/~fine/Tech/vi.html
+--  opening urls: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
 
 -- colemak nav
 require "mappings.colemak_nav"
@@ -38,6 +39,13 @@ map( 'v', '<Space>', 'I', nore )
 map( 'n', 'i', 'a', nore )
 map( 'n', 'a', 'i', nore )
 
+-- delete from cursor to end of line with bs
+map( 'n', '<bs>', 'D', na )
+
+-- tab and shift+tab for indentation
+map( 'n', '<tab>', '>>', na )
+map( 'n', '<s-tab>', '<<', na )
+
 -- move to first non-blank char
 map( '',  '<home>', '^',       na )
 map( 'i', '<home>', '<esc>^a', na )
@@ -73,12 +81,16 @@ map( 'i', '<down>', 'v:lua.arrow_down()', expr )
 map( 'i', '<Tab>',  'v:lua.tab_complete()',  expr )
 
 -- goto-preview
-map( 'n', 'gd', "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", na )
+map( 'n', '<leader>d', "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", na )
 
 -- nvim comment
 map( 'i', '<F14>', '<esc><Plug>kommentary_line_default', na )
 map( 'n', '<F14>', '<Plug>kommentary_line_default',      na )
 map( 'v', '<F14>', '<Plug>kommentary_visual_default',    na )
+
+-- orgmode
+map( 'n', '<leader>ci', 'i-[]<esc>', nore )
+
 
 -- symbols-outline.nvim
 map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )

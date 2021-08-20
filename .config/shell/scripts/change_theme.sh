@@ -3,7 +3,6 @@
 main()
 {
     # foreground 
-    darkFG="#000000"
     lightFG="#FDFDFB" 
 
     # background
@@ -18,7 +17,7 @@ main()
 
 
     case $themeChoice in
-        1) changeTheme "$lightBG"  "$darkFG" ;;
+        1) changeTheme "$lightBG"  "#000000" ;;
         2) changeTheme "$darkBG"   "$lightFG"  ;;
         3) changeTheme "$darkerBG" "$lightFG"  ;;
         4) changeTheme "$blackBG"  "$lightFG"  ;;
@@ -43,11 +42,10 @@ changeTheme()
     sed -i "/bgColorFlag/s/.*/$termBG/g" ~/.config/alacritty/alacritty.yml
     sed -i "/fgColorFlag/s/.*/$termFG/g" ~/.config/alacritty/alacritty.yml
 
-    # sxiv                                                       
+    # sxiv
     sed -i "/Sxiv.background/s/.*/$sxivBG/g" ~/.Xresources  
-    xrdb ~/.Xresources                                            
+    xrdb ~/.Xresources
 }
 
 
 main "$@"
-

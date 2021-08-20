@@ -18,9 +18,9 @@ local opt = vim.opt
 -- vars
 local custom_cursor = "n-v-sm:block,c-ci-cr-i-ve:ver30,r-o:hor20"
 
-local opt_dirs = "/home/j/.config/nvim/opt_dirs"
-local undo_dir = opt_dirs .. "/undo_files"
-local view_dir = opt_dirs .. "/view_files"
+local util_dirs = "/home/j/.config/nvim/utils"
+local undo_dir = util_dirs .. "/undo_files"
+local view_dir = util_dirs .. "/view_files"
 
 
 opt.backup          = false
@@ -34,7 +34,7 @@ opt.expandtab       = true
 opt.fillchars       = { eob = "˃", fold = " " }
 opt.foldenable      = false
 opt.foldlevel       = 99
-opt.foldmethod      = "indent"
+opt.foldmethod      = "syntax"
 opt.foldnestmax     = 1
 opt.foldtext        = " "
 opt.formatoptions   = "1cjr"
@@ -46,6 +46,9 @@ opt.hlsearch        = false
 opt.inccommand      = "nosplit"
 opt.keywordprg      = ":help"
 opt.lazyredraw      = true
+opt.list            = true
+opt.listchars       = { trail = '•' }
+
 opt.modeline        = false
 opt.modelines       = 0
 opt.nrformats       = "alpha"
@@ -58,6 +61,7 @@ opt.shiftwidth      = 4
 opt.showcmd         = false
 opt.showmode        = false
 opt.shortmess       = "acstFOW"
+opt.showbreak       = "..."
 opt.signcolumn      = "yes:1"
 opt.smartcase       = true
 opt.smartindent     = true
@@ -68,10 +72,13 @@ opt.synmaxcol       = 500
 opt.tabstop         = 4
 opt.termguicolors   = true
 opt.timeout         = false
+opt.textwidth       = 120
 opt.undodir         = undo_dir
 opt.undofile        = true
 opt.updatetime      = 350
 opt.viewdir         = view_dir
 opt.viewoptions     = "folds"
 opt.virtualedit     = "all"
+opt.wildmenu        = true
+opt.wildmode        = "longest,list,full"
 opt.writebackup     = false

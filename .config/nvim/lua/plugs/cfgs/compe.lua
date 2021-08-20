@@ -32,15 +32,20 @@ require( 'compe' ).setup
             priority = 99;
         },
         calc     = true;
-	    emoji    = true;
+        emoji    = true;
         nvim_lsp =
         {
             enable = true;
             priority = 98;
         },
         nvim_lua = true,
+        orgmode = true,
         path     = true;
         spell    = false;
-        vsnip    = true;
+        vsnip    =
+        {
+            enable = true;
+            priority = 100;
+        },
     }
 }

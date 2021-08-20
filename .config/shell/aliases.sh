@@ -8,7 +8,8 @@ SCRIPTS="/home/j/.config/shell/scripts"
 
 # dirs
 alias fonts="cd /usr/share/fonts"
-alias plugs="cd $HOME/.local/share/nvim/site/pack/packer/start/"
+alias org="cd $CONF/nvim/utils/org"
+alias plugs="cd $HOME/.local/share/nvim/site/pack/packer/"
 alias shs="cd $SCRIPTS"
 alias vimrc="cd $CONF/nvim"
 alias work="cd $HOME/git/"
@@ -28,7 +29,7 @@ alias termconf="nvim $CONF/alacritty/alacritty.yml"
 alias zathurarc="nvim $CONF/zathura/zathurarc"
 
 # files - other
-alias scratch="nvim $HOME/docs/notes/scratch.txt"
+alias note="nvim $HOME/docs/notes/note.txt"
 alias todo="nvim $HOME/docs/TODO.txt"
 
 # functions

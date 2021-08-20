@@ -149,10 +149,12 @@ workspace 6 output $middle
 workspace 7 output $right
 workspace 8 output $right
 workspace 9 output $right
+workspace 0 output $right
 
 
 # Define names for default workspaces for which we configure key bindings later on.
     # We use variables to avoid repeating the names in multiple places.
+set $ws0 "0"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -162,7 +164,6 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
  
 
 # assign applications to specific workspaces
@@ -170,26 +171,24 @@ set $ws10 "10"
 
 # HDMI-1
 assign [class="discord"] $ws1
-assign [class="Sxiv"] $ws2
-assign [class="Zathura"] $ws3
+assign [class="Thunderbird"] $ws2
+assign [class="Spotify"] $ws3
  
-
 # DVI-D-1
 assign [class="Alacritty"] $ws4
-assign [class="spotify"] $ws5
-assign [class="Eclipse"] $ws5
+assign [class="Sxiv"] $ws6
+assign [class="Zathura"] $ws6
 assign [class="libreoffice-writer"] $ws6
 assign [class="libreoffice-calc"] $ws6
 
-
 # DP-1
 assign [class="firefox"] $ws7
-assign [class="vlc"] $ws8
 assign [class="zoom"] $ws8
 assign [class="gzdoom"] $ws9
 
 
 # switch to workspace
+bindsym $mod+0 workspace number $ws0
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -199,7 +198,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
 
 # move focused container to workspace
@@ -243,10 +241,4 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-
-
-
-
-
 

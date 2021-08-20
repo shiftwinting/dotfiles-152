@@ -4,11 +4,13 @@
 -- requirements --
 local nvim_lsp  = require( "lspconfig" )
 
+
 -- variables --
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+
 -- set the path to the sumneko installation
-local server_dir        = '/home/j/.config/nvim/other/lua-language-server'
+local server_dir        = '/home/j/.config/nvim/utils/lua-language-server'
 local sumneko_binary    = server_dir .. '/bin/Linux/lua-language-server'
 local sumneko_main      = server_dir .. '/main.lua'
 
@@ -48,7 +50,6 @@ local servers   =
 }
 
 
-
 -- LSP signs --
 local lsp_err_hl    = { text = "✘", texthl = "LspDiagnosticsVirtualTextError" }
 local lsp_warn_hl   = { text = "⚠️", texthl = "LspDiagnosticsVirtualTextWarning" }
@@ -61,17 +62,14 @@ vim.fn.sign_define( "LspDiagnosticsSignInformation", lsp_info_hl)
 vim.fn.sign_define( "LspDiagnosticsSignHint",        lsp_hint_hl)
 
 
-
 -- onAttach --
 local function onAttach()
     vim.api.nvim_buf_set_option( 0, 'omnifunc', 'v:lua.vim.lsp.omnifunc' )
 end
 
 
-
 -- enable snippets --
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 
 
 -- handlers --
@@ -83,7 +81,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
          virtual_text = true
      }
 )
-
 
 
 -- implement --

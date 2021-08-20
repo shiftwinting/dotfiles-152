@@ -11,11 +11,7 @@ main()
     then
         sudo pacman -S "$@"
     else
-        current_utime=$(date '+%s') 
-        printf '\n'
-
         print_pacman_update_time
-        printf '\n'
 
         exe_menus 
     fi
@@ -24,6 +20,7 @@ main()
 
 exe_menus()
 {
+    printf '\n'
     read -p "Check Arch news before updating pkgs? " newsconf
 
     if [[ $newsconf == "y" || $newsconf == "yes" ]]; then
@@ -62,12 +59,13 @@ open_news()
 print_pacman_update_time()
 {
     pacman_mod_time=$(grep "\[PACMAN\] starting full system upgrade" /var/log/pacman.log | tail -1 | grep -oP '\[\K[^\]]+' | head -1)
+    current_utime=$(date '+%s') 
     last_upgrade_utime=$(date '+%s' -d "$pacman_mod_time")
     time_diff=$(( $current_utime - $last_upgrade_utime ))
     day_diff=$(( $time_diff / 86400 ))
     hour_diff=$(( ($time_diff - 86400 * $day_diff) / 3600 ))
 
-    printf "Last pkgs update: ${day_diff} days, ${hour_diff} hours ago..."
+    printf "\nLast pkgs update: ${day_diff} days, ${hour_diff} hours ago..."
 }
 
 

@@ -1,4 +1,15 @@
 {
+    "NAU Signature":
+    {
+        "prefix": [ "NAU Signature" ],
+        "body": 
+        [
+            "J. McAuley Penney, they/them",
+            "B.S. Applied Computer Science, B.A. Comparative Cultural Studies",
+            "President, ACM@NAU"
+        ]
+    },
+
     "long date": 
     {
         "prefix": ["long date"],

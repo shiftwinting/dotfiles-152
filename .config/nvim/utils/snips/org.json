@@ -1,0 +1,12 @@
+{
+    "TASK":
+    {
+        "prefix": [ "TASK" ],
+        "body": 
+        [
+            "* TODO ${1}",
+            "SCHEDULED: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>",
+            "DEADLINE: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>"
+        ]
+    } 
+}

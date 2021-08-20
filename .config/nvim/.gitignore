@@ -1,5 +1,5 @@
-opt_dirs/undo_files/
-opt_dirs/view_files/
-other/
+utils/lua-language-server
+utils/undo_files
+utils/view_files
 plugin/
 
