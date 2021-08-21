@@ -12,7 +12,7 @@ alias org="cd $CONF/nvim/utils/org"
 alias plugs="cd $HOME/.local/share/nvim/site/pack/packer/"
 alias shs="cd $SCRIPTS"
 alias vimrc="cd $CONF/nvim"
-alias work="cd $HOME/git/"
+alias work="cd $HOME/docs/"
 
 # files - configuration
 alias aliases="nvim $CONF/shell/aliases.sh"
@@ -30,7 +30,7 @@ alias zathurarc="nvim $CONF/zathura/zathurarc"
 
 # files - other
 alias note="nvim $HOME/docs/notes/note.txt"
-alias todo="nvim $CONF/nvim/utils/org/refile.org"
+alias todo="nvim /home/j/docs/personal/TODO/org/refile.org"
 
 # functions
 # TODO just use push and pop instead of ..

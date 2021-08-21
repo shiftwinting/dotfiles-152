@@ -1,4 +1,0 @@
-#+TITLE: OSL Agenda
-
-* TODO Whole Project
-DEADLINE: <2021-08-23 Mon>

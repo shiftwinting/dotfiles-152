@@ -3,25 +3,27 @@
 # Sources:
 #   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
 
-cd() 
-{ 
-    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1 
-} 
-
-
-cppwd()
+cd()
 {
+    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1
+}
+
+
+cppath()
+{
+    local cptxt=$( test $# -ne 0 && echo "$(readlink -f $1)" || echo "$(pwd)" )
+
     if command -v xsel &> /dev/null
     then
-       pwd | xsel -b
+       echo "$cptxt" | xsel -b
 
     elif command -v xclip &> /dev/null
     then
-        pwd | xclip
+       echo "$cptxt" | xclip
     fi
 
-    printf "\"$PWD\" copied to clipboard\n"
-} 
+    printf "\"$cptxt\" copied to clipboard\n"
+}
 
 
 extract()
@@ -36,9 +38,9 @@ extract()
             *.rar)       unrar x $1     ;;
             *.tar)       tar xf $1      ;;
             *.tar.bz2)   tar xjf $1     ;;
-            *.tar.gz)    tar xzf $1     ;; 
+            *.tar.gz)    tar xzf $1     ;;
             *.tar.xz)    tar xf $1      ;;
-            *.tar.zst)   unzstd $1      ;;      
+            *.tar.zst)   unzstd $1      ;;
             *.tbz2)      tar xjf $1     ;;
             *.tgz)       tar xzf $1     ;;
             *.zip)       unzip $1       ;;
@@ -47,8 +49,8 @@ extract()
         esac
     else
         echo "\"$1\" is not a valid archive"
-    fi 
-} 
+    fi
+}
 
 
 open()
@@ -57,8 +59,8 @@ open()
     then
         case $1 in
             *.jpg|*.png|*.gif)                  sxiv -b $1 &            ;;&
-            *.pdf)                              zathura --fork $1 &     ;;& 
-            *.doc|*.docx|*.odt|*.xls|*.xlsx)    libreoffice $1 &        ;;& 
+            *.pdf)                              zathura --fork $1 &     ;;&
+            *.doc|*.docx|*.odt|*.xls|*.xlsx)    libreoffice $1 &        ;;&
         esac
     fi
 }

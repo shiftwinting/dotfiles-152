@@ -23,18 +23,18 @@ export HISTFILESIZE=100000
 export HISTTIMEFORMAT="%D  %I:%M:%S%P:  "
 
 
-PROMPT_COMMAND="history -a;$PROMPT_COMMAND" 
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return 
+[[ $- != *i* ]] && return
 
 # turn off flow control
 stty -ixon
 
 shopt -s checkwinsize
 shopt -s extglob
-shopt -s histappend  
+shopt -s histappend
 
 
 # prompt -------------------------------------------------------

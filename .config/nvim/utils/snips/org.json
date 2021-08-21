@@ -4,7 +4,7 @@
         "prefix": [ "ARCHIVED" ],
         "body":
         [
-            "ARCHIVED:[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
+            "[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
         ]
     },
 
@@ -22,7 +22,7 @@
         "prefix": [ "STAMP" ],
         "body":
         [
-            "CREATED:[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
+            "[$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT]"
         ]
     },
 
