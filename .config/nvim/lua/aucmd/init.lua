@@ -16,7 +16,7 @@ cmd [[ au BufNewFile * silent! 0r /home/j/.config/nvim/opt_dirs/templates/skelet
 
 -- automatically create any needed parent dirs, clear trailing whitespace/newlines
 --  see sources 1 and 2
-cmd [[ autocmd BufWritePre * :%s/\s\+$//e | :silent v/\n*./d | lua require( "aucmd.functions" ).mkdirs() ]]
+cmd [[ autocmd BufWritePre * :%s/\s\+$//e | lua require( "aucmd.functions" ).mkdirs() ]]
 
 -- show diagnostic window on hold
 cmd [[ autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false }) ]]

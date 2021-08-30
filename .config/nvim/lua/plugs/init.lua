@@ -1,27 +1,46 @@
--- plugs
--- Sources
---  1. packer events are just neovim events: https://neovim.io/doc/user/autocmd.html#events
+-- sources
+--  1. packer events: https://neovim.io/doc/user/autocmd.html#events
+
 
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
 
+LSP_LANGS   = { 'c', "lua", "python" }
 
-LSP_LANGS = { 'c', "lua", "python" }
 
-
-return require( "packer" ).startup(function( use )
+return require( "packer" ).startup( function( use )
 
 -- base
     use "wbthomason/packer.nvim"
 
     use "neovim/nvim-lspconfig"
 
-    use{ "nvim-treesitter/nvim-treesitter", config = [[ require "plugs.cfgs.treesitter" ]] }
+    use
+    {
+        'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
+        config = [[ require "plugs.cfgs.cmp" ]],
+        requires =
+        {
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+            { 'hrsh7th/vim-vsnip', after = 'nvim-cmp'},
+            { 'hrsh7th/vim-vsnip-integ', after = 'nvim-cmp'},
+            { 'hrsh7th/cmp-vsnip', after = 'nvim-cmp'},
+        }
+    }
+
+    use
+    {
+        "nvim-treesitter/nvim-treesitter",
+        ft = LSP_LANGS,
+        config = [[ require "plugs.cfgs.treesitter" ]]
+    }
 
 
 -- functionality mods
-    use "rhysd/committia.vim"
-
     use{ "McAuleyPenney/expand.lua", event = "InsertEnter" }
 
     use
@@ -31,33 +50,15 @@ return require( "packer" ).startup(function( use )
         config = [[ require "plugs.cfgs.goto-preview" ]]
     }
 
-    use{ "b3nj5m1n/kommentary", keys = "F14" }
-
     use{ "iamcco/markdown-preview.nvim", run = ":call mkdp#util#install()" }
 
     use{ "norcalli/nvim-colorizer.lua", config = [[ require "plugs.cfgs.colorizer" ]] }
-
-    use
-    {
-        "hrsh7th/nvim-compe",
-        event = "InsertEnter",
-        config = [[ require "plugs.cfgs.compe" ]],
-        requires =
-        {
-            { "hrsh7th/vim-vsnip-integ", event = "InsertEnter" },
-            { "hrsh7th/vim-vsnip", event = "InsertEnter" }
-        }
-    }
 
     use{ 'kristijanhusak/orgmode.nvim', config = [[ require "plugs.cfgs.orgmode" ]] }
 
     use "vim-scripts/restore_view.vim"
 
-    use "itchyny/vim-highlighturl"
-
     use{ "rrethy/vim-illuminate", event = { "CursorHold" }}
-
-    use "matze/vim-move"
 
     use{ "simnalamburt/vim-mundo", cmd = "MundoToggle" }
 
@@ -67,7 +68,12 @@ return require( "packer" ).startup(function( use )
 -- UI mods
     use "McAuleyPenney/Cacophony-theme-nvim"
 
-    use{ "romgrk/nvim-treesitter-context", require'treesitter-context'.setup{ throttle = true }}
+    use
+    {
+        "romgrk/nvim-treesitter-context",
+        ft = LSP_LANGS,
+        config = [[ require "plugs.cfgs.ts_context" ]]
+    }
 
     use{ "tversteeg/registers.nvim", keys = '"' }
 
@@ -78,8 +84,6 @@ return require( "packer" ).startup(function( use )
         config = [[ require "plugs.cfgs.specs" ]]
     }
 
-    use{ "simrat39/symbols-outline.nvim", ft = LSP_LANGS }
-
     use
     {
         "folke/trouble.nvim",
@@ -89,6 +93,12 @@ return require( "packer" ).startup(function( use )
 
     use "jrudess/vim-foldtext"
 
+    use "itchyny/vim-highlighturl"
+
     use{ "folke/zen-mode.nvim", cmd = "ZenMode" }
+
+
+-- other
+    use{ "dstein64/vim-startuptime", cmd = "StartupTime" }
 
 end)

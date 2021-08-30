@@ -3,7 +3,7 @@
 CONF="$HOME/.config"
 
 . $CONF/shell/scripts/shell_functions.sh
-. $CONF/shell/aliases.sh
+. $CONF/shell/aliases/aliases.sh
 . $CONF/fzf/settings.sh
 
 

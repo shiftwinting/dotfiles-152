@@ -12,6 +12,7 @@ local to_disable =
     'netrwFileHandlers',
     'rrhelper',
     'spellfile_plugin',
+    'spec',
     'tar',
     'tarPlugin',
     'vimball',
@@ -21,4 +22,5 @@ local to_disable =
 }
 
 for index = 1, #to_disable do
-    vim.g['loaded_' .. to_disable[index]] = 1 end
+    vim.g['loaded_' .. to_disable[index]] = 1
+end

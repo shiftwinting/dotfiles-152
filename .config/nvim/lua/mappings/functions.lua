@@ -43,8 +43,3 @@ end
 _G.arrow_up = function()
     return vim.fn.pumvisible() == 1 and send_keys "<C-p>" or send_keys "<up>"
 end
-
-
-_G.tab_complete = function()
-    return vim.fn.pumvisible() == 1 and vim.fn['compe#confirm']( {keys = '<Tab>', select = true} ) or send_keys "<Tab>"
-end

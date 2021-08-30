@@ -32,6 +32,7 @@ require'nvim-treesitter.configs'.setup{
         "graphql",
         "haskell",
         "hcl",
+        "heex",
         "html",
         "java",
         "javascript",
@@ -64,6 +65,7 @@ require'nvim-treesitter.configs'.setup{
         "svelte",
         "swift",
         "teal",
+        "tlaplus",
         "toml",
         "tsx",
         "turtle",
@@ -78,7 +80,8 @@ require'nvim-treesitter.configs'.setup{
 
     highlight =
     {
-      enable = false, disable = {},
+      enable = true,
+      disable = {},
       additional_vim_regex_highlighting = false,
     },
 

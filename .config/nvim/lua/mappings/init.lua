@@ -25,7 +25,7 @@ vim.g.mapleader = 'm'
 
 -- utility bindings --
 -- fold
-map( 'n', ';', 'za', na )
+map( 'n', '<bs>', 'za', na )
 
 -- CR to enter cmd
 map( 'n', '<CR>', ':', nore )
@@ -35,12 +35,17 @@ map( 'v', '<CR>', ':', nore )
 map( 'n', '<Space>', 'a', nore )
 map( 'v', '<Space>', 'I', nore )
 
+-- completion
+map( 'i', '<up>',   'v:lua.arrow_up()',   expr )
+map( 'i', '<down>', 'v:lua.arrow_down()', expr )
+
 -- swap i and a
 map( 'n', 'i', 'a', nore )
 map( 'n', 'a', 'i', nore )
 
--- delete from cursor to end of line with bs
-map( 'n', '<bs>', 'D', na )
+-- make case change more accessible
+map( 'n', '`', '~s', na )
+map( 'v', '`', '~', na )
 
 -- tab and shift+tab for indentation
 map( 'n', '<tab>', '>>', na )
@@ -60,6 +65,14 @@ map( 'n', '/', ':silent grep  %<left><left>', na )
 --  taken from source 1
 map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 
+-- change splits
+map( 'n', '<C-j>', "<C-w><C-j>", cmd )
+map( 'n', '<C-k>', "<C-w><C-k>", cmd )
+
+-- resize splits
+map( 'n', '=', "<C-w>+", cmd )
+map( 'n', '-', "<C-w>-", cmd )
+
 
 -- LSP bindings --
 -- jump diagnostics
@@ -74,33 +87,11 @@ map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)
 -- mundo
 map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
 
--- compe
-map( 'i', '<up>',   'v:lua.arrow_up()',   expr )
-map( 'i', '<down>', 'v:lua.arrow_down()', expr )
-map( 'i', '<Tab>',  'v:lua.tab_complete()',  expr )
-
 -- goto-preview
 map( 'n', '<leader>d', "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", na )
 
--- nvim comment
-map( 'i', '<F14>', '<esc><Plug>kommentary_line_default', na )
-map( 'n', '<F14>', '<Plug>kommentary_line_default',      na )
-map( 'v', '<F14>', '<Plug>kommentary_visual_default',    na )
-
--- orgmode
-map( 'n', '<leader>ci', 'i-[]<esc>', nore )
-
--- symbols-outline.nvim
-map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )
-
 -- trouble
 map( 'n', '<leader>q', '<cmd>Trouble quickfix<cr>', na )
-
--- vim-move
-map( 'v', '<left>',  '<C-h>', na )
-map( 'v', '<down>',  '<C-j>', na )
-map( 'v', '<up>',    '<C-k>', na )
-map( 'v', '<right>', '<C-l>', na )
 
 -- vim-swap
 map( 'n', '<left>',  'g<', na )

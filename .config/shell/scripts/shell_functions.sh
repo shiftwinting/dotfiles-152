@@ -58,9 +58,9 @@ open()
     if test -f $1
     then
         case $1 in
-            *.jpg|*.png|*.gif)                  sxiv -b $1 &            ;;&
-            *.pdf)                              zathura --fork $1 &     ;;&
-            *.doc|*.docx|*.odt|*.xls|*.xlsx)    libreoffice $1 &        ;;&
+            *.jpg|*.png|*.gif)                          sxiv -b $1 &            ;;&
+            *.pdf)                                      zathura --fork $1 &     ;;&
+            *.doc|*.docx|*.odt|*.xls|*.xlsx|*.pptx)     libreoffice $1 &        ;;&
         esac
     fi
 }
