@@ -10,14 +10,14 @@ SCRIPTS="$CONF/shell/scripts"
 
 
 # dirs
-alias class="cd $HOME/catalog/school/coursework/21-22/fall21"
-alias fonts="cd /usr/share/fonts"
-alias org="cd $HOME/catalog/personal/TODO/org"
-alias plugs="cd $HOME/.local/share/nvim/site/pack/packer/"
-alias shs="cd $SCRIPTS"
-alias texts=" cd $HOME/catalog/school/texts"
-alias vimrc="cd $CONF/nvim"
-alias work="cd $HOME/catalog/"
+alias class="goto $HOME/catalog/school/coursework/21-22/fall21"
+alias fonts="goto /usr/share/fonts"
+alias org="goto $HOME/catalog/personal/TODO/org"
+alias plugs="goto $HOME/.local/share/nvim/site/pack/packer/"
+alias shs="goto $SCRIPTS"
+alias texts=" goto $HOME/catalog/school/texts"
+alias vimrc="goto $CONF/nvim"
+alias work="goto $HOME/catalog/"
 
 # files - configuration
 alias aliases="nvim $CONF/shell/aliases/aliases.sh"
@@ -36,13 +36,13 @@ alias zathurarc="nvim $CONF/zathura/zathurarc"
 # files - other
 alias note="nvim $HOME/catalog/personal/note.txt"
 alias refile="nvim $HOME/catalog/personal/TODO/org/refile.org"
-alias todo="cd $HOME/catalog/personal/TODO/"
+alias todo="goto $HOME/catalog/personal/TODO/"
 
 # functions
 # TODO just use push and pop instead of ..
-alias ..="cd .."
-alias .2="cd ../.."
-alias .3="cd ../../.."
+alias ..="goto .."
+alias .2="goto ../.."
+alias .3="goto ../../.."
 alias boottime="systemd-analyze && systemd-analyze blame"
 alias calc="python $SCRIPTS/calculator.py"
 alias ci="clear"

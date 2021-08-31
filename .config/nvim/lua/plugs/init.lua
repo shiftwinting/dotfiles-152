@@ -2,6 +2,7 @@
 --  1. packer events: https://neovim.io/doc/user/autocmd.html#events
 
 
+require "impatient"
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
 
@@ -11,9 +12,15 @@ LSP_LANGS   = { 'c', "lua", "python" }
 return require( "packer" ).startup( function( use )
 
 -- base
-    use "wbthomason/packer.nvim"
+
+    -- the functionality for this plugin will be
+    -- merged into upstream at some point. Watch
+    -- for it here: https://github.com/neovim/neovim/pull/15436
+    use{ 'lewis6991/impatient.nvim', rocks = 'mpack' }
 
     use "neovim/nvim-lspconfig"
+
+    use "wbthomason/packer.nvim"
 
     use
     {

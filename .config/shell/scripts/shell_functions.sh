@@ -2,10 +2,13 @@
 
 # Sources:
 #   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
+#   2. https://unix.stackexchange.com/questions/112159/grep-from-the-end-of-a-file-to-the-beginning
+#   3. https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
+#   4. https://stackoverflow.com/questions/28878629/bash-script-variable-expansion-within-backtick-grep-regex-string
 
-cd()
+goto()
 {
-    test $# -ne 0 && builtin cd $1 && ls -1bAFX || builtin cd $1
+    test $# -eq 1 && builtin cd $1 && ls -1bAFX || builtin cd $1
 }
 
 
@@ -53,6 +56,31 @@ extract()
 }
 
 
+jump()
+{
+    # see sources 2 and 4
+    if test $# -ne 0
+    then
+        local prev=$( tac $HISTFILE | grep -m 1 "^$1[[:space:]]" )
+    else
+        local prev=$( tac $HISTFILE | head -n1 )
+    fi
+
+    # see source 3
+    IFS=' ' read -ra cmd <<< "$prev"
+
+    local jump_loc=${cmd[-1]}
+
+    if test jump_loc != '.'
+    then
+        builtin cd $jump_loc
+
+    else
+        printf "Destination is not valid!\n"
+    fi
+}
+
+
 open()
 {
     if test -f $1
@@ -65,11 +93,6 @@ open()
     fi
 }
 
-
-rebase()
-{
-    local commits = $1
-}
 
 seal()
 {
@@ -91,5 +114,5 @@ seal()
 
 t()
 {
-    test -d $1 && cd $1 || nvim $1
+    test -d $1 && goto $1 || nvim $1
 }
