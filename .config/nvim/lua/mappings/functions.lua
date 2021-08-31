@@ -1,4 +1,5 @@
--- local utilities
+-- api docs: https://neovim.io/doc/user/api.html
+
 
 local send_keys = function(str)
     return vim.api.nvim_replace_termcodes( str, true, true, true )
@@ -42,4 +43,27 @@ end
 
 _G.arrow_up = function()
     return vim.fn.pumvisible() == 1 and send_keys "<C-p>" or send_keys "<up>"
+end
+
+
+-- commenting
+_G.send_comment = function()
+
+    local comment_dict =
+    {
+        [ 'c' ] = "//",
+        [ "lua" ] = "--",
+        [ "python" ] = '#',
+        [ "sh" ] = '#'
+    }
+
+    local ft = vim.api.nvim_buf_get_option( 0, "filetype" )
+
+    local comment_str = comment_dict[ ft ] .. '<Space>'
+
+    if vim.api.nvim_get_mode()[ "mode" ]  == 'n' then
+        comment_str = 'a' .. comment_str
+    end
+
+    return send_keys( comment_str )
 end

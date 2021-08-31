@@ -66,6 +66,11 @@ open()
 }
 
 
+rebase()
+{
+    local commits = $1
+}
+
 seal()
 {
     printf "\n"

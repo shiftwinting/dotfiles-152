@@ -23,7 +23,13 @@ local nore  = { noremap = true }
 vim.g.mapleader = 'm'
 
 
+
+
 -- utility bindings --
+-- comments
+map( 'i', '<F2>', 'v:lua.send_comment()', expr )
+map( 'n', '<F2>', 'v:lua.send_comment()', expr )
+
 -- fold
 map( 'n', '<bs>', 'za', na )
 
@@ -74,10 +80,12 @@ map( 'n', '=', "<C-w>+", cmd )
 map( 'n', '-', "<C-w>-", cmd )
 
 
+
+
 -- LSP bindings --
 -- jump diagnostics
-map('n', '<up>',   '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', cmd )
-map('n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', cmd )
+map( 'n', '<up>',   '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', cmd )
+map( 'n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', cmd )
 
 -- rename
 map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)

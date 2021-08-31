@@ -66,7 +66,7 @@ return require( "packer" ).startup( function( use )
 
 
 -- UI mods
-    use "McAuleyPenney/Cacophony-theme-nvim"
+    use "McAuleyPenney/cacophony.nvim"
 
     use
     {

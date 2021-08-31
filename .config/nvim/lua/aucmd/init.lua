@@ -10,28 +10,50 @@
 local cmd = vim.cmd
 
 
+-- favorite formatoptions
+--  default is 1jcroql
+cmd [[ au BufEnter * setlocal fo-=roql ]]
+
 -- use a template file if one exists for that filetype. See templates dir below
--- stolen from somewhere
 cmd [[ au BufNewFile * silent! 0r /home/j/.config/nvim/opt_dirs/templates/skeleton.%:e ]]
 
 -- automatically create any needed parent dirs, clear trailing whitespace/newlines
 --  see sources 1 and 2
-cmd [[ autocmd BufWritePre * :%s/\s\+$//e | lua require( "aucmd.functions" ).mkdirs() ]]
+cmd
+[[
+    augroup WritePre
+        au!
+        au BufWritePre * :%s/\s\+$//e
+        au BufWritePre * lua require( "aucmd.functions" ).mkdirs()
+    augroup END
+]]
 
 -- show diagnostic window on hold
-cmd [[ autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false }) ]]
+cmd
+[[
+    augroup Hold
+        au!
+        au CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false })
+    augroup END
+]]
 
--- use 'q' to exit several filetypes; code stolen from Folke
-cmd [[ autocmd FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR> ]]
+cmd
+[[
+    augroup ft
+        au!
+        au FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR>
+        au FileType python,c :set colorcolumn=80 | :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
+        au FileType text :set spell
+    augroup END
+]]
 
--- set colorcolumn and textwidth for languages we use
-cmd [[ autocmd FileType python,c :set colorcolumn=80 | :set textwidth=78 | inoremap <buffer> !! != ]]
-
--- turn on spell for txt files
-cmd [[ autocmd FileType text :set spell ]]
-
--- turn off numbers upon entering insert; idea stolen from Beau Williams
-cmd [[ autocmd InsertEnter * :set nonumber | :set norelativenumber ]]
+cmd
+[[
+    augroup i_enter
+        au!
+        au InsertEnter * :set nonumber | :set norelativenumber
+    augroup END
+]]
 
 -- highlight on yank
 cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=250 } ]]

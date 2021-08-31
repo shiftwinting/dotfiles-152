@@ -1,6 +1,6 @@
 -- init
 
-vim.g.colors_name = "cacophany"
+vim.g.colors_name = "cacophony"
 
 local modules =
 {
