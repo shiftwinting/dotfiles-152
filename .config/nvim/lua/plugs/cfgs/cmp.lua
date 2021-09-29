@@ -1,9 +1,18 @@
-local cmp = require'cmp'
+local cmp = require"cmp"
 
-require "cmp".setup({
+cmp.setup(
+{
     documentation =
     {
         border = 'rounded',
+    },
+
+    experimental =
+    {
+        ghost_text =
+        {
+            hl_group = "CmpGhostText"
+        }
     },
 
     formatting =
@@ -26,10 +35,7 @@ require "cmp".setup({
 
     mapping =
     {
-        ['<Tab>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        })
+        ['<tab>'] = cmp.mapping.confirm({ select = true })
     },
 
     snippet =
@@ -39,6 +45,7 @@ require "cmp".setup({
         end
     },
 
+    -- TODO configure max items and sort
     sources =
     {
         { name = 'vsnip' },
@@ -48,5 +55,6 @@ require "cmp".setup({
         { name = 'orgmode' },
         { name = 'path' },
         { name = 'emoji' },
+        { name = 'spell' },
     },
 })

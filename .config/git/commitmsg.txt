@@ -23,10 +23,10 @@
 #
 #   - Use keywords in subject to automatically modify issues
 #
-#       Keywords: 
+#       Keywords:
 #           -  close, closes, closed
-#           -  fix, fixes, fixed 
-#           -  resolve, resolves, resolved 
+#           -  fix, fixes, fixed
+#           -  resolve, resolves, resolved
 #
 #       - format
 #           :<KEYWORD> <ISSUE #>
@@ -55,4 +55,4 @@
 #           - authors if necessary
 #           - notes
 #           - links
- 
+

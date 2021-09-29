@@ -17,6 +17,7 @@ require'nvim-treesitter.configs'.setup{
         "dart",
         "devicetree",
         "dockerfile",
+        "dot",
         "elixir",
         "elm",
         "erlang",
@@ -38,6 +39,7 @@ require'nvim-treesitter.configs'.setup{
         "javascript",
         "jsdoc",
         "json",
+        "json5",
         "jsonc",
         "julia",
         "kotlin",
@@ -80,9 +82,9 @@ require'nvim-treesitter.configs'.setup{
 
     highlight =
     {
-      enable = true,
-      disable = {},
-      additional_vim_regex_highlighting = false,
+        enable = true,
+        disable = {},
+        additional_vim_regex_highlighting = false,
     },
 
     incremental_selection =

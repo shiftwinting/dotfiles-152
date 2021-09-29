@@ -5,18 +5,19 @@ CONF="$HOME/.config"
 SCRIPTS="$CONF/shell/scripts"
 
 
-# source temp aliases
-. $CONF/shell/aliases/temp_aliases.sh
-
+# temp aliases
+alias aitext="open $HOME/catalog/school/texts/cs/470_artificial_intelligence/artificial_intelligence_a_modern_approach_4th_ed_russell_norvig.pdf"
+alias 450="goto $HOME/catalog/school/coursework/class_files/cs/450-parallel_programming/assignments/"
+alias 470="goto $HOME/catalog/school/coursework/class_files/cs/470-artificial_intelligence/assignments/"
 
 # dirs
-alias class="goto $HOME/catalog/school/coursework/21-22/fall21"
+alias class="goto $HOME/catalog/school/coursework/class_files"
 alias fonts="goto /usr/share/fonts"
 alias org="goto $HOME/catalog/personal/TODO/org"
 alias plugs="goto $HOME/.local/share/nvim/site/pack/packer/"
 alias shs="goto $SCRIPTS"
 alias texts=" goto $HOME/catalog/school/texts"
-alias vimrc="goto $CONF/nvim"
+alias vimrc="goto $CONF/nvim/lua"
 alias work="goto $HOME/catalog/"
 
 # files - configuration
@@ -63,6 +64,7 @@ alias branches="git branch -vv"
 alias cfg="/usr/bin/git --git-dir=$HOME/.cfg.git/ --work-tree=$HOME"
 alias clone="git clone"
 alias commit="git commit"
+alias root='cd $(git rev-parse --show-toplevel)'
 alias push="git push"
 alias rebase="git rebase -i HEAD~2"
 alias unstage="git restore --staged"

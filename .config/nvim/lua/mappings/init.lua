@@ -3,8 +3,6 @@
 --  default mappings: https://hea-www.harvard.edu/~fine/Tech/vi.html
 --  opening urls: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
 
--- colemak nav
-require "mappings.colemak_nav"
 
 -- import functions for mappings
 require "mappings.functions"
@@ -23,12 +21,13 @@ local nore  = { noremap = true }
 vim.g.mapleader = 'm'
 
 
-
-
 -- utility bindings --
 -- comments
-map( 'i', '<F2>', 'v:lua.send_comment()', expr )
-map( 'n', '<F2>', 'v:lua.send_comment()', expr )
+map( 'i', '<F2>', 'v:lua.send_single_comment()', expr )
+map( 'n', '<F2>', 'v:lua.send_single_comment()', expr )
+
+-- save
+map( 'n', '<C-w>', '<cmd>w<cr>', cmd )
 
 -- fold
 map( 'n', '<bs>', 'za', na )
@@ -80,8 +79,6 @@ map( 'n', '=', "<C-w>+", cmd )
 map( 'n', '-', "<C-w>-", cmd )
 
 
-
-
 -- LSP bindings --
 -- jump diagnostics
 map( 'n', '<up>',   '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', cmd )
@@ -95,8 +92,8 @@ map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)
 -- mundo
 map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
 
--- goto-preview
-map( 'n', '<leader>d', "<cmd>lua require('goto-preview').goto_preview_definition()<cr>", na )
+-- outline
+map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )
 
 -- trouble
 map( 'n', '<leader>q', '<cmd>Trouble quickfix<cr>', na )
@@ -105,5 +102,26 @@ map( 'n', '<leader>q', '<cmd>Trouble quickfix<cr>', na )
 map( 'n', '<left>',  'g<', na )
 map( 'n', '<right>', 'g>', na )
 
--- zen mode
-map( 'n', '<leader>z', '<cmd>ZenMode<cr>', cmd )
+
+-- colemak
+-- home row: right nav
+map( '', 'n', 'j', nore )
+map( '', 'N', 'J', nore )
+map( '', 'e', 'k', nore )
+map( '', 'E', 'K', nore )
+
+map( '', 'j', 'n', nore )
+map( '', 'J', 'N', nore )
+map( '', 'k', 'e', nore )
+map( '', 'K', 'E', nore )
+
+-- home row: left nav
+map( '', 's', 'h', nore )
+map( '', 'S', 'H', nore )
+map( '', 't', 'l', nore )
+map( '', 'T', 'L', nore )
+
+map( '', 'h', 's', nore )
+map( '', 'H', 'S', nore )
+map( '', 'l', 't', nore )
+map( '', 'L', 'T', nore )

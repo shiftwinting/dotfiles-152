@@ -35,6 +35,36 @@ _G.num_toggle = function()
 end
 
 
+-- send single comments
+_G.send_single_comment = function()
+
+    local dash       = '-'
+    local octothorpe = '#'
+
+    local comment_dict =
+    {
+        [ 'awk' ]       = octothorpe,
+        [ 'c' ]         = "//",
+        [ "lua" ]       = dash..dash,
+        [ "org" ]       = octothorpe,
+        [ "python" ]    = octothorpe,
+        [ "sh" ]        = octothorpe,
+        [ "txt" ]       = dash,     -- 'txt' for filetype.nvim plugin but
+        [ "text" ]      = dash,     -- 'text' for builtin ft functionality
+        [ "yaml" ]      = octothorpe
+    }
+
+    local ft = vim.api.nvim_buf_get_option( 0, "filetype" )
+    local comment_str = comment_dict[ ft ] .. '<Space>'
+
+    if vim.api.nvim_get_mode()[ "mode" ]  == 'n' then
+        comment_str = 'a' .. comment_str
+    end
+
+    return send_keys( comment_str )
+end
+
+
 -- compe
 _G.arrow_down = function()
     return vim.fn.pumvisible() == 1 and send_keys "<C-n>" or send_keys "<down>"
@@ -46,24 +76,4 @@ _G.arrow_up = function()
 end
 
 
--- commenting
-_G.send_comment = function()
-
-    local comment_dict =
-    {
-        [ 'c' ] = "//",
-        [ "lua" ] = "--",
-        [ "python" ] = '#',
-        [ "sh" ] = '#'
-    }
-
-    local ft = vim.api.nvim_buf_get_option( 0, "filetype" )
-
-    local comment_str = comment_dict[ ft ] .. '<Space>'
-
-    if vim.api.nvim_get_mode()[ "mode" ]  == 'n' then
-        comment_str = 'a' .. comment_str
-    end
-
-    return send_keys( comment_str )
-end
+-- TODO create lua replacement for toggle-words

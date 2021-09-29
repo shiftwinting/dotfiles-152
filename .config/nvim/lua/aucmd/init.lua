@@ -10,14 +10,26 @@
 local cmd = vim.cmd
 
 
+-- use a template file if one exists for that filetype. See templates dir below
+cmd [[ au BufNewFile * silent! 0r /home/j/.config/nvim/utils/templates/skeleton.%:e ]]
+
 -- favorite formatoptions
 --  default is 1jcroql
-cmd [[ au BufEnter * setlocal fo-=roql ]]
+cmd [[ au BufEnter * setlocal fo-=oql ]]
 
--- use a template file if one exists for that filetype. See templates dir below
-cmd [[ au BufNewFile * silent! 0r /home/j/.config/nvim/opt_dirs/templates/skeleton.%:e ]]
 
--- automatically create any needed parent dirs, clear trailing whitespace/newlines
+-- remember folds
+cmd
+[[
+    augroup remember_folds
+        au!
+        au BufWinLeave * :mkview
+        au BufWinEnter * :silent! loadview | :1
+    augroup END
+]]
+
+
+-- automatically create any needed parent dirs, clear trailing whitespace
 --  see sources 1 and 2
 cmd
 [[
@@ -31,7 +43,7 @@ cmd
 -- show diagnostic window on hold
 cmd
 [[
-    augroup Hold
+    augroup hold
         au!
         au CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false })
     augroup END
@@ -41,19 +53,44 @@ cmd
 [[
     augroup ft
         au!
-        au FileType help,startuptime,qf,lspinfo nnoremap <buffer><silent> q :close<CR>
-        au FileType python,c :set colorcolumn=80 | :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
+        au FileType c inoremap >> ->
+        au FileType c,python :set colorcolumn=80 | :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
+        au FileType gitcommit :set textwidth=72
+        au FileType help,lspinfo,qf,startuptime nnoremap <buffer><silent> q :close<CR>
         au FileType text :set spell
     augroup END
 ]]
 
+
+-- clear cmd line
 cmd
 [[
-    augroup i_enter
+    augroup cmd_msg_cls
+        au!
+        au CmdlineLeave * :call timer_start( 1500, { -> execute( "echo ' ' ", "" )})
+    augroup END
+]]
+
+
+-- turn off numbers when entering Insert
+cmd
+[[
+    augroup IEnter
         au!
         au InsertEnter * :set nonumber | :set norelativenumber
     augroup END
 ]]
 
+
 -- highlight on yank
-cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=250 } ]]
+cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=180 } ]]
+
+
+-- change cursor back to beam when leaving neovim
+cmd
+[[
+    augroup change_cursor
+        au!
+        au ExitPre * :set guicursor=a:ver90
+    augroup END
+]]

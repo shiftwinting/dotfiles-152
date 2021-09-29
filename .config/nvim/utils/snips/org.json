@@ -45,5 +45,14 @@
             "  SCHEDULED: <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>",
             "  DEADLINE:  <$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_DAY_NAME_SHORT${2}>"
         ]
+    },
+
+    "WAIT ON":
+    {
+        "prefix": [ "WAIT" ],
+        "body":
+        [
+            " WAIT ON: ${1}"
+        ]
     }
 }

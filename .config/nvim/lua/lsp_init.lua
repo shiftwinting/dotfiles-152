@@ -43,7 +43,7 @@ local servers   =
                 diagnostics = { globals = { 'vim' } },
                 runtime     = { version = 'LuaJIT', path = vim.split(package.path, ';') },
                 telemetry   = { enable = false },
-                workspace   = { library = { library = vim.api.nvim_get_runtime_file("", true) }}
+                workspace   = { library = { library = vim.api.nvim_get_runtime_file( "", true )}}
             }
         }
     },
@@ -87,6 +87,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 for server, config in pairs( servers ) do
     config.on_attach    = onAttach
     config.capabilities = capabilities
+    config.flags = { debounce_text_changes = 500 }
 
     nvim_lsp[server].setup( config )
 end

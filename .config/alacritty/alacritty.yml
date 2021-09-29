@@ -2,7 +2,7 @@
 
 
 # !!! pay close attention to indentation. This file very seriously values it
-#    The indentation rule for this file is always two spaces 
+#    The indentation rule for this file is always two spaces
 
 # Import additional configuration files
 #
@@ -43,8 +43,8 @@ window:
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   #position:
-  # x: 
-  # y: 
+  # x:
+  # y:
 
   # Window padding (changes require restart)
   #
@@ -111,7 +111,7 @@ scrolling:
 font:
   size: 12  #fontSizeFlag
 
-  # to have emojis in Alacritty, include an emoji font here and 
+  # to have emojis in Alacritty, include an emoji font here and
   # place an emoji font in the fonts directory (/usr/share/fonts)
   normal:
 
@@ -136,11 +136,11 @@ font:
   italic:
 
     # Dina
-    family: Dina  #fontFamilyFlag 
-    style: MediumItalic    #fontStyleFlag 
+    family: Dina  #fontFamilyFlag
+    style: MediumItalic    #fontStyleFlag
 
-    #family: CtrlD  #fontFamilyFlag 
-    #style: MediumItalic    #fontStyleFlag  
+    #family: CtrlD  #fontFamilyFlag
+    #style: MediumItalic    #fontStyleFlag
 
   # Bold italic font face
   #bold_italic:
@@ -180,10 +180,11 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#38404B' #bgColorFlag
-    foreground: '#FDFDFB' #fgColorFlag
-    
-    
+    background: '#2D343C'   # dispute
+    # background: '#38404B' # cacophony
+    foreground: '#FDFDFB'   #fgColorFlag
+
+
     # Bright and dim foreground colors
     #
     # The dimmed foreground color is calculated automatically if it is not
@@ -345,9 +346,9 @@ cursor:
   style:
     blinking: Always
     shape: Beam
-  blink_interval: 500
+  blink_interval: 600
 
-    
+
 
 
   # Vi mode cursor style
@@ -356,7 +357,7 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  #vi_mode_style: None
+  vi_mode_style: Beam
 
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
@@ -756,7 +757,7 @@ mouse:
   #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
 
-  
+
 #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
@@ -776,4 +777,4 @@ mouse:
   #log_level: Warn
 
   # Print all received window events.
-  #print_events: false 
+  #print_events: false

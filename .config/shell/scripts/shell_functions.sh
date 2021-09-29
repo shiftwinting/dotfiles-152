@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Sources:
 #   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
@@ -6,12 +6,60 @@
 #   3. https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
 #   4. https://stackoverflow.com/questions/28878629/bash-script-variable-expansion-within-backtick-grep-regex-string
 
+
+# Navigation
 goto()
 {
     test $# -eq 1 && builtin cd $1 && ls -1bAFX || builtin cd $1
 }
 
 
+jmp()
+{
+    # see sources 2 and 4
+    if test $# -ne 0
+    then
+        local prev=$( tac $HISTFILE | grep -m 1 "^$1[[:space:]]" )
+    else
+        local prev=$( tac $HISTFILE | head -n1 )
+    fi
+
+    # see source 3
+    IFS=' ' read -ra cmd <<< "$prev"
+
+    local jump_loc=${cmd[-1]}
+
+    if test jump_loc != '.'
+    then
+        builtin cd $jump_loc
+
+    else
+        printf "Destination is not valid!\n"
+    fi
+}
+
+
+n()
+{
+    local count=$( test $# -eq 0 && echo "1" || echo "$1" )
+
+    while test $count -gt 0
+    do
+        cd ..
+        let "count=count-1"
+    done
+}
+
+
+t()
+{
+    test -d $1 && goto $1 || nvim $1
+}
+
+
+
+
+# other
 cppath()
 {
     local cptxt=$( test $# -ne 0 && echo "$(readlink -f $1)" || echo "$(pwd)" )
@@ -56,40 +104,31 @@ extract()
 }
 
 
-jump()
-{
-    # see sources 2 and 4
-    if test $# -ne 0
-    then
-        local prev=$( tac $HISTFILE | grep -m 1 "^$1[[:space:]]" )
-    else
-        local prev=$( tac $HISTFILE | head -n1 )
-    fi
-
-    # see source 3
-    IFS=' ' read -ra cmd <<< "$prev"
-
-    local jump_loc=${cmd[-1]}
-
-    if test jump_loc != '.'
-    then
-        builtin cd $jump_loc
-
-    else
-        printf "Destination is not valid!\n"
-    fi
-}
-
-
 open()
 {
     if test -f $1
     then
         case $1 in
-            *.jpg|*.png|*.gif)                          sxiv -b $1 &            ;;&
-            *.pdf)                                      zathura --fork $1 &     ;;&
-            *.doc|*.docx|*.odt|*.xls|*.xlsx|*.pptx)     libreoffice $1 &        ;;&
+            *.jpg| *.png| *.gif)                            sxiv -b $1 &            ;;&
+            *.pdf)                                          zathura --fork $1 &     ;;&
+            *.doc| *.docx| *.odt| *.xls| *.xlsx| *.pptx)    libreoffice $1 &        ;;&
+            *.mp4)                                          vlc $1 &                ;;&
+            *.ipynb)                                        jupyter notebook $1     ;;&
         esac
+    fi
+}
+
+
+run()
+{
+    if test -f $1
+    then
+        case $1 in
+            *.sh)       sh "$@"        ;;
+            *.py)       python "$@"    ;;
+        esac
+    else
+        printf "\n\"$1\" is not a defined file type\n"
     fi
 }
 
@@ -112,7 +151,4 @@ seal()
 }
 
 
-t()
-{
-    test -d $1 && goto $1 || nvim $1
-}
+

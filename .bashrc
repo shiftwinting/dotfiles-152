@@ -1,7 +1,10 @@
 # bashrc
 
-CONF="$HOME/.config"
+#---------------------------------------------------------------
+# external sources
+CONF="/home/j/.config"
 
+. /usr/share/git/git-prompt.sh
 . $CONF/shell/scripts/shell_functions.sh
 . $CONF/shell/aliases/aliases.sh
 . $CONF/fzf/settings.sh
@@ -44,16 +47,20 @@ shopt -s histappend
 #       2) True color escape sequences:
 #           see https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
 
-txtrst='\[\e[0m\]'
 
-branch_bg='250;166;26'
-branch_fg='5;0'
-branch_col='\033[1;38;${branch_fg};48;2;${branch_bg}m'
+# git vars
+GIT_PS1_SHOWDIRTYSTATE=true
+branch='$(__git_ps1)'
 
-branch='$(git branch --show-current 2>/dev/null)'
+# colors
+branch_bg='36;41;48'
+branch_fg='0;0' # black
+branch_col='\033[0;38;${branch_fg};48;2;${branch_bg}m'
+txtrst='\033[0m'
+
 color_branch="${branch_col} ${branch} ${txtrst}"
 prompt_top="\n\w   ${color_branch}\n"
-prompt_bot='» '
+prompt_bot="» "
 
 
 # prompt

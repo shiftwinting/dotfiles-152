@@ -1,41 +1,61 @@
 {
-    "author annotation": 
+    "author annotation":
     {
         "prefix": ["aann"],
-        "body": 
+        "body":
         [
             "$LINE_COMMENT--------------------------------------------------------------------------- ",
-            "$LINE_COMMENT Author : Jacob Penney ",
+            "$LINE_COMMENT Author : J. McAuley Penney ",
             "$LINE_COMMENT Purpose: $1",
-            "$LINE_COMMENT Process: ",
-            "$LINE_COMMENT Notes  : ",
+            "$LINE_COMMENT Process:",
+            "$LINE_COMMENT Notes  :",
             "$LINE_COMMENT--------------------------------------------------------------------------- "
         ],
         "description": "Annotation discussing file info"
     },
 
-    "function annotation":
+    "function template":
     {
         "prefix": ["fann"],
-        "body": 
+        "body":
         [
             "$LINE_COMMENT--------------------------------------------------------------------------- ",
             "$LINE_COMMENT Name   : $1",
-            "$LINE_COMMENT Context: ",
-            "$LINE_COMMENT Process: ",
-            "$LINE_COMMENT Params : ",
-            "$LINE_COMMENT Output : ",
-            "$LINE_COMMENT Notes  : ",
-            "$LINE_COMMENT Docs   : ",
+            "$LINE_COMMENT Context:",
+            "$LINE_COMMENT Process:",
+            "$LINE_COMMENT Params :",
+            "$LINE_COMMENT Output :",
+            "$LINE_COMMENT Notes  :",
+            "$LINE_COMMENT Docs   :",
             "$LINE_COMMENT--------------------------------------------------------------------------- "
         ],
         "description": "Annotation discussing function info"
     },
 
+    "function annotation":
+    {
+        "prefix": ["function template"],
+        "body":
+        [
+            "$LINE_COMMENT--------------------------------------------------------------------------- ",
+            "$LINE_COMMENT Name   :",
+            "$LINE_COMMENT Context:",
+            "$LINE_COMMENT Process:",
+            "$LINE_COMMENT Params :",
+            "$LINE_COMMENT Output :",
+            "$LINE_COMMENT Notes  :",
+            "$LINE_COMMENT Docs   :",
+            "$LINE_COMMENT--------------------------------------------------------------------------- ",
+            "def $1():",
+            "    pass"
+        ],
+        "description": "Generic function template"
+    },
+
     "parameter annotation":
     {
         "prefix": ["pann"],
-        "body": 
+        "body":
         [
             "$LINE_COMMENT",
             "$LINE_COMMENT          $1",
@@ -44,16 +64,16 @@
             "$LINE_COMMENT"
         ],
         "description": "\"Function Annotation\" \"Parameter\" field template"
-    }, 
+    },
 
     "Other Docs annotation":
     {
         "prefix": ["dann"],
-        "body": 
+        "body":
         [
             "$LINE_COMMENT                 - topic : $1",
             "$LINE_COMMENT                   - link: "
         ],
-        "description": "\"Function Annotation\" \"Other Docs\" field template" 
-    }  
+        "description": "\"Function Annotation\" \"Other Docs\" field template"
+    }
 }

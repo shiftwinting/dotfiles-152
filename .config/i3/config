@@ -35,10 +35,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # set mod to alt
 set $mod Mod1
- 
+
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart 
+bindsym $mod+Shift+r restart
 
 
 # start a terminal
@@ -164,7 +164,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
- 
+
 
 # assign applications to specific workspaces
 #   use xprop to find class names, i.e. WM_CLASS(STRING)
@@ -173,18 +173,21 @@ set $ws9 "9"
 assign [class="discord"] $ws1
 assign [class="Thunderbird"] $ws2
 assign [class="Spotify"] $ws3
- 
+assign [class="Sxiv"] $ws3
+
+
 # DVI-D-1
 assign [class="Alacritty"] $ws4
-assign [class="Sxiv"] $ws6
-assign [class="Zathura"] $ws6
-assign [class="libreoffice-writer"] $ws6
-assign [class="libreoffice-calc"] $ws6
+assign [class="libreoffice-writer"] $ws5
+assign [class="libreoffice-calc"] $ws5
+assign [class="Zdl"] $ws6
 
 # DP-1
 assign [class="firefox"] $ws7
-assign [class="zoom"] $ws8
-assign [class="gzdoom"] $ws9
+assign [class="Zathura"] $ws8
+assign [class="gzdoom"] $ws8
+assign [class="vlc"] $ws9
+assign [class="zoom"] $ws0
 
 
 # switch to workspace
@@ -210,7 +213,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+0 move container to workspace number $ws0
 
 
 

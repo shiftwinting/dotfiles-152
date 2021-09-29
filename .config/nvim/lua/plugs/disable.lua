@@ -1,3 +1,5 @@
+-- default plugins: https://neovim.io/doc/user/index.html#standard-plugin-list
+
 local to_disable =
 {
     '2html_plugin',

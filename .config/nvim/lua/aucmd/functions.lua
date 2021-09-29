@@ -1,7 +1,11 @@
+-- api docs: https://neovim.io/doc/user/api.html
+
+
 local M = {}
 local fn = vim.fn
 
-
+-- automatically make dirs if they do not
+-- exist, upon save
 function M.mkdirs()
     local dir = fn.expand( '%:p:h' )
 
