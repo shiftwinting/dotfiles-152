@@ -180,7 +180,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#2D343C'   # dispute
+    background: '#1c2128'
+    # background: '#242930'   # dispute
     # background: '#38404B' # cacophony
     foreground: '#FDFDFB'   #fgColorFlag
 

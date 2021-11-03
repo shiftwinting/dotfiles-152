@@ -177,7 +177,7 @@ assign [class="Sxiv"] $ws3
 
 
 # DVI-D-1
-assign [class="Alacritty"] $ws4
+#assign [class="Alacritty"] $ws4
 assign [class="libreoffice-writer"] $ws5
 assign [class="libreoffice-calc"] $ws5
 assign [class="Zdl"] $ws6

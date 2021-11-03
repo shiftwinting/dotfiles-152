@@ -6,7 +6,7 @@ require "impatient"
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
 
-LSP_LANGS   = { 'c', "lua", "python" }
+LSP_LANGS = { 'c', "lua", "python" }
 
 
 return require( "packer" ).startup( function( use )
@@ -24,16 +24,36 @@ return require( "packer" ).startup( function( use )
     use
     {
         'hrsh7th/nvim-cmp',
-        branch = 'custom-menu',
         config = [[ require "plugs.cfgs.cmp" ]],
         requires =
         {
-            { 'hrsh7th/cmp-nvim-lsp', event = 'InsertEnter', ft = LSP_LANGS },
-            { 'hrsh7th/cmp-nvim-lua', event = 'InsertEnter', ft = "lua" },
+            {
+                'hrsh7th/cmp-nvim-lsp',
+                event = 'InsertEnter',
+                ft = LSP_LANGS
+            },
+
+            {
+                'hrsh7th/cmp-nvim-lua',
+                event = 'InsertEnter',
+                ft = "lua"
+            },
+
             { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
-            { 'hrsh7th/cmp-emoji', event = 'InsertEnter', keys = ':' },
+
+            {
+                'hrsh7th/cmp-emoji',
+                event = 'InsertEnter',
+                keys = ':'
+            },
+
+            {
+                'petertriho/cmp-git',
+                ft = 'gitcommit',
+                keys = { "#", "@" }
+            },
+
             { 'hrsh7th/cmp-path', event = 'InsertEnter' },
-            { 'f3fora/cmp-spell', event = 'InsertEnter', ft = "txt" },
             { 'hrsh7th/vim-vsnip', event = 'InsertEnter' },
             { 'hrsh7th/vim-vsnip-integ', event = 'InsertEnter' },
             { 'hrsh7th/cmp-vsnip', event = 'InsertEnter' }
@@ -49,9 +69,9 @@ return require( "packer" ).startup( function( use )
 
     use{ "norcalli/nvim-colorizer.lua", config = [[ require "plugs.cfgs.colorizer" ]] }
 
-    use{ 'kristijanhusak/orgmode.nvim', config = [[ require "plugs.cfgs.orgmode" ]] }
-
     use{ "simrat39/symbols-outline.nvim", ft = LSP_LANGS }
+
+    use "McAuleyPenney/tidy.nvim"
 
     use
     {
@@ -59,6 +79,8 @@ return require( "packer" ).startup( function( use )
         keys = "<C-space>",
         config = [[ require "plugs.cfgs.toggleterm" ]]
     }
+
+    use "lervag/vimtex"
 
     use{ "rrethy/vim-illuminate", event = "CursorHold" }
 
@@ -68,6 +90,15 @@ return require( "packer" ).startup( function( use )
 
 -- UI mods
     use "McAuleyPenney/cacophony.nvim"
+
+    use{ "lukas-reineke/indent-blankline.nvim" }
+
+    use
+    {
+        "ray-x/lsp_signature.nvim",
+        ft = LSP_LANGS
+        -- for config, see lsp_init
+    }
 
     use
     {
@@ -80,13 +111,13 @@ return require( "packer" ).startup( function( use )
     {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
-        config = [[ require "plugs.cfgs.todo_comments" ]]
+        config   = [[ require "plugs.cfgs.todo_comments" ]]
     }
 
     use
     {
         "folke/trouble.nvim",
-        event = "QuickFixCmdPre",
+        event  = "QuickFixCmdPre",
         config = [[ require "plugs.cfgs.trouble" ]]
     }
 

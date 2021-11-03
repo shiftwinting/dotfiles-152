@@ -3,7 +3,6 @@
 -- Sources:
 --  Options:
 --      1. https://neovim.io/doc/user/options.html
---      2. https://vimhelp.org/options.txt.html
 --
 --  nvim defaults:  https://neovim.io/doc/user/vim_diff.html
 --  opt syntax:     https://github.com/neovim/neovim/pull/13479#event-4813249467
@@ -19,7 +18,9 @@ local o = vim.opt
 
 -- vars
 local custom_cursor = "n-v-sm:block,c-ci-cr-i-ve:ver30,r-o:hor20"
-local fold_func     = [[ substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').' '.(v:foldend - v:foldstart + 1).' lines '.trim(getline(v:foldend)) ]]
+local fold_func     = [[
+substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g') . '    { +'.(v:foldend - v:foldstart).' lines'.' }'
+]]
 
 local util_dirs     = "/home/j/.config/nvim/utils"
 local undo_dir      = util_dirs .. "/undo_files"
@@ -37,10 +38,10 @@ o.fillchars         = { eob = "˃", fold = " " }
 o.foldenable        = false
 o.foldlevel         = 99
 o.foldmethod        = "indent"
-o.foldnestmax       = 2
+o.foldnestmax       = 4
 o.foldtext          = fold_func
 o.gdefault          = true
-o.grepprg           = [[ rg --glob "!.git" --trim --vimgrep ]]
+o.grepprg           = [[ rg --ignore-case --glob "!.git" --trim --vimgrep ]]
 o.guicursor         = custom_cursor
 o.hidden            = true
 o.hlsearch          = false
@@ -49,7 +50,7 @@ o.keywordprg        = ":help"
 o.laststatus        = 2
 o.lazyredraw        = true
 o.list              = true
-o.listchars         = { trail = '•' }
+o.listchars         = { trail = '●' }
 o.modeline          = false
 o.modelines         = 0
 o.nrformats         = "alpha"

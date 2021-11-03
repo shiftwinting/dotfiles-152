@@ -1,5 +1,6 @@
 -- default plugins: https://neovim.io/doc/user/index.html#standard-plugin-list
 
+-- disable default plugins
 local to_disable =
 {
     '2html_plugin',
@@ -23,6 +24,10 @@ local to_disable =
     'zipPlugin'
 }
 
-for index = 1, #to_disable do
-    vim.g['loaded_' .. to_disable[index]] = 1
+for _, plug in ipairs( to_disable) do
+    vim.g['loaded_' .. plug] = 1
 end
+
+
+-- disable runtime filetype files
+vim.g.python_recommended_style = 0

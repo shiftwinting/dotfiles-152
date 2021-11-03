@@ -25,6 +25,9 @@ export HISTSIZE=100000
 export HISTFILESIZE=100000
 export HISTTIMEFORMAT="%D  %I:%M:%S%P:  "
 
+# this adds texlab lsp to path
+export PATH=$PATH:/home/j/.cargo/bin/
+
 
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
@@ -53,7 +56,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 branch='$(__git_ps1)'
 
 # colors
-branch_bg='36;41;48'
+branch_bg='21;24;28'
 branch_fg='0;0' # black
 branch_col='\033[0;38;${branch_fg};48;2;${branch_bg}m'
 txtrst='\033[0m'

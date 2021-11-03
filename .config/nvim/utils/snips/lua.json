@@ -1,40 +1,27 @@
 {
-    "basic annotation": 
+    "basic annotation":
     {
         "prefix": ["ann"],
-        "body": 
+        "body":
         [
             "--[[",
             "    $1",
             "]]"
-        ],                 
-        "description": "General annotation template"
-    },  
-
-    "author annotation": 
-    {
-        "prefix": ["aann"],
-        "body": 
-        [
-            "--[[",
-            "    @author: Jacob Penney",
-            "    @since :",
-            "]]"
         ],
-        "description": "Annotation discussing file info"
+        "description": "General annotation template"
     },
 
     "function annotation":
     {
         "prefix": ["fann"],
-        "body": 
+        "body":
         [
             "--[[",
-            "    @name  :$1", 
-            "    @param :", 
+            "    @name  :$1",
+            "    @param :",
             "    @return:",
             "]]"
         ],
         "description": "Annotation discussing function info"
     }
-} 
+}

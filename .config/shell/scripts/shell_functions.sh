@@ -146,9 +146,6 @@ seal()
 
     case $compressType in
         "1")    tar -czvf $filename.tar.gz "$@"   ;;
-        "2")    zip $filename "$@" ;;
+        "2")    zip -r -z $filename "$@" ;;
     esac
 }
-
-
-

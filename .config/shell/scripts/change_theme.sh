@@ -2,12 +2,12 @@
 
 main()
 {
-    # foreground 
-    lightFG="#FDFDFB" 
+    # foreground
+    lightFG="#FDFDFB"
 
     # background
     lightBG="#6F7E94"
-    darkBG="#38404B" 
+    darkBG="#38404B"
     darkerBG="#2C2F33"
     blackBG="#000000"
 
@@ -26,7 +26,7 @@ main()
 
 
 changeTheme()
-{      
+{
     startpage="    background-color: $1;"
 
     sxivBG="Sxiv.background:$1"
@@ -43,7 +43,7 @@ changeTheme()
     sed -i "/fgColorFlag/s/.*/$termFG/g" ~/.config/alacritty/alacritty.yml
 
     # sxiv
-    sed -i "/Sxiv.background/s/.*/$sxivBG/g" ~/.Xresources  
+    sed -i "/Sxiv.background/s/.*/$sxivBG/g" ~/.Xresources
     xrdb ~/.Xresources
 }
 

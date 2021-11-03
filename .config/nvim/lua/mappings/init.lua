@@ -23,14 +23,10 @@ vim.g.mapleader = 'm'
 
 -- utility bindings --
 -- comments
-map( 'i', '<F2>', 'v:lua.send_single_comment()', expr )
-map( 'n', '<F2>', 'v:lua.send_single_comment()', expr )
-
--- save
-map( 'n', '<C-w>', '<cmd>w<cr>', cmd )
+map( 'i', '<F2>' , 'v:lua.send_comment()', expr )
 
 -- fold
-map( 'n', '<bs>', 'za', na )
+map( 'n', ';', 'za', na )
 
 -- CR to enter cmd
 map( 'n', '<CR>', ':', nore )
@@ -40,10 +36,6 @@ map( 'v', '<CR>', ':', nore )
 map( 'n', '<Space>', 'a', nore )
 map( 'v', '<Space>', 'I', nore )
 
--- completion
-map( 'i', '<up>',   'v:lua.arrow_up()',   expr )
-map( 'i', '<down>', 'v:lua.arrow_down()', expr )
-
 -- swap i and a
 map( 'n', 'i', 'a', nore )
 map( 'n', 'a', 'i', nore )
@@ -52,9 +44,11 @@ map( 'n', 'a', 'i', nore )
 map( 'n', '`', '~s', na )
 map( 'v', '`', '~', na )
 
--- tab and shift+tab for indentation
+-- tab and bs for indentation
 map( 'n', '<tab>', '>>', na )
-map( 'n', '<s-tab>', '<<', na )
+map( 'n', '<bs>', '<<', na )
+map( 'v', '<tab>', '>gv', na )
+map( 'v', '<bs>', '<gv', na )
 
 -- move to first non-blank char
 map( '',  '<home>', '^',       na )
@@ -64,28 +58,27 @@ map( 'i', '<home>', '<esc>^a', na )
 map( 'n', '<C-n>', 'v:lua.num_toggle()', expr )
 
 -- make '/' default to ripgrep
-map( 'n', '/', ':silent grep  %<left><left>', na )
+map( 'n', '/', ':LOOK ', na )
 
--- open URLs
---  taken from source 1
+-- open URLs, taken from source 1
 map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 
--- change splits
-map( 'n', '<C-j>', "<C-w><C-j>", cmd )
-map( 'n', '<C-k>', "<C-w><C-k>", cmd )
+-- write arrows
+map( 'i', '>>', "->", nore )
 
--- resize splits
-map( 'n', '=', "<C-w>+", cmd )
-map( 'n', '-', "<C-w>-", cmd )
 
 
 -- LSP bindings --
 -- jump diagnostics
-map( 'n', '<up>',   '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', cmd )
-map( 'n', '<down>', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', cmd )
+map( 'n', '<up>',   '<cmd>lua vim.diagnostic.goto_next{ float = false }<cr>', cmd )
+map( 'n', '<down>', '<cmd>lua vim.diagnostic.goto_next{ float = false }<cr>', cmd )
 
 -- rename
-map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd)
+map( 'n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', cmd )
+
+-- show line diagnostics
+map( 'n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false })<cr>', na )
+
 
 
 -- plugin bindings --
@@ -96,7 +89,10 @@ map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
 map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )
 
 -- trouble
-map( 'n', '<leader>q', '<cmd>Trouble quickfix<cr>', na )
+map( 'n', '<leader>q', '<cmd>TroubleToggle quickfix<cr>', na )
+
+-- vimtex
+map( 'n', '<leader>ll', '<cmd>VimtexCompile<cr>', na )
 
 -- vim-swap
 map( 'n', '<left>',  'g<', na )

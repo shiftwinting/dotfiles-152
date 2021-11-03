@@ -9,10 +9,7 @@ cmp.setup(
 
     experimental =
     {
-        ghost_text =
-        {
-            hl_group = "CmpGhostText"
-        }
+        native_menu = true
     },
 
     formatting =
@@ -20,12 +17,12 @@ cmp.setup(
         format = function(entry, vim_item)
 
             vim_item.menu = ({
-                nvim_lsp = '[LSP]',
-                emoji = '[Emoji]',
-                path = '[Path]',
-                orgmode = '[Org]',
-                vsnip = '[Vsnip]',
-                buffer = '[Buffer]',
+                nvim_lsp    = 'LSP',
+                emoji       = 'EMOJI',
+                path        = 'PATH',
+                orgmode     = 'ORG',
+                vsnip       = 'VSNIP',
+                buffer      = 'BUFFER',
             })[entry.source.name]
 
             return vim_item
@@ -35,7 +32,14 @@ cmp.setup(
 
     mapping =
     {
-        ['<tab>'] = cmp.mapping.confirm({ select = true })
+        ['<tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<down>'] = function( fallback )
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end
     },
 
     snippet =
@@ -45,16 +49,15 @@ cmp.setup(
         end
     },
 
-    -- TODO configure max items and sort
     sources =
     {
-        { name = 'vsnip' },
-        { name = 'buffer' },
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
+        { name = 'buffer', max_item_count = 5 },
+        { name = "cmp_git" },
+        { name = 'emoji', max_item_count = 10 },
+        { name = 'nvim_lsp', max_item_count = 5 },
+        { name = 'nvim_lua', max_item_count = 5 },
         { name = 'orgmode' },
         { name = 'path' },
-        { name = 'emoji' },
-        { name = 'spell' },
+        { name = 'vsnip' },
     },
 })

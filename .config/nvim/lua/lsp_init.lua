@@ -28,11 +28,25 @@ local servers   =
         cmd =
         {
             'clangd',
-            '--header-insertion=iwyu',
+            '--clang-tidy',
+            '--completion-style=detailed',
             '--cross-file-rename',
+            '--header-insertion=iwyu',
+            '--header-insertion-decorators',
+            '--limit-results=10',
+            '--pch-storage=memory'
         }
     },
-    pyright     = {},
+
+    pyright =
+    -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#pyright
+    {
+        -- settings =
+        -- {
+        --     python = { pythonPath = "python" }
+        -- }
+    },
+
     sumneko_lua =
     {
         cmd = { sumneko_binary, "-E", sumneko_main },
@@ -47,24 +61,33 @@ local servers   =
             }
         }
     },
+    texlab = {}
 }
 
 
 -- LSP signs --
-local lsp_err_hl    = { text = "✘", texthl = "LspDiagnosticsVirtualTextError" }
-local lsp_warn_hl   = { text = "⚠️", texthl = "LspDiagnosticsVirtualTextWarning" }
-local lsp_info_hl   = { text = "💬" }
-local lsp_hint_hl   = { text = "💡" }
+local err_hl    = { text = "✘", texthl = "DiagnosticError" }
+local warn_hl   = { text = "⚠️", texthl = "DiagnosticWarning" }
+local info_hl   = { text = "ℹ️" }
+local hint_hl   = { text = "💡" }
 
-vim.fn.sign_define( "LspDiagnosticsSignError",       lsp_err_hl )
-vim.fn.sign_define( "LspDiagnosticsSignWarning",     lsp_warn_hl )
-vim.fn.sign_define( "LspDiagnosticsSignInformation", lsp_info_hl)
-vim.fn.sign_define( "LspDiagnosticsSignHint",        lsp_hint_hl)
+vim.fn.sign_define( "DiagnosticSignError",          err_hl )
+vim.fn.sign_define( "DiagnosticSignWarn",           warn_hl )
+vim.fn.sign_define( "DiagnosticSignInformation",    info_hl )
+vim.fn.sign_define( "DiagnosticSignHint",           hint_hl )
 
 
 -- onAttach --
 local function onAttach()
     vim.api.nvim_buf_set_option( 0, 'omnifunc', 'v:lua.vim.lsp.omnifunc' )
+    require "lsp_signature".on_attach(
+    {
+        bind = true,
+        hint_prefix = "",
+        fix_pos = true,
+        max_height = 30,
+        max_width = 180
+    })
 end
 
 
@@ -76,9 +99,10 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
      vim.lsp.diagnostic.on_publish_diagnostics,
      {
-         underline = true,
+         severity_sort    = true,
+         underline        = true,
          update_in_insert = false,
-         virtual_text = true
+         virtual_text     = true
      }
 )
 

@@ -2,20 +2,18 @@
 --  for event types, see https://neovim.io/doc/user/autocmd.html#events
 --  for updates on the Lua aucmds interface, see https://github.com/neovim/neovim/pull/14661
 
--- sources
---  1.https://stackoverflow.com/questions/7495932/how-can-i-trim-blank-lines-at-the-end-of-file-in-vim
---  2. https://vim.fandom.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
-
 
 local cmd = vim.cmd
 
 
--- use a template file if one exists for that filetype. See templates dir below
-cmd [[ au BufNewFile * silent! 0r /home/j/.config/nvim/utils/templates/skeleton.%:e ]]
+-- use a template file if one exists for that filetype. See templates dir
+cmd "au BufNewFile * silent! 0r /home/j/.config/nvim/utils/templates/skeleton.%:e"
+
 
 -- favorite formatoptions
 --  default is 1jcroql
-cmd [[ au BufEnter * setlocal fo-=oql ]]
+--  see https://vimhelp.org/change.txt.html#fo-table
+cmd "au BufEnter * setlocal fo-=oql"
 
 
 -- remember folds
@@ -23,29 +21,8 @@ cmd
 [[
     augroup remember_folds
         au!
-        au BufWinLeave * :mkview
+        au BufWinLeave * :silent! mkview
         au BufWinEnter * :silent! loadview | :1
-    augroup END
-]]
-
-
--- automatically create any needed parent dirs, clear trailing whitespace
---  see sources 1 and 2
-cmd
-[[
-    augroup WritePre
-        au!
-        au BufWritePre * :%s/\s\+$//e
-        au BufWritePre * lua require( "aucmd.functions" ).mkdirs()
-    augroup END
-]]
-
--- show diagnostic window on hold
-cmd
-[[
-    augroup hold
-        au!
-        au CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable=false, max_height=30, max_width=100, show_header=false })
     augroup END
 ]]
 
@@ -53,11 +30,10 @@ cmd
 [[
     augroup ft
         au!
-        au FileType c inoremap >> ->
-        au FileType c,python :set colorcolumn=80 | :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
+        au FileType c,python :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
         au FileType gitcommit :set textwidth=72
-        au FileType help,lspinfo,qf,startuptime nnoremap <buffer><silent> q :close<CR>
-        au FileType text :set spell
+        au FileType help,lspinfo,qf,startuptime nnoremap <buffer><silent> q <cmd>close<CR>
+        au FileType tex,txt :set spell | :set textwidth=100
     augroup END
 ]]
 
@@ -83,14 +59,25 @@ cmd
 
 
 -- highlight on yank
-cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=180 } ]]
+cmd "au TextYankPost * silent! lua vim.highlight.on_yank{ higroup=\"HighlightedYankRegion\", timeout=180 }"
 
 
 -- change cursor back to beam when leaving neovim
+--  see https://github.com/neovim/neovim/issues/6005
 cmd
 [[
-    augroup change_cursor
+    augroup ChangeCursor
         au!
         au ExitPre * :set guicursor=a:ver90
+    augroup END
+]]
+
+
+-- automatically open qf after grep
+cmd
+[[
+    augroup Quickfix
+        au!
+        au QuickFixCmdPost * :TroubleToggle quickfix
     augroup END
 ]]
