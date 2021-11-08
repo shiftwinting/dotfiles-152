@@ -9,7 +9,7 @@ require "plugs.cfgs.global_cfgs"
 LSP_LANGS = { 'c', "lua", "python" }
 
 
-return require( "packer" ).startup( function( use )
+return require( "packer" ).startup({function( use )
 
 -- base
     -- the functionality for this plugin will be
@@ -24,21 +24,9 @@ return require( "packer" ).startup( function( use )
     use
     {
         'hrsh7th/nvim-cmp',
-        config = [[ require "plugs.cfgs.cmp" ]],
+        config = [[ require "plugs.cfgs.cmp.init" ]],
         requires =
         {
-            {
-                'hrsh7th/cmp-nvim-lsp',
-                event = 'InsertEnter',
-                ft = LSP_LANGS
-            },
-
-            {
-                'hrsh7th/cmp-nvim-lua',
-                event = 'InsertEnter',
-                ft = "lua"
-            },
-
             { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
 
             {
@@ -51,6 +39,18 @@ return require( "packer" ).startup( function( use )
                 'petertriho/cmp-git',
                 ft = 'gitcommit',
                 keys = { "#", "@" }
+            },
+
+            {
+                'hrsh7th/cmp-nvim-lsp',
+                event = 'InsertEnter',
+                ft = LSP_LANGS
+            },
+
+            {
+                'hrsh7th/cmp-nvim-lua',
+                event = 'InsertEnter',
+                ft = "lua"
             },
 
             { 'hrsh7th/cmp-path', event = 'InsertEnter' },
@@ -67,20 +67,17 @@ return require( "packer" ).startup( function( use )
 
     use{ "iamcco/markdown-preview.nvim", run = ":call mkdp#util#install()" }
 
-    use{ "norcalli/nvim-colorizer.lua", config = [[ require "plugs.cfgs.colorizer" ]] }
+    use
+    {
+        "norcalli/nvim-colorizer.lua",
+        config = [[ require "plugs.cfgs.colorizer.init" ]]
+    }
+
+    use{ "AndrewRadev/splitjoin.vim", keys = { "gS", "gJ" }}
 
     use{ "simrat39/symbols-outline.nvim", ft = LSP_LANGS }
 
     use "McAuleyPenney/tidy.nvim"
-
-    use
-    {
-        "akinsho/toggleterm.nvim",
-        keys = "<C-space>",
-        config = [[ require "plugs.cfgs.toggleterm" ]]
-    }
-
-    use "lervag/vimtex"
 
     use{ "rrethy/vim-illuminate", event = "CursorHold" }
 
@@ -88,10 +85,15 @@ return require( "packer" ).startup( function( use )
 
     use{ "machakann/vim-swap", keys = { "g<", "g>" }}
 
+
 -- UI mods
     use "McAuleyPenney/cacophony.nvim"
 
-    use{ "lukas-reineke/indent-blankline.nvim" }
+    use
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = [[ require "plugs.cfgs.indent_blankline.init" ]]
+    }
 
     use
     {
@@ -104,21 +106,14 @@ return require( "packer" ).startup( function( use )
     {
         "edluffy/specs.nvim",
         event = "WinScrolled",
-        config = [[ require "plugs.cfgs.specs" ]]
-    }
-
-    use
-    {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config   = [[ require "plugs.cfgs.todo_comments" ]]
+        config = [[ require "plugs.cfgs.specs.init" ]]
     }
 
     use
     {
         "folke/trouble.nvim",
         event  = "QuickFixCmdPre",
-        config = [[ require "plugs.cfgs.trouble" ]]
+        config = [[ require "plugs.cfgs.trouble.init" ]]
     }
 
     use{ "bfrg/vim-cpp-modern", ft = 'c' }
@@ -128,4 +123,15 @@ return require( "packer" ).startup( function( use )
 -- other
     use{ "dstein64/vim-startuptime", cmd = "StartupTime" }
 
-end)
+end,
+
+config =
+{
+    display =
+    {
+        header_sym = '',
+        open_fn = function()
+            return require('packer.util').float({ border = "none" })
+        end,
+    }}
+})

@@ -13,7 +13,13 @@ cmd "au BufNewFile * silent! 0r /home/j/.config/nvim/utils/templates/skeleton.%:
 -- favorite formatoptions
 --  default is 1jcroql
 --  see https://vimhelp.org/change.txt.html#fo-table
-cmd "au BufEnter * setlocal fo-=oql"
+cmd
+[[
+    augroup EnterBuffer
+        au!
+        au BufEnter * setlocal fo-=oql"
+    augroup END
+]]
 
 
 -- remember folds
@@ -26,6 +32,7 @@ cmd
     augroup END
 ]]
 
+-- ft options
 cmd
 [[
     augroup ft
@@ -33,7 +40,7 @@ cmd
         au FileType c,python :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
         au FileType gitcommit :set textwidth=72
         au FileType help,lspinfo,qf,startuptime nnoremap <buffer><silent> q <cmd>close<CR>
-        au FileType tex,txt :set spell | :set textwidth=100
+        au FileType tex,txt :set spell | :set textwidth=110
     augroup END
 ]]
 
@@ -59,7 +66,7 @@ cmd
 
 
 -- highlight on yank
-cmd "au TextYankPost * silent! lua vim.highlight.on_yank{ higroup=\"HighlightedYankRegion\", timeout=180 }"
+cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=160 }]]
 
 
 -- change cursor back to beam when leaving neovim

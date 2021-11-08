@@ -18,13 +18,15 @@ local runtime_path = vim.split( package.path, ';' )
 table.insert( runtime_path, "lua/?.lua" )
 table.insert( runtime_path, "lua/?/init.lua" )
 
-local servers   =
+local servers =
 {
-    clangd      =
+    clangd =
     {
-        -- for cmd info and defaults
-        -- https://manpages.debian.org/experimental/clangd/clangd.1.en.html
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
+        --[[
+            for cmd info and defaults:
+            https://manpages.debian.org/experimental/clangd/clangd.1.en.html
+            https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#clangd
+         ]]
         cmd =
         {
             'clangd',

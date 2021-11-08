@@ -2,13 +2,14 @@
 # xinitrc
 
 
-onStart ()
+onStart()
 {
-    userresources=$HOME/.Xresources
 
-    # merge in defaults and keymaps
-    if [ -f "$userresources" ]; then
-        xrdb -merge "$userresources"
+    # load xresources
+    xresources=$HOME/.Xresources
+
+    if [ -f "$xresources" ]; then
+        xrdb -merge "$xresources"
 
     fi
 
@@ -26,8 +27,11 @@ onStart ()
     xset r rate 200 60
     xset m 2 0
 
-    # Two screens
-    xrandr --fb 4800x1950 --output DVI-D-1 --mode 1920x1080 --pos 1080x0 --rotate right --output DP-1 --primary --mode 2560x1440 --pos 2160x0 --rotate normal &
+
+    xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate right\
+            --output DVI-D-1 --mode 1920x1080 --pos 1093x0 --rotate right\
+            --output DP-1 --primary --mode 2560x1440 --pos 2173x0 --rate 144.00 &
+
 
     # terminal
     alacritty &
@@ -35,10 +39,11 @@ onStart ()
     firefox &
     discord &
 
+    xscreensaver -no-splash &
+
     exec i3
 }
 
 
 # execute
 onStart
-

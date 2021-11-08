@@ -1,30 +1,22 @@
 -- options --
 
--- Sources:
---  Options:
---      1. https://neovim.io/doc/user/options.html
---
---  nvim defaults:  https://neovim.io/doc/user/vim_diff.html
---  opt syntax:     https://github.com/neovim/neovim/pull/13479#event-4813249467
---  fold function:
---      https://www.reddit.com/r/neovim/comments/psl8rq/sexy_folds/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
+--[[
+    Options:
+    https://neovim.io/doc/user/options.html
+
+    nvim defaults:  https://neovim.io/doc/user/vim_diff.html
+    opt syntax:     https://github.com/neovim/neovim/pull/13479#event-4813249467
+]]
 
 
-require "options.providers"
+require "options.functions"
 
 
 -- alias syntax
 local o = vim.opt
 
 -- vars
-local custom_cursor = "n-v-sm:block,c-ci-cr-i-ve:ver30,r-o:hor20"
-local fold_func     = [[
-substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g') . '    { +'.(v:foldend - v:foldstart).' lines'.' }'
-]]
-
 local util_dirs     = "/home/j/.config/nvim/utils"
-local undo_dir      = util_dirs .. "/undo_files"
-local view_dir      = util_dirs .. "/view_files"
 
 
 o.backup            = false
@@ -39,10 +31,10 @@ o.foldenable        = false
 o.foldlevel         = 99
 o.foldmethod        = "indent"
 o.foldnestmax       = 4
-o.foldtext          = fold_func
+o.foldtext          = "v:lua.fold_func()"
 o.gdefault          = true
 o.grepprg           = [[ rg --ignore-case --glob "!.git" --trim --vimgrep ]]
-o.guicursor         = custom_cursor
+o.guicursor         = "n-v-sm:block,c-ci-cr-i-ve:ver30,r-o:hor20"
 o.hidden            = true
 o.hlsearch          = false
 o.inccommand        = "nosplit"
@@ -76,12 +68,51 @@ o.tabstop           = 4
 o.termguicolors     = true
 o.timeout           = false
 o.textwidth         = 120
-o.undodir           = undo_dir
+o.undodir           = util_dirs .. "/undo_files"
 o.undofile          = true
 o.updatetime        = 350
-o.viewdir           = view_dir
+o.viewdir           = util_dirs .. "/view_files"
 o.viewoptions       = "folds"
 o.virtualedit       = "all"
 o.wildmenu          = true
 o.wildmode          = "longest,list,full"
 o.writebackup       = false
+
+
+
+
+--[[
+    providers
+    https://github.com/neovim/neovim/blob/master/runtime/doc/provider.txt
+]]
+-- turn off python 2, perl, and ruby support for now
+vim.g.loaded_node_provider   = 0
+vim.g.loaded_perl_provider   = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_ruby_provider   = 0
+
+-- python 3 provider
+vim.g.python3_host_prog = '/usr/bin/python3'
+
+
+--[[
+    define clipboard commands here to preempt
+    clipboard.vim runtime execution. Same concept
+    as defining providers to speed up.
+    see https://github.com/neovim/neovim/blob/master/runtime/autoload/provider/clipboard.vim
+]]
+vim.cmd
+[[
+    let g:clipboard = {
+        \ 'name': 'xsel',
+        \ 'copy': {
+        \    '+': 'xsel --nodetach -i -b',
+        \    '*': 'xsel --nodetach -i -p',
+        \  },
+        \ 'paste': {
+        \    '+': 'xsel -o -b',
+        \    '*': 'xsel -o -p',
+        \ },
+        \ 'cache_enabled': 1,
+        \ }
+]]

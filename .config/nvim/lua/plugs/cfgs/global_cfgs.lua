@@ -1,16 +1,14 @@
 local g = vim.g
 local snips = "/home/j/.config/nvim/utils/snips"
 
+
+-- TODO move all of these to their own dirs
+
 -- filetype.nvim
 g.did_load_filetypes = 1
 
 -- highlight url
 g.highlighturl_guifg = "#7289DA"
-
--- indent_blankline
-g.indent_blankline_max_indent_increase = 1
-g.indent_blankline_show_first_indent_level = false
-g.indent_blankline_char_list = {'┊'}
 
 -- illuminate
 g.Illuminate_delay                  = 300

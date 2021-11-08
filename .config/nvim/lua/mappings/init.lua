@@ -1,8 +1,9 @@
 -- mappings --
--- Sources
---  default mappings: https://hea-www.harvard.edu/~fine/Tech/vi.html
---  opening urls: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
-
+--[[
+    Sources
+    default mappings: https://hea-www.harvard.edu/~fine/Tech/vi.html
+    opening urls: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
+]]
 
 -- import functions for mappings
 require "mappings.functions"
@@ -17,13 +18,16 @@ local na    = {}
 local nore  = { noremap = true }
 
 
--- leader --
+
+--[[ leader ]]--
 vim.g.mapleader = 'm'
 
 
--- utility bindings --
+
+--[[ utility bindings ]]--
 -- comments
-map( 'i', '<F2>' , 'v:lua.send_comment()', expr )
+map( 'i', '<F2>', 'v:lua.send_comment()', expr )
+map( 'i', '<F14>', '- ', na )
 
 -- fold
 map( 'n', ';', 'za', na )
@@ -60,7 +64,10 @@ map( 'n', '<C-n>', 'v:lua.num_toggle()', expr )
 -- make '/' default to ripgrep
 map( 'n', '/', ':LOOK ', na )
 
--- open URLs, taken from source 1
+--[[
+    open URLs, taken from source 1
+    uses xdg-open shell command (!) to open word under cursor ( cWORD )
+]]
 map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 
 -- write arrows
@@ -68,7 +75,7 @@ map( 'i', '>>', "->", nore )
 
 
 
--- LSP bindings --
+--[[ LSP bindings ]]--
 -- jump diagnostics
 map( 'n', '<up>',   '<cmd>lua vim.diagnostic.goto_next{ float = false }<cr>', cmd )
 map( 'n', '<down>', '<cmd>lua vim.diagnostic.goto_next{ float = false }<cr>', cmd )
@@ -81,7 +88,7 @@ map( 'n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ focu
 
 
 
--- plugin bindings --
+--[[ plugin bindings ]]--
 -- mundo
 map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
 
@@ -99,7 +106,8 @@ map( 'n', '<left>',  'g<', na )
 map( 'n', '<right>', 'g>', na )
 
 
--- colemak
+
+--[[ colemak ]]--
 -- home row: right nav
 map( '', 'n', 'j', nore )
 map( '', 'N', 'J', nore )
