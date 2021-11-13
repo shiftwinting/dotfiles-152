@@ -27,11 +27,10 @@ onStart()
     xset r rate 200 60
     xset m 2 0
 
-
     xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate right\
             --output DVI-D-1 --mode 1920x1080 --pos 1093x0 --rotate right\
-            --output DP-1 --primary --mode 2560x1440 --pos 2173x0 --rate 144.00 &
-
+            --output DP-1 --primary --mode 2560x1440 --pos 2173x0 --rate 144.00\
+            --output DP-3 --mode 1280x1024 --pos 2750x-1440 & 
 
     # terminal
     alacritty &
