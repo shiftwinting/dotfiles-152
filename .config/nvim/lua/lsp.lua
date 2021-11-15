@@ -113,7 +113,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 for server, config in pairs( servers ) do
     config.on_attach    = onAttach
     config.capabilities = capabilities
-    config.flags = { debounce_text_changes = 500 }
+    config.flags        = { debounce_text_changes = 500 }
 
     nvim_lsp[server].setup( config )
 end

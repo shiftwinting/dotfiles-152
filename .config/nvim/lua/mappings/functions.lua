@@ -4,15 +4,6 @@
 local api = vim.api
 
 
--- prefer nvim_input for sending strings that are not
--- special, e.g. <C-o>, because it is {fast}
-local send_keys = function(str)
-    return api.nvim_replace_termcodes( str, true, true, true )
-end
-
-
-
-
 -- toggle num settings ------------------------------------------------
 _G.num_toggle = function()
 

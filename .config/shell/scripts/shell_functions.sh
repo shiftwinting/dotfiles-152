@@ -7,13 +7,7 @@
 #   4. https://stackoverflow.com/questions/28878629/bash-script-variable-expansion-within-backtick-grep-regex-string
 
 
-# Navigation
-goto()
-{
-    test $# -eq 1 && builtin cd $1 && ls -1bAFX || builtin cd $1
-}
-
-
+# TODO fix jmp when path contains '~'
 jmp()
 {
     # see sources 2 and 4
@@ -53,7 +47,7 @@ n()
 
 t()
 {
-    test -d $1 && goto $1 || nvim $1
+    test -d $1 && builtin cd $1 && ls -1bAFX || nvim $1
 }
 
 
@@ -68,12 +62,13 @@ cppath()
     then
        echo "$cptxt" | xsel -b
 
-    elif command -v xclip &> /dev/null
-    then
-       echo "$cptxt" | xclip
+    # elif command -v xclip &> /dev/null
+    # then
+    #    echo "$cptxt" | xclip
+
     fi
 
-    printf "\"$cptxt\" copied to clipboard\n"
+    printf "\"$cptxt\"\n copied to clipboard\n"
 }
 
 

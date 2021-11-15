@@ -73,6 +73,14 @@ map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 -- write arrows
 map( 'i', '>>', "->", nore )
 
+-- buffers --
+-- open a new buffer
+map( 'n', "<C-t>", ":e ", na )
+map( 'n', "<C-Pageup>", "<cmd>bn<CR>", cmd )
+map( 'n', "<C-Pagedown>", "<cmd>bp<CR>", cmd )
+map( 'n', "<C-w>", "<cmd>bd<CR>", cmd )
+
+
 
 
 --[[ LSP bindings ]]--
@@ -89,20 +97,15 @@ map( 'n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ focu
 
 
 --[[ plugin bindings ]]--
--- mundo
-map( 'n', '<C-u>', '<cmd>MundoToggle<cr>', cmd )
-
+-- TODO move all of these to respective plugin cfgs
 -- outline
-map( 'n', '<F1>', '<cmd>SymbolsOutline<cr>', cmd )
+map( 'n', '<F1>','<cmd>SymbolsOutline<cr>', cmd )
 
 -- trouble
 map( 'n', '<leader>q', '<cmd>TroubleToggle quickfix<cr>', na )
 
--- vimtex
-map( 'n', '<leader>ll', '<cmd>VimtexCompile<cr>', na )
-
 -- vim-swap
-map( 'n', '<left>',  'g<', na )
+map( 'n', '<left>', 'g<', na )
 map( 'n', '<right>', 'g>', na )
 
 

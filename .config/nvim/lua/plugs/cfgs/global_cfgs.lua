@@ -1,39 +1,36 @@
 local g = vim.g
-local snips = "/home/j/.config/nvim/utils/snips"
 
-
--- TODO move all of these to their own dirs
-
--- filetype.nvim
-g.did_load_filetypes = 1
 
 -- highlight url
 g.highlighturl_guifg = "#7289DA"
+
 
 -- illuminate
 g.Illuminate_delay                  = 300
 g.Illuminate_highlightUnderCursor   = 0
 
+
+-- vsnip
+g.vsnip_snippet_dir = "/home/j/.config/nvim/utils/snips"
+g.vsnip_filetyes    = {}
+
+
+-- filetype.nvim
+g.did_load_filetypes = 1
+
+
 -- markdown preview
-g.mkdp_auto_start       = 1
-g.mkdp_auto_close       = 1
-g.mkdp_browser          = "firefox"
-g.mkdp_page_title       = "${name}.md"
-g.mkdp_preview_options  =
-{
+vim.g.mkdp_auto_start       = 1
+vim.g.mkdp_auto_close       = 1
+vim.g.mkdp_browser          = "firefox"
+vim.g.mkdp_page_title       = "${name}.md"
+vim.g.mkdp_preview_options  = {
     disable_sync_scroll = 0,
     disable_filename    = 1
 }
 
--- mundo
-g.mundo_auto_preview_delay  = 100
-g.mundo_header              = 0
-g.mundo_preview_height      = 50
-g.mundo_right               = 1
-g.mundo_width               = 85
-
--- outline
-g.symbols_outline =
+-- symbol outline
+vim.g.symbols_outline =
 {
     auto_preview            = false,
     highlight_hovered_item  = true,
@@ -68,28 +65,3 @@ g.symbols_outline =
     },
     width = 45,
 }
-
--- vimtex
-g.tex_flavor                = 'latex'
-g.vimtex_compiler_latexmk   =
-{
-    build_dir  = "build",
-    callback   = 1,
-    continuous = 1,
-    executable = "/usr/bin/latexmk",
-    options =
-    {
-        '-verbose',
-        '-file-line-error',
-        '-synctex=1',
-        '-interaction=nonstopmode'
-    }
-}
-g.vimtex_compiler_silent    = 1
-g.vimtex_fold_enabled       = 1
-g.vimtex_mappings_enabled   = 0
-g.vimtex_view_method        = 'zathura'
-
--- vsnip
-g.vsnip_snippet_dir = snips
-g.vsnip_filetyes    = {}

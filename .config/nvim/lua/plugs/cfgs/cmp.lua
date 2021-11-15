@@ -32,7 +32,7 @@ cmp.setup(
 
     mapping =
     {
-        ['<tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
         ['<down>'] = function( fallback )
             if cmp.visible() then
                 cmp.select_next_item()
@@ -54,6 +54,7 @@ cmp.setup(
         { name = 'buffer', max_item_count = 5 },
         { name = "cmp_git" },
         { name = 'emoji', max_item_count = 10 },
+        { name = "latex_symbols", max_item_count = 7 },
         { name = 'nvim_lsp', max_item_count = 5 },
         { name = 'nvim_lua', max_item_count = 5 },
         { name = 'path' },

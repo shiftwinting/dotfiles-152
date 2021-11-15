@@ -137,20 +137,22 @@ bindsym $mod+a exec flameshot gui
 set $left HDMI-1
 set $middle DVI-D-1
 set $right DP-1
+set $top DP-3
 
 # assign workspaces to specific screens
 workspace 1 output $left
 workspace 2 output $left
-workspace 3 output $left
 
+workspace 3 output $middle
 workspace 4 output $middle
 workspace 5 output $middle
-workspace 6 output $middle
 
+workspace 6 output $right
 workspace 7 output $right
 workspace 8 output $right
-workspace 9 output $right
-workspace 0 output $right
+
+workspace 9 output $top
+workspace 0 output $top
 
 
 # Define names for default workspaces for which we configure key bindings later on.

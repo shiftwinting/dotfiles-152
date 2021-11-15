@@ -13,6 +13,7 @@ local to_disable =
     'netrwPlugin',
     'netrwSettings',
     'netrwFileHandlers',
+    'remote_plugins',
     'rrhelper',
     'spellfile_plugin',
     'spec',

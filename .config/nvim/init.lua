@@ -6,9 +6,9 @@ local modules =
 {
    "options.init",
    "mappings.init",
-   "aucmd.init",
+   "aucmd",
    "plugs.init",
-   "lsp_init"
+   "lsp"
 }
 
 for index = 1, #modules do

@@ -16,7 +16,7 @@ require "options.functions"
 local o = vim.opt
 
 -- vars
-local util_dirs     = "/home/j/.config/nvim/utils"
+local util_dirs     = "/home/j/.config/nvim/utils/"
 
 
 o.backup            = false
@@ -56,7 +56,7 @@ o.shiftwidth        = 4
 o.showcmd           = false
 o.showmode          = false
 o.shortmess         = "acstFOW"
-o.showbreak         = ">"
+o.showbreak         = "..."
 o.signcolumn        = "yes:1"
 o.smartcase         = true
 o.smartindent       = true
@@ -68,14 +68,13 @@ o.tabstop           = 4
 o.termguicolors     = true
 o.timeout           = false
 o.textwidth         = 120
-o.undodir           = util_dirs .. "/undo_files"
+o.undodir           = util_dirs .. "undo_files"
 o.undofile          = true
 o.updatetime        = 350
-o.viewdir           = util_dirs .. "/view_files"
+o.viewdir           = util_dirs .. "view_files"
 o.viewoptions       = "folds"
 o.virtualedit       = "all"
-o.wildmenu          = true
-o.wildmode          = "longest,list,full"
+o.wildmode          = "longest,list"
 o.writebackup       = false
 
 

@@ -9,7 +9,7 @@ require "plugs.cfgs.global_cfgs"
 LSP_LANGS = { 'c', "lua", "python" }
 
 
-return require( "packer" ).startup({function( use )
+return require( "packer" ).startup({ function( use )
 
 -- base
     -- the functionality for this plugin will be
@@ -21,44 +21,49 @@ return require( "packer" ).startup({function( use )
 
     use "wbthomason/packer.nvim"
 
-    use
-    {
-        'hrsh7th/nvim-cmp',
-        config = [[ require "plugs.cfgs.cmp.init" ]],
-        requires =
-        {
-            { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
+   use
+   {
+       'hrsh7th/nvim-cmp',
+       config = [[ require "plugs.cfgs.cmp" ]],
+       requires =
+       {
+           { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
 
-            {
-                'hrsh7th/cmp-emoji',
-                event = 'InsertEnter',
-                keys = ':'
-            },
+           {
+               'hrsh7th/cmp-emoji',
+               event = 'InsertEnter',
+               keys = ':'
+           },
 
-            {
-                'petertriho/cmp-git',
-                ft = 'gitcommit',
-                keys = { "#", "@" }
-            },
+           {
+               'petertriho/cmp-git',
+               ft = 'gitcommit',
+               keys = { "#", "@" }
+           },
 
-            {
-                'hrsh7th/cmp-nvim-lsp',
-                event = 'InsertEnter',
-                ft = LSP_LANGS
-            },
+           {
+               "kdheepak/cmp-latex-symbols",
+               event = 'InsertEnter'
+           },
 
-            {
-                'hrsh7th/cmp-nvim-lua',
-                event = 'InsertEnter',
-                ft = "lua"
-            },
+           {
+               'hrsh7th/cmp-nvim-lsp',
+               event = 'InsertEnter',
+               ft = LSP_LANGS
+           },
 
-            { 'hrsh7th/cmp-path', event = 'InsertEnter' },
-            { 'hrsh7th/vim-vsnip', event = 'InsertEnter' },
-            { 'hrsh7th/vim-vsnip-integ', event = 'InsertEnter' },
-            { 'hrsh7th/cmp-vsnip', event = 'InsertEnter' }
-        }
-    }
+           {
+               'hrsh7th/cmp-nvim-lua',
+               event = 'InsertEnter',
+               ft = "lua"
+           },
+
+           { 'hrsh7th/cmp-path', event = 'InsertEnter' },
+           { 'hrsh7th/vim-vsnip', event = 'InsertEnter' },
+           { 'hrsh7th/vim-vsnip-integ', event = 'InsertEnter' },
+           { 'hrsh7th/cmp-vsnip', event = 'InsertEnter' }
+       }
+   }
 
 -- functionality mods
     use{ "McAuleyPenney/expand.lua", event = "InsertEnter" }
@@ -70,7 +75,8 @@ return require( "packer" ).startup({function( use )
     use
     {
         "norcalli/nvim-colorizer.lua",
-        config = [[ require "plugs.cfgs.colorizer.init" ]]
+        ft = 'lua',
+        config = [[ require "plugs.cfgs.colorizer" ]]
     }
 
     use{ "AndrewRadev/splitjoin.vim", keys = { "gS", "gJ" }}
@@ -81,18 +87,24 @@ return require( "packer" ).startup({function( use )
 
     use{ "rrethy/vim-illuminate", event = "CursorHold" }
 
-    use{ "simnalamburt/vim-mundo", cmd = "MundoToggle" }
+    -- use{ "simnalamburt/vim-mundo", cmd = "MundoToggle" }
 
     use{ "machakann/vim-swap", keys = { "g<", "g>" }}
 
 
 -- UI mods
+    use
+    {
+        "akinsho/bufferline.nvim",
+        config = [[ require "plugs.cfgs.bufferline" ]]
+    }
+
     use "McAuleyPenney/cacophony.nvim"
 
     use
     {
         "lukas-reineke/indent-blankline.nvim",
-        config = [[ require "plugs.cfgs.indent_blankline.init" ]]
+        config = [[ require "plugs.cfgs.indent_blankline" ]]
     }
 
     use
@@ -104,16 +116,16 @@ return require( "packer" ).startup({function( use )
 
     use
     {
-        "edluffy/specs.nvim",
-        event = "WinScrolled",
-        config = [[ require "plugs.cfgs.specs.init" ]]
+        "akinsho/toggleterm.nvim",
+        config = [[ require "plugs.cfgs.toggleterm" ]],
+        keys = "<C-space>"
     }
 
     use
     {
         "folke/trouble.nvim",
         event  = "QuickFixCmdPre",
-        config = [[ require "plugs.cfgs.trouble.init" ]]
+        config = [[ require "plugs.cfgs.trouble" ]]
     }
 
     use{ "bfrg/vim-cpp-modern", ft = 'c' }
@@ -122,6 +134,11 @@ return require( "packer" ).startup({function( use )
 
 -- other
     use{ "dstein64/vim-startuptime", cmd = "StartupTime" }
+
+
+-- testing
+
+
 
 end,
 
