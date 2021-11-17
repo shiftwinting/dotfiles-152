@@ -36,13 +36,14 @@ map( 'n', ';', 'za', na )
 map( 'n', '<CR>', ':', nore )
 map( 'v', '<CR>', ':', nore )
 
--- space for insert mode
-map( 'n', '<Space>', 'a', nore )
-map( 'v', '<Space>', 'I', nore )
-
 -- swap i and a
 map( 'n', 'i', 'a', nore )
 map( 'n', 'a', 'i', nore )
+
+-- space for insert mode
+-- original: map( 'n', '<Space>', 'a', expr )
+map('n', '<Space>', "v:lua.require'indentInsert'.indent('i')", expr )
+map( 'v', '<Space>', 'I', nore )
 
 -- make case change more accessible
 map( 'n', '`', '~s', na )
@@ -74,10 +75,11 @@ map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
 map( 'i', '>>', "->", nore )
 
 -- buffers --
--- open a new buffer
 map( 'n', "<C-t>", ":e ", na )
-map( 'n', "<C-Pageup>", "<cmd>bn<CR>", cmd )
-map( 'n', "<C-Pagedown>", "<cmd>bp<CR>", cmd )
+map( 'n', "<C-Pageup>", "<cmd>bp<CR>", cmd )
+map( 'n', "<C-Pagedown>", "<cmd>bn<CR>", cmd )
+map( 'n', "<C-S-Pageup>", "<cmd>:BufferLineMovePrev<CR>", cmd )
+map( 'n', "<C-S-Pagedown>", "<cmd>:BufferLineMoveNext<CR>", cmd )
 map( 'n', "<C-w>", "<cmd>bd<CR>", cmd )
 
 
@@ -97,7 +99,6 @@ map( 'n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ focu
 
 
 --[[ plugin bindings ]]--
--- TODO move all of these to respective plugin cfgs
 -- outline
 map( 'n', '<F1>','<cmd>SymbolsOutline<cr>', cmd )
 

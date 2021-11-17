@@ -66,7 +66,7 @@ cmd
 
 
 -- highlight on yank
-cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=160 }]]
+cmd [[ au TextYankPost * silent! lua vim.highlight.on_yank{ higroup="HighlightedYankRegion", timeout=165 }]]
 
 
 -- change cursor back to beam when leaving neovim

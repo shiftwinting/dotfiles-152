@@ -13,9 +13,7 @@ require "options.functions"
 
 
 -- alias syntax
-local o = vim.opt
-
--- vars
+local o             = vim.opt
 local util_dirs     = "/home/j/.config/nvim/utils/"
 
 
@@ -50,6 +48,7 @@ o.numberwidth       = 1
 o.redrawtime        = 3000
 o.ruler             = false
 o.scrolloff         = 60
+o.sessionoptions    = "buffers,folds"
 o.shada             = "'0,:30,/30"
 o.shiftround        = true
 o.shiftwidth        = 4
@@ -74,17 +73,16 @@ o.updatetime        = 350
 o.viewdir           = util_dirs .. "view_files"
 o.viewoptions       = "folds"
 o.virtualedit       = "all"
-o.wildmode          = "longest,list"
+o.wildmode          = "longest:full"
+o.wildoptions       = "pum"
 o.writebackup       = false
-
-
 
 
 --[[
     providers
     https://github.com/neovim/neovim/blob/master/runtime/doc/provider.txt
 ]]
--- turn off python 2, perl, and ruby support for now
+-- turn off node, python 2, perl, and ruby support for now
 vim.g.loaded_node_provider   = 0
 vim.g.loaded_perl_provider   = 0
 vim.g.loaded_python_provider = 0

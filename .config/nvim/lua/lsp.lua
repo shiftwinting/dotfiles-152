@@ -63,7 +63,6 @@ local servers =
             }
         }
     },
-    texlab = {}
 }
 
 
