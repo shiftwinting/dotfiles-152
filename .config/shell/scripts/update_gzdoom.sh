@@ -1,7 +1,7 @@
 # see https://zdoom.org/wiki/Compile_GZDoom_on_Linux
 
 
-GZDOOM_DIR="/home/j/gzdoom_build" 
+GZDOOM_DIR="/home/j/gzdoom_build"
 
 
 main()
@@ -35,8 +35,8 @@ main()
     cmake .. -DCMAKE_BUILD_TYPE=Release $f &&
     make -j$c
 
-    printf "\nOperation complete\n" 
-} 
+    printf "\nOperation complete\n"
+}
 
 
 main "$@"

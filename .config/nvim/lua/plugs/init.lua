@@ -6,7 +6,7 @@ require "impatient"
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
 
-LSP_LANGS = { 'c', "lua", "python" }
+LSP_LANGS = { 'sh', 'c', "lua", "python" }
 
 
 return require( "packer" ).startup({ function( use )
@@ -40,9 +40,9 @@ return require( "packer" ).startup({ function( use )
 
             {
                 'petertriho/cmp-git',
+                config = [[ require "plugs.cfgs.git-cmp" ]],
                 ft = 'gitcommit',
                 event = 'InsertEnter',
-                keys = { "#", "@" }
             },
 
             {
@@ -52,20 +52,19 @@ return require( "packer" ).startup({ function( use )
 
             {
                 'hrsh7th/cmp-nvim-lsp',
+                ft = LSP_LANGS,
                 event = 'InsertEnter',
-                ft = LSP_LANGS
             },
 
             {
                 'hrsh7th/cmp-nvim-lua',
-                event = 'InsertEnter',
-                ft = "lua"
+                ft = "lua",
+                event = 'InsertEnter'
             },
 
             {
                 'hrsh7th/cmp-path',
                 event = 'InsertEnter',
-                keys = "/",
             },
 
             { 'hrsh7th/vim-vsnip', event = 'InsertEnter' },
@@ -74,8 +73,16 @@ return require( "packer" ).startup({ function( use )
         }
     }
 
+    use 'nvim-lua/plenary.nvim'
+
+
 -- functionality mods
-    use{ "McAuleyPenney/expand.lua", event = "InsertEnter" }
+    use
+    {
+        -- cannot be lazy-loaded
+        "p00f/godbolt.nvim",
+        config = require("godbolt").setup({})
+    }
 
     use "pedro757/indentInsert.nvim"
 
@@ -87,9 +94,16 @@ return require( "packer" ).startup({ function( use )
 
     use
     {
+        "windwp/nvim-autopairs",
+        config = [[ require "plugs.cfgs.pairs" ]],
+        event = "InsertEnter"
+    }
+
+    use
+    {
         "norcalli/nvim-colorizer.lua",
-        ft = 'lua',
-        config = [[ require "plugs.cfgs.colorizer" ]]
+        config = [[ require "plugs.cfgs.colorizer" ]],
+        ft = 'lua'
     }
 
     use{ "AndrewRadev/splitjoin.vim", keys = { "gS", "gJ" }}
@@ -109,8 +123,8 @@ return require( "packer" ).startup({ function( use )
     use
     {
         "akinsho/bufferline.nvim",
-        event = "BufHidden",
-        config = [[ require "plugs.cfgs.bufferline" ]]
+        config = [[ require "plugs.cfgs.bufferline" ]],
+        event = "BufHidden"
     }
 
     use "McAuleyPenney/cacophony.nvim"
@@ -124,9 +138,9 @@ return require( "packer" ).startup({ function( use )
     use
     {
         "ray-x/lsp_signature.nvim",
+        -- for config, see lsp_init
         event = "InsertEnter",
         ft = LSP_LANGS,
-        -- for config, see lsp_init
     }
 
     use
@@ -139,8 +153,8 @@ return require( "packer" ).startup({ function( use )
     use
     {
         "folke/trouble.nvim",
-        event  = "QuickFixCmdPre",
-        config = [[ require "plugs.cfgs.trouble" ]]
+        config = [[ require "plugs.cfgs.trouble" ]],
+        event  = "QuickFixCmdPre"
     }
 
     use{ "bfrg/vim-cpp-modern", ft = 'c' }
@@ -154,9 +168,8 @@ return require( "packer" ).startup({ function( use )
 
 -- testing
 
-    -- TODO test this during winter break
+    -- TODO test this when we have the time to break LSP
     -- "williamboman/nvim-lsp-installer",
-
 
 
     end,

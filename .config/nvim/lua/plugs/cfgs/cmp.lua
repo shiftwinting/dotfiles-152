@@ -1,5 +1,8 @@
 local cmp = require"cmp"
 
+-- TODO
+--  test autopairs integration
+
 cmp.setup(
 {
     documentation =
@@ -17,17 +20,16 @@ cmp.setup(
         format = function(entry, vim_item)
 
             vim_item.menu = ({
-                nvim_lsp    = 'LSP',
-                emoji       = 'EMOJI',
-                path        = 'PATH',
-                orgmode     = 'ORG',
-                vsnip       = 'VSNIP',
                 buffer      = 'BUFFER',
+                emoji       = 'EMOJI',
+                cmp_git     = 'GIT',
+                nvim_lsp    = 'LSP',
+                path        = 'PATH',
+                vsnip       = 'VSNIP',
             })[entry.source.name]
 
             return vim_item
         end
-
     },
 
     mapping =
@@ -49,6 +51,15 @@ cmp.setup(
         end
     },
 
+    sorting =
+    {
+        comparators =
+        {
+            -- sort on locality
+            function(...) return require('cmp_buffer'):compare_locality(...) end
+        }
+    },
+
     sources =
     {
         { name = 'buffer', max_item_count = 5 },
@@ -61,3 +72,7 @@ cmp.setup(
         { name = 'vsnip' },
     },
 })
+
+
+-- autopairs integration
+require('nvim-autopairs').setup()

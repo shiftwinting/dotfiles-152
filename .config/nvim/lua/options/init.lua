@@ -1,7 +1,6 @@
 -- options --
 
 --[[
-    Options:
     https://neovim.io/doc/user/options.html
 
     nvim defaults:  https://neovim.io/doc/user/vim_diff.html
@@ -11,67 +10,53 @@
 
 require "options.functions"
 
-
 -- alias syntax
 local o             = vim.opt
-local util_dirs     = "/home/j/.config/nvim/utils/"
 
 
-o.backup            = false
 o.breakindent       = true
+o.breakindentopt    = "shift:-4"
+o.cindent           = true
 o.clipboard         = "unnamedplus"
-o.cmdheight         = 1
 o.confirm           = true
-o.emoji             = false  -- turning emoji off forces nvim to treat emojis as one space
 o.expandtab         = true
-o.fillchars         = { eob = "˃", fold = " " }
+o.fillchars         = { eob = " ", fold = " " }
 o.foldenable        = false
 o.foldlevel         = 99
 o.foldmethod        = "indent"
-o.foldnestmax       = 4
 o.foldtext          = "v:lua.fold_func()"
 o.gdefault          = true
 o.grepprg           = [[ rg --ignore-case --glob "!.git" --trim --vimgrep ]]
 o.guicursor         = "n-v-sm:block,c-ci-cr-i-ve:ver30,r-o:hor20"
-o.hidden            = true
 o.hlsearch          = false
-o.inccommand        = "nosplit"
-o.keywordprg        = ":help"
-o.laststatus        = 2
 o.lazyredraw        = true
 o.list              = true
-o.listchars         = { trail = '●' }
+o.listchars         = { trail = '●', eol = '↴' }
 o.modeline          = false
 o.modelines         = 0
 o.nrformats         = "alpha"
 o.numberwidth       = 1
-o.redrawtime        = 3000
+o.redrawtime        = 250
 o.ruler             = false
 o.scrolloff         = 60
-o.sessionoptions    = "buffers,folds"
 o.shada             = "'0,:30,/30"
 o.shiftround        = true
 o.shiftwidth        = 4
+o.shortmess         = "acstFOW"
 o.showcmd           = false
 o.showmode          = false
-o.shortmess         = "acstFOW"
-o.showbreak         = "..."
 o.signcolumn        = "yes:1"
-o.smartcase         = true
-o.smartindent       = true
 o.softtabstop       = 4
 o.statusline        = "%1*%F%* %1*%M%* %1*%R%* %=%1*Lines: %L%*"
 o.swapfile          = false
-o.synmaxcol         = 350
-o.tabstop           = 4
+o.synmaxcol         = 1000
 o.termguicolors     = true
-o.timeout           = false
 o.textwidth         = 120
-o.undodir           = util_dirs .. "undo_files"
+o.timeout           = false
+o.undodir           = vim.fn.expand(vim.fn.stdpath "data".."/undo/")
 o.undofile          = true
-o.updatetime        = 350
-o.viewdir           = util_dirs .. "view_files"
-o.viewoptions       = "folds"
+o.updatetime        = 350   -- used for swap file and cursorhold
+o.viewoptions       = "cursor,folds"
 o.virtualedit       = "all"
 o.wildmode          = "longest:full"
 o.wildoptions       = "pum"
@@ -82,7 +67,6 @@ o.writebackup       = false
     providers
     https://github.com/neovim/neovim/blob/master/runtime/doc/provider.txt
 ]]
--- turn off node, python 2, perl, and ruby support for now
 vim.g.loaded_node_provider   = 0
 vim.g.loaded_perl_provider   = 0
 vim.g.loaded_python_provider = 0

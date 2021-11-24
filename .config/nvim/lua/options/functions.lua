@@ -14,11 +14,12 @@ _G.fold_func = function()
 
     local line_count = vim.v.foldend - vim.v.foldstart
 
-    local fold_str = string.format(
-        "%s {%s more lines}",
-        first_line,
-        line_count
-    )
+    local fold_str =
+        string.format(
+            "%s {%s more lines}",
+            first_line,
+            line_count
+        )
 
     return fold_str
 end

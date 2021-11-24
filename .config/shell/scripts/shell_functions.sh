@@ -1,75 +1,35 @@
 #!/bin/bash
 
-# Sources:
-#   1. on the usage of the 'test' keyword: https://stackoverflow.com/questions/17689511/what-does-ne-mean-in-bash
-#   2. https://unix.stackexchange.com/questions/112159/grep-from-the-end-of-a-file-to-the-beginning
-#   3. https://stackoverflow.com/questions/918886/how-do-i-split-a-string-on-a-delimiter-in-bash
-#   4. https://stackoverflow.com/questions/28878629/bash-script-variable-expansion-within-backtick-grep-regex-string
 
-
-# TODO fix jmp when path contains '~'
-jmp()
-{
-    # see sources 2 and 4
-    if test $# -ne 0
-    then
-        local prev=$( tac $HISTFILE | grep -m 1 "^$1[[:space:]]" )
-    else
-        local prev=$( tac $HISTFILE | head -n1 )
-    fi
-
-    # see source 3
-    IFS=' ' read -ra cmd <<< "$prev"
-
-    local jump_loc=${cmd[-1]}
-
-    if test jump_loc != '.'
-    then
-        builtin cd $jump_loc
-
-    else
-        printf "Destination is not valid!\n"
-    fi
-}
-
-
-n()
-{
-    local count=$( test $# -eq 0 && echo "1" || echo "$1" )
-
-    while test $count -gt 0
-    do
-        cd ..
-        let "count=count-1"
-    done
-}
-
-
-t()
-{
-    test -d $1 && builtin cd $1 && ls -1bAFX || nvim $1
-}
-
-
-
-
-# other
 cppath()
 {
-    local cptxt=$( test $# -ne 0 && echo "$(readlink -f $1)" || echo "$(pwd)" )
+    # copy just filename with -f
+    if test "$1" == "-f"; then
+        local cptxt=$2
 
-    if command -v xsel &> /dev/null
-    then
-       echo "$cptxt" | xsel -b
+    # copy full path to a file if no flags, but one arg
+    elif test $# -ne 0; then
+        local cptxt=$(readlink -f $1)
 
-    # elif command -v xclip &> /dev/null
-    # then
-    #    echo "$cptxt" | xclip
-
+    # copy pwd if no args at all
+    else
+        local cptxt=$(pwd)
     fi
 
-    printf "\"$cptxt\"\n copied to clipboard\n"
+    # check for existence of clipboard tool
+    if type xsel &> /dev/null; then
+
+        # copy to clipboard
+        echo "$cptxt" | xsel -b
+
+        printf "\n\"$cptxt\"\nhas been copied!\n"
+
+    else
+        printf "Copy not performed!\nPlease install a clipboard utility!\n"
+    fi
 }
+
+
 
 
 extract()
@@ -94,9 +54,43 @@ extract()
             *)           echo "\"$1\" is not a valid archive" ;;
         esac
     else
-        echo "\"$1\" is not a valid archive"
+        echo "\"$1\" is a directory, not a valid archive"
     fi
 }
+
+
+
+
+# draws jump locations from commands in
+# history. If a relative path without
+# a tilde is used and you are outside of
+# the rood dir that you conducted the mv
+# from, the location cannot be found
+jmp()
+{
+    # TODO teach to handle flags for cp
+    if test $# -ne 0
+    then
+        # gets the first item from history that matches arg
+        local prev=$( tac $HISTFILE | grep -m 1 "^$1[[:space:]]" )
+    else
+        # gets the last used mv or cp command
+        local prev=$( tac $HISTFILE\
+            | grep -m 1 "^mv[[:space:]]\|cp[[:space:]]" )
+    fi
+
+    # get location to jump to
+    local rel_path=$(cut -d ' ' -f 3 <<< $prev)
+
+    # expand tildes in path
+    local full_path="${rel_path/#\~/$HOME}"
+
+    echo $full_path
+
+    builtin cd $full_path
+}
+
+
 
 
 open()
@@ -104,7 +98,7 @@ open()
     if test -f $1
     then
         case $1 in
-            *.jpg| *.png| *.gif)                            sxiv -b $1 &            ;;&
+            *.jpg| *.png| *.gif)                            imv $1 &                ;;&
             *.pdf)                                          zathura --fork $1 &     ;;&
             *.doc| *.docx| *.odt| *.xls| *.xlsx| *.pptx)    libreoffice $1 &        ;;&
             *.mp4)                                          vlc $1 &                ;;&
@@ -114,18 +108,6 @@ open()
 }
 
 
-run()
-{
-    if test -f $1
-    then
-        case $1 in
-            *.sh)       sh "$@"        ;;
-            *.py)       python "$@"    ;;
-        esac
-    else
-        printf "\n\"$1\" is not a defined file type\n"
-    fi
-}
 
 
 seal()
@@ -143,4 +125,12 @@ seal()
         "1")    tar -czvf $filename.tar.gz "$@"   ;;
         "2")    zip -r -z $filename "$@" ;;
     esac
+}
+
+
+
+
+t()
+{
+    test -d $1 && builtin cd $1 && ls -1bAFX || nvim $1
 }

@@ -1,6 +1,5 @@
 -- mappings --
 --[[
-    Sources
     default mappings: https://hea-www.harvard.edu/~fine/Tech/vi.html
     opening urls: https://vi.stackexchange.com/questions/22459/gx-doesnt-open-the-url-and-complains-netrw-no-line-in-buffer/22505#22505
 ]]
@@ -27,7 +26,6 @@ vim.g.mapleader = 'm'
 --[[ utility bindings ]]--
 -- comments
 map( 'i', '<F2>', 'v:lua.send_comment()', expr )
-map( 'i', '<F14>', '- ', na )
 
 -- fold
 map( 'n', ';', 'za', na )
@@ -62,17 +60,17 @@ map( 'i', '<home>', '<esc>^a', na )
 -- toggle numbers
 map( 'n', '<C-n>', 'v:lua.num_toggle()', expr )
 
--- make '/' default to ripgrep
+-- make '/' default to custom ripgrep
 map( 'n', '/', ':LOOK ', na )
+
+-- undo to last save
+map( 'n', "<C-u>", "<cmd>earlier 1f<CR>", cmd )
 
 --[[
     open URLs, taken from source 1
     uses xdg-open shell command (!) to open word under cursor ( cWORD )
 ]]
 map( 'n', '<leader>u', "<cmd>!xdg-open <cWORD> &<CR><CR>", cmd )
-
--- write arrows
-map( 'i', '>>', "->", nore )
 
 -- buffers --
 map( 'n', "<C-t>", ":e ", na )

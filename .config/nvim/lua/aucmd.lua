@@ -25,17 +25,17 @@ cmd
 -- remember folds
 cmd
 [[
-    augroup remember_folds
+    augroup Views
         au!
         au BufWinLeave * :silent! mkview
-        au BufWinEnter * :silent! loadview | :1
+        au BufWinEnter * :silent! loadview
     augroup END
 ]]
 
 -- ft options
 cmd
 [[
-    augroup ft
+    augroup Ft
         au!
         au FileType c,python :set textwidth=78 | inoremap <buffer> !! != | match Error /\%81v.\+/
         au FileType gitcommit :set textwidth=72
@@ -48,7 +48,7 @@ cmd
 -- clear cmd line
 cmd
 [[
-    augroup cmd_msg_cls
+    augroup CmdMsgCl
         au!
         au CmdlineLeave * :call timer_start( 1500, { -> execute( "echo ' ' ", "" )})
     augroup END

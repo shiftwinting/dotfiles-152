@@ -58,14 +58,20 @@ open_news()
 
 print_pacman_update_time()
 {
-    pacman_mod_time=$(grep "\[PACMAN\] starting full system upgrade" /var/log/pacman.log | tail -1 | grep -oP '\[\K[^\]]+' | head -1)
+    pacman_mod_time=$(grep "\[PACMAN\] starting full system upgrade"\
+        /var/log/pacman.log | tail -1 | grep -oP '\[\K[^\]]+' | head -1)
+
+    human_readable=$(echo $pacman_mod_time |cut -d 'T' -f 1)
+
     current_utime=$(date '+%s')
     last_upgrade_utime=$(date '+%s' -d "$pacman_mod_time")
     time_diff=$(( $current_utime - $last_upgrade_utime ))
     day_diff=$(( $time_diff / 86400 ))
     hour_diff=$(( ($time_diff - 86400 * $day_diff) / 3600 ))
 
-    printf "\nLast pkgs update: ${day_diff} days, ${hour_diff} hours ago..."
+    printf "\nLast packages update:\n\n"
+    printf "    $human_readable\n"
+    printf "    ${day_diff} days, ${hour_diff} hours ago\n\n"
 }
 
 
