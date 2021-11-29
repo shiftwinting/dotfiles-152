@@ -6,7 +6,7 @@ local modules =
 {
    "options.init",
    "mappings.init",
-   "aucmd",
+   "aucmd.init",
    "plugs.init",
    "lsp"
 }

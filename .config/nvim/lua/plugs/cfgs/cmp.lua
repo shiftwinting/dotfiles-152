@@ -75,4 +75,4 @@ cmp.setup(
 
 
 -- autopairs integration
-require('nvim-autopairs').setup()
+-- require('nvim-autopairs').setup()

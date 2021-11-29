@@ -5,12 +5,13 @@
 local nvim_lsp  = require( "lspconfig" )
 
 
--- variables --
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
 -- set the path to the sumneko installation
-local server_dir        = '/home/j/.config/nvim/utils/lua-language-server'
+local server_dir        =  vim.fn.expand(vim.fn.stdpath "data".."/sumneko/")
 local sumneko_binary    = server_dir .. '/bin/Linux/lua-language-server'
 local sumneko_main      = server_dir .. '/main.lua'
 
@@ -20,7 +21,7 @@ table.insert( runtime_path, "lua/?/init.lua" )
 
 local servers =
 {
-    bashls = {},
+    -- bashls = {},
     clangd =
     {
         --[[
@@ -93,8 +94,7 @@ local function onAttach()
 end
 
 
--- enable snippets --
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 
 
 -- handlers --

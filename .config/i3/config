@@ -12,23 +12,6 @@ mouse_warping none
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 
-# gaps
-gaps inner 0
-gaps outer 0
-
-
-### programs to start ###
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-
-
-
 ### keybinds ###
 # To mimic this functionality outside of i3, you can use sxhkd
     # https://github.com/baskerville/sxhkd
@@ -50,7 +33,7 @@ bindsym $mod+space exec alacritty
 bindsym $mod+w kill
 
 
-# start dmenu (a program launcher)
+# start dmenu
 bindsym $mod+t exec --no-startup-id dmenu_run
 
 
@@ -134,10 +117,10 @@ bindsym $mod+a exec flameshot gui
 
 ### workspace settings ###
 
-set $left HDMI-1
-set $middle DVI-D-1
-set $right DP-1
-set $top DP-3
+set $left HDMI-A-0
+set $middle DVI-D-0
+set $right DisplayPort-0
+set $top DisplayPort-2
 
 # assign workspaces to specific screens
 workspace 1 output $left

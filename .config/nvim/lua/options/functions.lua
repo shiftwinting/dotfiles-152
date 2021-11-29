@@ -4,7 +4,7 @@
 ]]
 _G.fold_func = function()
 
-    local first_line =
+    local first_line_str =
         vim.api.nvim_buf_get_lines(
             0,
             vim.v.foldstart - 1,
@@ -12,13 +12,13 @@ _G.fold_func = function()
             true
         )[1]
 
-    local line_count = vim.v.foldend - vim.v.foldstart
+    local folded_line_count = vim.v.foldend - vim.v.foldstart
 
     local fold_str =
         string.format(
             "%s {%s more lines}",
-            first_line,
-            line_count
+            first_line_str,
+            folded_line_count
         )
 
     return fold_str

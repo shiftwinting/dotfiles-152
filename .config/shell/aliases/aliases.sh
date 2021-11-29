@@ -6,16 +6,15 @@ SCRIPTS="$CONF/shell/scripts"
 
 
 # temp aliases
-alias 450="goto $HOME/catalog/school/coursework/class_files/cs/450-parallel_programming/"
+alias 450="t $HOME/catalog/school/coursework/class_files/cs/450-parallel_programming/"
 
 # dirs
-alias class="goto $HOME/catalog/school/coursework/class_files"
-alias org="goto $HOME/catalog/personal/TODO/org"
-alias plugs="goto $HOME/.local/share/nvim/site/pack/packer/"
-alias shs="goto $SCRIPTS"
-alias texts=" goto $HOME/catalog/school/texts"
-alias vimrc="goto $CONF/nvim/lua"
-alias work="goto $HOME/catalog/"
+alias class="t $HOME/catalog/school/coursework/class_files"
+alias plugs="t $HOME/.local/share/nvim/site/pack/packer/"
+alias shs="t $SCRIPTS"
+alias texts=" t $HOME/catalog/school/texts"
+alias vimrc="t $CONF/nvim/lua"
+alias work="t $HOME/files/"
 
 # files - configuration
 alias aliases="nvim $CONF/shell/aliases/aliases.sh"
@@ -29,16 +28,15 @@ alias mirrors="sudo nvim /etc/pacman.d/mirrorlist"
 alias picomconf="nvim $CONF/picom.conf"
 alias sudoers="sudo EDITOR=nvim visudo"
 alias termconf="nvim $CONF/alacritty/alacritty.yml"
+alias xinitrc="nvim ~/.xinitrc"
 alias zathurarc="nvim $CONF/zathura/zathurarc"
 
 # files - other
 alias note="nvim $HOME/catalog/personal/note.txt"
-alias refile="nvim $HOME/catalog/personal/TODO/org/refile.org"
-alias todo="goto $HOME/catalog/personal/TODO/"
 
 # functions
 # TODO just use push and pop instead of ..
-alias ..="goto .."
+alias ..="t .."
 alias boottime="systemd-analyze && systemd-analyze blame"
 alias calc="python $SCRIPTS/calculator.py"
 alias ci="clear"

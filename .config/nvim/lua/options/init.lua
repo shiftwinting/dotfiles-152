@@ -16,6 +16,7 @@ local o             = vim.opt
 
 o.breakindent       = true
 o.breakindentopt    = "shift:-4"
+o.colorcolumn       = "-1"
 o.cindent           = true
 o.clipboard         = "unnamedplus"
 o.confirm           = true

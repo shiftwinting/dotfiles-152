@@ -2,17 +2,18 @@
 --  1. packer events: https://neovim.io/doc/user/autocmd.html#events
 
 
-require "impatient"
 require "plugs.disable"
 require "plugs.cfgs.global_cfgs"
+require "impatient"
 
-LSP_LANGS = { 'sh', 'c', "lua", "python" }
+local COMPILED_PATH = vim.fn.stdpath "cache".."/packer/packer_compiled.lua"
+local LSP_LANGS = { 'sh', 'c', "lua", "python" }
 
 
-return require( "packer" ).startup({ function( use )
+
+require "packer".startup({ function( use )
 
 -- base
-
     use "nathom/filetype.nvim"
 
     -- the functionality for this plugin will be
@@ -28,6 +29,8 @@ return require( "packer" ).startup({ function( use )
     {
         'hrsh7th/nvim-cmp',
         config = [[ require "plugs.cfgs.cmp" ]],
+        module = "cmp",
+        event  = "InsertEnter",
         requires =
         {
             { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
@@ -77,14 +80,13 @@ return require( "packer" ).startup({ function( use )
 
 
 -- functionality mods
+    vim.cmd "packadd! cfilter"
+
     use
     {
-        -- cannot be lazy-loaded
-        "p00f/godbolt.nvim",
-        config = require("godbolt").setup({})
+        "pedro757/indentInsert.nvim",
+         module = "indentInsert",
     }
-
-    use "pedro757/indentInsert.nvim"
 
     use
     {
@@ -154,12 +156,21 @@ return require( "packer" ).startup({ function( use )
     {
         "folke/trouble.nvim",
         config = [[ require "plugs.cfgs.trouble" ]],
-        event  = "QuickFixCmdPre"
+        cmd = "TroubleToggle"
     }
 
     use{ "bfrg/vim-cpp-modern", ft = 'c' }
 
     use "itchyny/vim-highlighturl"
+
+    use
+    {
+        use "lukas-reineke/virt-column.nvim",
+        require "virt-column".setup{
+            char = "│",
+            vim.cmd "highlight clear ColorColumn"
+        }
+    }
 
 
     -- other
@@ -168,14 +179,12 @@ return require( "packer" ).startup({ function( use )
 
 -- testing
 
-    -- TODO test this when we have the time to break LSP
-    -- "williamboman/nvim-lsp-installer",
-
 
     end,
 
     config =
     {
+        compile_path = COMPILED_PATH,
         display =
         {
             header_sym = '',
@@ -185,3 +194,11 @@ return require( "packer" ).startup({ function( use )
         }
     }
 })
+
+
+-- load plugins from chosen location
+if not vim.g.packer_compiled_loaded
+then
+    vim.cmd( string.format( 'source %s', COMPILED_PATH ))
+    vim.g.packer_compiled_loaded = true
+end

@@ -22,7 +22,6 @@ local nore  = { noremap = true }
 vim.g.mapleader = 'm'
 
 
-
 --[[ utility bindings ]]--
 -- comments
 map( 'i', '<F2>', 'v:lua.send_comment()', expr )

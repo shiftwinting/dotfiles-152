@@ -1,4 +1,4 @@
-require("trouble").setup {
+require("trouble").setup{
     height      = 7,
     action_keys =
     {

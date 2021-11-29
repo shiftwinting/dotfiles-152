@@ -1,59 +1,13 @@
 # bashrc
 
-#---------------------------------------------------------------
-# external sources
-CONF="/home/j/.config"
 
-. /usr/share/git/git-prompt.sh
-. $CONF/shell/scripts/shell_functions.sh
-. $CONF/shell/aliases/aliases.sh
-. $CONF/fzf/settings.sh
+#---------------------------------------------------------------
+# temp external sources
+
 
 
 #---------------------------------------------------------------
-# options and settings
-
-# default editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-
-# history
-export HISTFILE=$CONF/shell/shell_hist
-export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-export HISTTIMEFORMAT="%D  %I:%M:%S%P:  "
-
-# this adds texlab lsp to path
-export PATH=$PATH:/home/j/.cargo/bin/
-
-
-PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
-
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# turn off flow control
-stty -ixon
-
-shopt -s checkwinsize
-shopt -s extglob
-shopt -s histappend
-
-
-# prompt -------------------------------------------------------
-#   docs:
-#       1) Buggy bash history may be because of incorrectly escaped coloration
-#           see: https://unix.stackexchange.com/questions/28827/why-is-my-bash-prompt-getting-bugged-when-i-browse-the-history
-#       2) True color escape sequences:
-#           see https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
-
-
-# git vars
-GIT_PS1_SHOWDIRTYSTATE=true
-branch='$(__git_ps1)'
+# prompt
 
 # colors
 branch_bg='21;24;28'
@@ -68,3 +22,44 @@ prompt_bot="» "
 
 # prompt
 PS1="${prompt_top}${prompt_bot}"
+
+
+
+
+#---------------------------------------------------------------
+# permanent external sources
+CONF="/home/m/.config"
+
+. $CONF/shell/scripts/mmv.sh
+. $CONF/shell/scripts/shell_functions.sh
+. $CONF/shell/aliases/aliases.sh
+
+
+
+
+#---------------------------------------------------------------
+# options and settings
+
+# shell options
+shopt -s checkwinsize
+shopt -s extglob
+shopt -s histappend
+
+# history
+export HISTFILE=~/.cache/bash_history
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=
+export HISTFILESIZE=
+export HISTTIMEFORMAT="%D  %I:%M:%S%P:  "
+
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+# default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# turn off flow control
+stty -ixon

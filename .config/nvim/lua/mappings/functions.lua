@@ -84,21 +84,3 @@ vim.cmd
 ]]
 
 vim.cmd ":com -nargs=+ -complete=file_in_path -bar LOOK  cgetexpr LOOK(<f-args>)"
-
-
-
-
---[[
-    Align on equals sign with Neat -------------------------------------
-    Instructions:
-        1. highlight range in visual
-        2. Enter ex mode
-        3. Type Neat and hit enter
-    Future Plans: allow for optional/default args
-    Sources:
-        http://vimdoc.sourceforge.net/htmldoc/map.html#:command-completion
-        https://stackoverflow.com/questions/8964953/align-text-on-an-equals-sign-in-vim/51462785#51462785
-        https://stackoverflow.com/questions/10572996/passing-command-range-to-a-function/10573044#10573044
-        https://www.man7.org/linux/man-pages/man1/column.1.html
-]]
-vim.cmd ":com -range Neat :'<,'>! column -t -s= -o="
