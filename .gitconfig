@@ -1,0 +1,11 @@
+[user]
+    email = 134115@gmail.com
+    name = McAuley
+[commit]
+    template = /home/m/.config/git/commitmsg.txt
+    status = false
+[credential]
+    username = mcauley-penney
+    helper = cache --timeout=3000
+[init]
+    defaultBranch = main

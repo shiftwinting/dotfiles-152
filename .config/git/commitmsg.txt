@@ -1,0 +1,33 @@
+[]:
+
+# What:
+
+# Why:
+
+
+###########################################################################################################
+#
+# - Types of commits:
+#     - \"build\": build related changes, such as modifying dependencies
+#     - \"chore\": a code change that external user won't see, such as modifying .gitignore
+#     - \"docs\" : documentation related changes
+#     - \"feat\" : a new feature
+#     - \"fix\"  : a bug fix
+#     - \"init\" : project initialization
+#     - \"perf\" : performance improvements
+#     - \"refac\": for non-functional code quality changes
+#     - \"style\": stylistic changes
+#     - \"test\" : modifications to testing features
+#
+#
+# - Use keywords in subject to automatically modify issues
+#     -  close, closes, closed
+#     -  fix, fixes, fixed
+#     -  resolve, resolves, resolved
+#
+#     - format
+#         :<KEYWORD> <ISSUE #>
+#
+#             e.g.
+#
+#         :fixes #1033

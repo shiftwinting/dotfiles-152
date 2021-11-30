@@ -1,0 +1,223 @@
+/* userChrome conf */
+
+/* useful files
+ *    1. https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox
+ *    2. https://github.com/mohabaks/dotfiles/blob/master/mozilla/.mozilla/firefox/profile.default/chrome/userChrome.css
+ * */
+
+/* To enable the usage of userChrome in Firefox:
+ *    1. Search about:config in url bar
+ *    2. Search toolkit.legacyUserProfileCustomizations.stylesheets in page
+ *    3. Set to true
+ * */
+
+/* Items that may be changed with css but that can be changed in about:config
+ *    I have opted to use about:config to modify some of these features
+ *    for the sake of convenience. I will denote which ones I have chosen
+ *    to use and which ones I have simply discovered during research
+ *
+ *  I use:
+ *    1. remove rich search results: browser.urlbar.maxRichResults set to 0 (css for this can be found at the bottom of "useful files" #2)
+ *
+ *
+ *  I have found and not tested:
+ *    1. remove expanding url bar (source: https://www.reddit.com/r/firefox/comments/gwfn3l/new_working_method_to_disable_enlarging_address/ )
+ * */
+
+
+
+
+/* CSS */
+
+/* Must be first to be executed */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+/*** Miscellaneous modifications ***/
+
+/* Hides status panel */
+/*
+ * The status panel is the small box in
+ * the bottom left corner of the window
+ * that displays website connection
+ * information.
+ *
+ * source: https://stackoverflow.com/questions/37084010/how-to-hide-the-status-bar-showing-link-urls-in-firefox
+ *  see second answer, from Greg M.
+ * */
+#statuspanel {display:none!important;}
+
+
+
+
+/* Tab bar */
+/* removes tab bar completely */
+#tabbrowser-tabs {
+  visibility: collapse !important;
+}
+
+
+
+
+/** Buttons **/
+/* Remove Back button when there's nothing to go back to */
+#back-button[disabled="true"] { display: none; }
+
+/* Remove Forward button when there's nothing to go forward to */
+#forward-button[disabled="true"] { display: none; }
+
+
+
+
+/** Url bar **/
+
+/* Remove blue border around urlbar when focused */
+#nav-bar{
+    --toolbar-field-focus-border-color: transparent
+}
+
+
+/* Removes placeholder text from urlbar */
+/* This code was hard to find. I attempted
+ * to write it myself, to no avail. I'm not
+ * very skilled with css. There are a
+ * variety of codes on the mozilla forums
+ * that attempt to do the same thing but didn't
+ * work for me. If this doesn't work for you
+ * look at the forums and keep an eye out for
+ * the moderator named "cor-el".
+ *
+ * source: https://support.mozilla.org/en-US/questions/1293159
+ * */
+#urlbar *|input::placeholder {opacity:0 !important;}
+#urlbar *|input:focus::placeholder {opacity:0 !important}
+
+
+
+
+/* Remove magnifying glass identity icon */
+#identity-box[pageproxystate="invalid"]> #identity-icon {
+  display: none !important;
+}
+
+
+
+
+/* Removes header and original splitter from sidebar */
+#sidebar-header, #sidebar-box ~ #sidebar-splitter {
+  display: none;
+  padding-top: 6px;
+}
+
+
+
+
+/* remove the tabs at the top */
+#TabsToolbar-customization-target {visibility: collapse;}
+
+/* changes the top bar to match the area with the search bar */
+.titlebar-color {background-color: #2b2a33;}
+
+/* add padding at the top of the window buttons to make it match other windows */
+.titlebar-buttonbox-container {padding-top: 6px;}
+
+
+
+
+/* findbar
+ * https://www.reddit.com/r/FirefoxCSS/comments/r2elve/compact_findbar/
+ * */
+.browserContainer {
+  position: relative !important;
+}
+
+.findbar-highlight.findbar-button.tabbable,
+.findbar-match-diacritics.findbar-button.tabbable,
+.findbar-highlight.findbar-button.tabbable,
+.findbar-entire-word.findbar-button.tabbable {
+  display: none !important;
+}
+
+#statuspanel-inner {
+  width: unset !important;
+}
+
+findbar {
+    -moz-box-ordinal-group: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: -1px 20px 0 0 !important;
+    border: 1px solid var(--chrome-content-separator-color) !important;
+    border-top: 0 !important;
+    background-color: var(--toolbar-bgcolor) !important;
+    background-image: none !important;
+    z-index: 1002 !important;
+    display: flex !important;
+}
+
+#main-window[inFullscreen] findbar{
+    margin-top: 0 !important;
+}
+
+findbar .findbar-container,
+findbar .close-icon{
+    pointer-events: auto;
+}
+
+.findbar-highlight,
+.findbar-case-sensitive {
+    padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+.findbar-highlight .toolbarbutton-text,
+.findbar-case-sensitive > .toolbarbutton-text,
+.findbar-match-diacritics > .toolbarbutton-text {
+    display: none !important;
+}
+
+.findbar-highlight:after,
+.findbar-case-sensitive:after,
+.findbar-match-diacritics:after {
+    display: -moz-box !important;
+}
+
+.findbar-highlight:after {
+    content: "\00a0\00a0\00a0\00a0";
+}
+
+.findbar-case-sensitive:after {
+    content: "Aa" !important;
+}
+
+.findbar-match-diacritics:after {
+    content: "eê" !important;
+}
+.found-matches{
+    -moz-box-ordinal-group: 0 !important;
+    margin: 0 8px 0 0 !important;
+}
+
+.findbar-find-status{
+    display: none !important;
+}
+.findbar-container,
+.findbar-closebutton{
+    vertical-align: middle !important;
+}
+
+.findbar-container checkbox.findbar-match-diacritics.tabbable,
+.findbar-container checkbox.findbar-case-sensitive.tabbable,
+checkbox.findbar-case-sensitive tabbable,
+checkbox.findbar-highlight.tabbable,
+checkbox.findbar-entire-word.tabbable{
+    display: none !important;
+}
+
+.findbar-find-previous{
+    margin-left: -60px !important;
+}
+
+findbar{
+    margin-top:20px !important
+}

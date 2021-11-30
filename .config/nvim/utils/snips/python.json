@@ -1,0 +1,20 @@
+{
+
+    "function template":
+    {
+        "prefix": ["fann"],
+        "body":
+        [
+            "$LINE_COMMENT--------------------------------------------------------------------------- ",
+            "$LINE_COMMENT Name   : $1",
+            "$LINE_COMMENT Context:",
+            "$LINE_COMMENT Process:",
+            "$LINE_COMMENT Params :",
+            "$LINE_COMMENT Output :",
+            "$LINE_COMMENT Notes  :",
+            "$LINE_COMMENT Docs   :",
+            "$LINE_COMMENT--------------------------------------------------------------------------- "
+        ],
+        "description": "Annotation discussing function info"
+    }
+}

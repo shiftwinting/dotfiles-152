@@ -1,0 +1,46 @@
+# ██╗███╗   ██╗██████╗ ██╗   ██╗████████╗██████╗  ██████╗
+# ██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝██╔══██╗██╔════╝
+# ██║██╔██╗ ██║██████╔╝██║   ██║   ██║   ██████╔╝██║     
+# ██║██║╚██╗██║██╔═══╝ ██║   ██║   ██║   ██╔══██╗██║     
+# ██║██║ ╚████║██║     ╚██████╔╝   ██║   ██║  ██║╚██████╗
+# ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝    ╚═╝   ╚═╝  ╚═╝ ╚═════╝
+
+# useful files
+#   1. http://tiswww.case.edu/php/chet/readline/readline.html#SEC10
+#   2. https://wiki.archlinux.org/index.php/Readline
+
+
+# present at install
+set input-meta on
+set convert-meta off
+set output-meta on 
+set bell-style none
+
+
+### custom ###
+
+## vi mode ##
+#   see https://wiki.archlinux.org/index.php/Readline
+set editing-mode vi
+
+
+## settings ##
+
+# turn off complete case sensitivity 
+set completion-ignore-case on
+
+set print-completions-horizontally off
+
+set skip-completed-text on
+
+# single keystroke autocompletes if possible and shows suggestions if not 
+set show-all-if-unmodified on
+
+# append character to indicate type of item
+set visible-stats on
+
+
+## mappings ##
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward

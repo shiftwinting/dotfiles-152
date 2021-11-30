@@ -1,0 +1,27 @@
+{
+    "basic annotation":
+    {
+        "prefix": ["ann"],
+        "body":
+        [
+            "--[[",
+            "    $1",
+            "]]"
+        ],
+        "description": "General annotation template"
+    },
+
+    "function annotation":
+    {
+        "prefix": ["fann"],
+        "body":
+        [
+            "--[[",
+            "    @name  :$1",
+            "    @param :",
+            "    @return:",
+            "]]"
+        ],
+        "description": "Annotation discussing function info"
+    }
+}
