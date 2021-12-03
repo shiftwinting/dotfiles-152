@@ -1,0 +1,166 @@
+/* userChrome conf */
+
+/* To use userChrome:
+ *    1. Set toolkit.legacyUserProfileCustomizations.stylesheets to true
+ *       - we have this set in user.js already
+ *    2. mkdir chrome, mv userChrome.css chrome, mv chrome <ff profile>
+ * */
+
+
+
+
+/* Must be first to be executed */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+
+/* Hides status panel
+ *
+ * The status panel is the small box in
+ * the bottom left corner of the window
+ * that displays website connection
+ * information.
+ *
+ * source: https://stackoverflow.com/questions/37084010/how-to-hide-the-status-bar-showing-link-urls-in-firefox
+ * see second answer, from Greg M.
+ * */
+#statuspanel {display:none!important;}
+
+
+
+
+/* Buttons
+ * Remove Back button when there's nothing to go back to */
+#back-button[disabled="true"] { display: none; }
+
+/* Remove Forward button when there's nothing to go forward to */
+#forward-button[disabled="true"] { display: none; }
+
+
+
+
+/** bar
+ * removes tab bar completely */
+#tabbrowser-tabs{ visibility: collapse !important; }
+
+/* Remove blue border around urlbar when focused */
+#nav-bar{ --toolbar-field-focus-border-color: transparent }
+
+
+/* makes URL placeholder text transparent
+ * source: https://support.mozilla.org/en-US/questions/1293159
+ * */
+#urlbar *|input::placeholder {opacity:0 !important;}
+#urlbar *|input:focus::placeholder {opacity:0 !important}
+
+
+/* Remove magnifying glass identity icon */
+#identity-box[pageproxystate="invalid"]> #identity-icon {
+    display: none !important;
+}
+
+
+/* Removes header and original splitter from sidebar */
+#sidebar-header, #sidebar-box ~ #sidebar-splitter {
+    display: none;
+}
+
+
+
+
+/* findbar
+ * https://www.reddit.com/r/FirefoxCSS/comments/r2elve/compact_findbar/
+ * */
+.browserContainer {
+  position: relative !important;
+}
+
+.findbar-highlight.findbar-button.tabbable,
+.findbar-match-diacritics.findbar-button.tabbable,
+.findbar-highlight.findbar-button.tabbable,
+.findbar-entire-word.findbar-button.tabbable {
+  display: none !important;
+}
+
+#statuspanel-inner {
+  width: unset !important;
+}
+
+findbar {
+    -moz-box-ordinal-group: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    margin: -1px 50px 0 0 !important;
+    border: 1px solid var(--chrome-content-separator-color) !important;
+    border-top: 0 !important;
+    background-color: var(--toolbar-bgcolor) !important;
+    background-image: none !important;
+    z-index: 1002 !important;
+    display: flex !important;
+}
+
+#main-window[inFullscreen] findbar{
+    margin-top: 0 !important;
+}
+
+findbar .findbar-container,
+findbar .close-icon{
+    pointer-events: auto;
+}
+
+.findbar-highlight,
+.findbar-case-sensitive {
+    padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+.findbar-highlight .toolbarbutton-text,
+.findbar-case-sensitive > .toolbarbutton-text,
+.findbar-match-diacritics > .toolbarbutton-text {
+    display: none !important;
+}
+
+.findbar-highlight:after,
+.findbar-case-sensitive:after,
+.findbar-match-diacritics:after {
+    display: -moz-box !important;
+}
+
+.findbar-highlight:after {
+    content: "\00a0\00a0\00a0\00a0";
+}
+
+.findbar-case-sensitive:after {
+    content: "Aa" !important;
+}
+
+.findbar-match-diacritics:after {
+    content: "eê" !important;
+}
+.found-matches{
+    -moz-box-ordinal-group: 0 !important;
+    margin: 0 8px 0 0 !important;
+}
+
+.findbar-find-status{
+    display: none !important;
+}
+.findbar-container,
+.findbar-closebutton{
+    vertical-align: middle !important;
+}
+
+.findbar-container checkbox.findbar-match-diacritics.tabbable,
+.findbar-container checkbox.findbar-case-sensitive.tabbable,
+checkbox.findbar-case-sensitive tabbable,
+checkbox.findbar-highlight.tabbable,
+checkbox.findbar-entire-word.tabbable{
+    display: none !important;
+}
+
+.findbar-find-previous{
+    margin-left: -60px !important;
+}
+
+findbar{
+    margin-top:30px !important
+}

@@ -1,0 +1,25 @@
+[user]
+    name  = McAuley Penney
+    email = 134115@gmail.com
+
+[commit]
+    template = /home/m/.config/git/commitmsg.txt
+    status   = false
+
+[credential]
+    username = mcauley-penney
+    helper   = cache --timeout 10800
+    helper   = /usr/bin/pass-git-helper
+
+[init]
+    defaultBranch = main
+
+[alias]
+    # TODO design these around workflow
+    aliases  = "!git config -l | grep ^alias | cut -c 7- | sort"
+    cfgs     = "config --list --show-origin --show-scope"
+    cl       = clone
+    st       = status
+    rebase   = "rebase -i HEAD~2"
+    # uncommit = "reset --soft HEAD~2"
+    unstage  = "restore --staged"

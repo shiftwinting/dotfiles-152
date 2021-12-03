@@ -1,0 +1,3924 @@
+#1638048420
+nvim postchroot.sh 
+#1638048420
+nvim prechroot.sh 
+#1638048420
+nvim exit_chroot.sh 
+#1638048420
+nvim postchroot.sh 
+#1638048420
+cd ../postinstall/
+#1638048420
+nvim postinstall.sh 
+#1638048420
+ufw default deny
+#1638048420
+sudo su
+#1638048420
+pacman -S i3
+#1638048420
+sudo pacman -S i3
+#1638048420
+git clone https://www.github/McAuleyPenney/dotfiles
+#1638048420
+git clone https://github/McAuleyPenney/dotfiles
+#1638048420
+git clone https://github.com/McAuleyPenney/dotfiles
+#1638048420
+ping gnu.org
+#1638048420
+git clone https://github.com/McAuleyPenney/dotfiles
+#1638048420
+links https://github.com/McAuleyPenney
+#1638048420
+pacman -S links
+#1638048420
+sudo pacman -S links
+#1638048420
+links https://github.com/McAuleyPenney
+#1638048420
+nvim .xinitrc
+#1638048420
+ls -a
+#1638048420
+sudo pacman -S xinit-xorg
+#1638048420
+sudo pacman -S xorg-xinit
+#1638048420
+install xorg
+#1638048420
+install x
+#1638048420
+pacman -S xorg
+#1638048420
+sudo pacman -S xorg
+#1638048420
+sudo pacman -S amdgpu
+#1638048420
+sudo pacman -S xf86-video-amdgpu
+#1638048420
+ls -a
+#1638048420
+reboot
+#1638048420
+cls
+#1638048420
+cd /etc/
+#1638048420
+cd X11/
+#1638048420
+cp xinit/ ~
+#1638048420
+cd xinit/
+#1638048420
+cp xinitrc ~
+#1638048420
+nvim xinitrc 
+#1638048420
+pacman -S discord
+#1638048420
+sudo pacman -S discord
+#1638048420
+ping gnu.org
+#1638048420
+nvim /etc/iwd/main.conf 
+#1638048420
+sudo nvim /etc/iwd/main.conf 
+#1638048420
+mv xinitrc .xinitrc 
+#1638048420
+which i3
+#1638048420
+which alacritty
+#1638048420
+reboot
+#1638048462
+cd .config/i3/
+#1638048465
+nvim config 
+#1638053965
+pacman -S dmenu
+#1638053968
+sudo pacman -S dmenu
+#1638053998
+git clone https://www.github.com/McAuleyPenney/dotfiles
+#1638054008
+mv dotfiles/ ..
+#1638054010
+cd ../dotfiles/
+#1638054020
+..
+#1638054021
+cd ..
+#1638054028
+cd dotfiles/
+#1638054030
+cd ..
+#1638054033
+cd dotfiles/
+#1638054034
+ls -a
+#1638054050
+ls -a
+#1638054058
+cd /etc/
+#1638054064
+ls | grep inputrc
+#1638054070
+sudo nvim inputrc 
+#1638054145
+cd ~/.config/
+#1638054148
+cd dotfiles/
+#1638054150
+ls -a
+#1638054155
+mv .bash* ~
+#1638054165
+mv .xinitrc .Xresources ~
+#1638054168
+cd 
+#1638054176
+nvim .bashrc 
+#1638054205
+cd .config/dotfiles/
+#1638054207
+ls -a
+#1638054217
+cd other/
+#1638054225
+sudo cp inputrc /etc/
+#1638054230
+ir
+#1638054235
+cd ..
+#1638054245
+cp -r * ..
+#1638054247
+cd ..
+#1638054253
+ls -a
+#1638054265
+cd ..
+#1638054268
+ls -a
+#1638054270
+cd dotfiles/
+#1638054274
+rm -r other/
+#1638054278
+mv * ..
+#1638054284
+cd ..
+#1638054287
+rm -r i3/
+#1638054293
+cd dotfiles/
+#1638054296
+mv i3/ ..
+#1638054300
+cd ..
+#1638054320
+cd shell/
+#1638054328
+touch shell_hist
+#1638054358
+cd
+#1638054361
+cd .config/
+#1638054361
+ls
+#1638054375
+nvim ~/.bashrc
+#1638054385
+clear
+#1638054386
+reload
+#1638054394
+. ~/.bashrc
+#1638054395
+ls
+#1638054396
+ir
+#1638054398
+ci
+#1638054399
+ls
+#1638054400
+ci
+#1638054400
+ir
+#1638054411
+termconf
+#1638054421
+clear
+#1638054422
+ls
+#1638054426
+reboot
+#1638054480
+alias
+#1638054482
+clear
+#1638054492
+t .config/i3/config 
+#1638054544
+clear
+#1638054545
+reload
+#1638054554
+clear
+#1638054564
+cd .config/
+#1638054566
+cd i3/
+#1638054568
+t config 
+#1638054592
+t
+#1638054597
+t .xinitrc 
+#1638054621
+cd /
+#1638054622
+ls
+#1638054624
+cd arch_installer/
+#1638054626
+clear
+#1638054627
+ls
+#1638054630
+cd postinstall/
+#1638054632
+is
+#1638054634
+ir
+#1638054635
+t postinstall.sh 
+#1638054661
+git clone https://aur.archlinux.org/yay.git ~/.config/yay
+#1638054673
+jmp
+#1638054680
+cd ~/.config/yay/
+#1638054681
+ls
+#1638054686
+makepkg -si
+#1638054717
+cd /arch_installer/postinstall/
+#1638054720
+t postinstall.sh 
+#1638054761
+yay -S https://aur.archlinux.org/dina-font-otb.git https://aur.archlinux.org/terminus-font-ll2-td1.git
+#1638054812
+clear
+#1638054908
+yay -S https://aur.archlinux.org/packages/terminus-font-ll2-td1/
+#1638054966
+uninstall yay
+#1638054969
+clear
+#1638054972
+uninstall go
+#1638054974
+clear
+#1638054992
+cd 
+#1638054994
+cd .config/
+#1638054995
+ls
+#1638054998
+mkdir fonts
+#1638054999
+cd fonts/
+#1638055002
+git clone https://aur.archlinux.org/terminus-font-ll2-td1.git
+#1638055011
+ls
+#1638055012
+cd terminus-font-ll2-td1/
+#1638055013
+ls
+#1638055018
+mkpkg -si
+#1638055046
+clear
+#1638055048
+ls
+#1638055051
+clear
+#1638055051
+ls
+#1638055063
+cd /arch_installer/
+#1638055064
+ls
+#1638055068
+cd postinstall/postinstall.sh 
+#1638055071
+t postinstall/postinstall.sh 
+#1638055088
+clear
+#1638055089
+ls
+#1638055092
+cd ~/.config/
+#1638055092
+ls
+#1638055094
+cd fonts/
+#1638055095
+ls
+#1638055099
+https://aur.archlinux.org/dina-font-otb.git 
+#1638055103
+git clone https://aur.archlinux.org/dina-font-otb.git 
+#1638055109
+ls
+#1638055111
+cd dina-font-otb/
+#1638055112
+ls
+#1638055117
+mkpkg -si
+#1638055130
+install fonttosfnt
+#1638055179
+clone https://aur.archlinux.org/fonttosfnt-git.git
+#1638055183
+git clone https://aur.archlinux.org/fonttosfnt-git.git
+#1638055187
+cd fonttosfnt-git/
+#1638055190
+mkpkg -si
+#1638055201
+clear
+#1638055202
+ls
+#1638055207
+mkpkg
+#1638055212
+clear
+#1638055213
+ls
+#1638055217
+..
+#1638055218
+ls
+#1638055226
+cd ..
+#1638055227
+ls
+#1638055229
+mkpkg
+#1638055233
+clear
+#1638055234
+ls
+#1638055235
+..
+#1638055236
+cd ..
+#1638055239
+ls
+#1638055240
+cd ..
+#1638055241
+ls
+#1638055244
+rm -r fonts/
+#1638055245
+ls
+#1638055246
+clear
+#1638055247
+ls
+#1638055251
+bashrc
+#1638055258
+clear
+#1638055259
+ls
+#1638055260
+cd shell/
+#1638055261
+ls
+#1638055265
+t shell_hist 
+#1638055270
+vimrc
+#1638055274
+t scripts/
+#1638055277
+t shell_functions.sh 
+#1638055284
+rm change_theme.sh 
+#1638055289
+update
+#1638055294
+clear
+#1638055295
+ls
+#1638055297
+t shell_functions.sh 
+#1638055307
+aliases
+#1638055321
+vimrc
+#1638055326
+cd ~/.config/
+#1638055327
+ls
+#1638055330
+cd nvim/
+#1638055330
+ls
+#1638055333
+ir
+#1638055373
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#1638055376
+ls
+#1638055380
+cd lua/plugs/init.lua 
+#1638055384
+t lua/plugs/init.lua 
+#1638055433
+ls
+#1638055435
+t init.lua 
+#1638055451
+clear
+#1638055451
+ls
+#1638055455
+t lua/plugs/init.lua 
+#1638055528
+t init.lua 
+#1638055542
+clear
+#1638055543
+ls
+#1638055546
+t lua/plugs/init.lua 
+#1638055582
+t clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#1638055592
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#1638055611
+ir
+#1638055613
+t init.lua 
+#1638055628
+install xsel
+#1638055632
+clear
+#1638055632
+ls
+#1638055639
+vimrc
+#1638055642
+t lua/plugs/init.lua 
+#1638055692
+ci
+#1638055692
+ir
+#1638055694
+..
+#1638055696
+cd ..
+#1638055700
+t nvim/init.lua 
+#1638055718
+t nvim/lua/plugs/
+#1638055720
+ci
+#1638055722
+ls
+#1638055723
+ir
+#1638055724
+t init.lua 
+#1638055756
+ci
+#1638055756
+t init.lua 
+#1638055762
+clear
+#1638055762
+ls
+#1638055764
+t cfgs/
+#1638055765
+t cmp.lua 
+#1638055779
+clear
+#1638055779
+ls
+#1638055781
+cd ..
+#1638055785
+..
+#1638055786
+cd ..
+#1638055788
+ir
+#1638055792
+t aucmd.lua 
+#1638055804
+ci
+#1638055804
+ir
+#1638055812
+t plugs/init.lua 
+#1638055824
+ci
+#1638055833
+bashrc
+#1638055839
+vimrc
+#1638055843
+cd .config/nvim/
+#1638055844
+ls
+#1638055846
+t lua/
+#1638055848
+t lsp.lua 
+#1638055858
+ci
+#1638055915
+aliases
+#1638055922
+bashrc
+#1638055937
+cd .config/nvim/lua/
+#1638055938
+ir
+#1638055939
+t lsp.lua 
+#1638055947
+bashrc
+#1638055963
+aliases
+#1638056000
+reload
+#1638056002
+vimrc
+#1638056003
+ir
+#1638056011
+t plugs/
+#1638056012
+t init.lua 
+#1638056032
+ci
+#1638056037
+t cfgs/cmp.lua 
+#1638056054
+clear
+#1638056054
+ls
+#1638056056
+ir
+#1638056057
+t init.lua 
+#1638056071
+plugs
+#1638056074
+t start/
+#1638056077
+t cacophony.nvim/
+#1638056078
+t colors/
+#1638056079
+t cacophony.lua 
+#1638056123
+ci
+#1638056123
+ir
+#1638056132
+vimrc
+#1638056139
+t plugs/init.lua 
+#1638056143
+t plugs/
+#1638056144
+t init.lua 
+#1638056215
+xinit
+#1638056233
+clear
+#1638056161
+aliases
+#1638056236
+reload
+#1638056240
+xinitrc
+#1638056264
+ci
+#1638056264
+ir
+#1638056266
+vimrc
+#1638056268
+t mappings/
+#1638056269
+t functions.lua 
+#1638056279
+ir
+#1638056292
+termconf
+#1638056415
+clear
+#1638056415
+ls
+#1638056418
+fonts
+#1638056420
+lsfonts
+#1638056439
+clear
+#1638056440
+ls
+#1638056450
+xinitrc
+#1638056452
+reload
+#1638056453
+xinitrc
+#1638056460
+install xrandr
+#1638056468
+which xrandr
+#1638056472
+xinitrc
+#1638056511
+install xscreensaver
+#1638056526
+reboot
+#1638056280
+t init.lua 
+#1638056569
+ir
+#1638056574
+xrandr
+#1638056595
+xrandr > screens.txt
+#1638056631
+cd .config/
+#1638056632
+ls
+#1638056635
+git clone https://github.com/neovim/neovim.git
+#1638056697
+cd neovim/
+#1638056697
+ls
+#1638056709
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638056709
+sudo make install
+#1638056715
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638056724
+clear
+#1638056724
+ls
+#1638056729
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638056743
+install cmake
+#1638056653
+xinitrc 
+#1638056760
+t screens.txt 
+#1638056775
+rm -r screens.txt 
+#1638056809
+cl
+#1638056811
+ir
+#1638056751
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638056827
+install unzip
+#1638056838
+rm -r .bash_history 
+#1638056839
+ci
+#1638056840
+ir
+#1638056847
+t .Xresources 
+#1638056850
+clear
+#1638056850
+ls
+#1638056831
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638056935
+sudo make install
+#1638056939
+..
+#1638056941
+rm -r neovim/
+#1638056943
+clear
+#1638056946
+uninstall neovim
+#1638056957
+clear
+#1638056854
+xinitrc
+#1638056959
+ci
+#1638056960
+xinitrc
+#1638056973
+git clone https://github.com/neovim/neovim.git
+#1638060019
+ls
+#1638060021
+cd neovim/
+#1638060021
+ls
+#1638060071
+ls
+#1638060029
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+#1638060269
+sudo make install
+#1638060406
+xinitrc
+#1638060414
+clear
+#1638060416
+clear
+#1638060417
+ls
+#1638060418
+cd ..
+#1638060420
+rm -r neovim/
+#1638060421
+cler
+#1638060423
+ri
+#1638060423
+ci
+#1638060427
+xinitrc
+#1638060473
+xinitrc
+#1638060486
+reboot
+#1638060550
+xrandr
+#1638060615
+reboot
+#1638060538
+xinitrc
+#1638060682
+xrdb -merge $HOME/.Xresources 
+#1638060687
+xinitrc
+#1638060774
+ir
+#1638060784
+ci
+#1638060810
+ir
+#1638060812
+vimrc
+#1638060814
+t options/init.lua 
+#1638060881
+ci
+#1638060882
+t options/init.lua 
+#1638060898
+ci
+#1638060905
+termconf
+#1638061001
+cppath .Xresources 
+#1638061019
+ci
+#1638061080
+cd /usr/share/fonts/
+#1638061081
+ls
+#1638061085
+cd misc/
+#1638061086
+ls
+#1638060967
+xinitrc
+#1638061228
+clear
+#1638061228
+ls
+#1638061234
+vimrc
+#1638061246
+..
+#1638061247
+t init.lua 
+#1638061254
+ci
+#1638061255
+ir
+#1638061256
+t init.lua 
+#1638061263
+ci
+#1638061300
+fc-list
+#1638061315
+fc-list | grep Dina
+#1638061323
+termconf
+#1638061429
+ci
+#1638061430
+termconf
+#1638061453
+plugs
+#1638061458
+vimrc
+#1638061459
+t plugs/init.lua 
+#1638061498
+ci
+#1638061499
+ir
+#1638061502
+bashrc
+#1638061505
+xinitrc
+#1638061508
+ci
+#1638061508
+xinitrc
+#1638061514
+bashrc
+#1638061517
+clear
+#1638061518
+ls
+#1638061572
+t
+#1638061574
+t .Xresources 
+#1638061587
+xrdb -merge $HOME/.Xresources 
+#1638061592
+xrdb -merge .Xresources 
+#1638061621
+clear
+#1638061623
+bashrc
+#1638061647
+ci
+#1638061654
+t .config/
+#1638061654
+ls
+#1638061659
+t shell/
+#1638061661
+t aliases/
+#1638061663
+t aliases.sh 
+#1638061679
+ci
+#1638061679
+ir
+#1638061680
+..
+#1638061683
+t git/
+#1638061685
+t
+#1638061691
+clear
+#1638061691
+ls
+#1638061693
+todo
+#1638061706
+vimrc
+#1638061725
+todo
+#1638061732
+ci
+#1638061709
+t mappings/functions.lua 
+#1638061821
+todo
+#1638061839
+aliases
+#1638061852
+ci
+#1638061854
+vimrc
+#1638061856
+t plugs/init.lua 
+#1638061882
+vimrc
+#1638061883
+t options/init.lua 
+#1638062036
+ci
+#1638062037
+t options/init.lua 
+#1638062134
+ls
+#1638062141
+install ripgrep
+#1638062149
+vimrc
+#1638062211
+aliases
+#1638062227
+note
+#1638062151
+t options/init.lua 
+#1638062268
+ci
+#1638062269
+ir
+#1638062272
+t lsp.lua 
+#1638062275
+ci
+#1638062276
+ir
+#1638062426
+ri
+#1638062428
+ir
+#1638062828
+t options/init.lua 
+#1638062838
+ci
+#1638062840
+t options/init.lua 
+#1638062849
+clear
+#1638062849
+ls
+#1638062863
+shs
+#1638062865
+t mmv.sh 
+#1638063088
+clear
+#1638063088
+ls
+#1638063093
+t
+#1638063097
+mkdir test
+#1638063099
+t te
+#1638063101
+t test/
+#1638063103
+clear
+#1638063103
+ls
+#1638063109
+ir
+#1638063115
+mkdir bot
+#1638063121
+shs
+#1638063184
+ir
+#1638063186
+touch test
+#1638063188
+mmv test 
+#1638063123
+t mmv.sh 
+#1638063200
+clear
+#1638063200
+ls
+#1638063202
+ci
+#1638063202
+ir
+#1638063205
+mmv *
+#1638063239
+vimrc
+#1638063241
+t options/init.lua 
+#1638063253
+ci
+#1638063223
+bashrc
+#1638063258
+reload
+#1638063259
+t
+#1638063262
+t test/
+#1638063265
+mmv test 
+#1638063276
+ls
+#1638063279
+ci
+#1638063279
+ir
+#1638063281
+rm -r *
+#1638063282
+ci
+#1638063282
+ir
+#1638063291
+shs
+#1638063464
+install discord
+#1638063499
+ci
+#1638063584
+clear
+#1638063585
+ls
+#1638063292
+t mmv.sh 
+#1638063690
+t
+#1638063692
+t test/
+#1638063694
+mkdir bot
+#1638063700
+mkdir test
+#1638063708
+touch test/testfile
+#1638063711
+mmv test/
+#1638063725
+shs
+#1638063727
+t mmv.sh 
+#1638063865
+t ~/.config/
+#1638063870
+t
+#1638063889
+mkdir dwnlds files media
+#1638063899
+mkdir dwnlds/outgoing media/vids media/pics
+#1638063900
+ci
+#1638063900
+ir
+#1638063907
+rm -r test/
+#1638063909
+ci
+#1638063909
+ir
+#1638063911
+t .config/
+#1638063915
+t user-dirs.dirs 
+#1638063998
+xdg-user-dirs-update
+#1638064001
+..
+#1638064017
+rm -r Desktop/ Documents/ Downloads/ Music/ Pictures/ Public/ Templates/ Videos/
+#1638064018
+ls
+#1638064020
+clear
+#1638064021
+ls
+#1638064023
+ir
+#1638064033
+t files/
+#1638064085
+mkdir nonwork
+#1638064088
+clear
+#1638064088
+ls
+#1638064089
+t nonwork/
+#1638064106
+git clone https://github.com/McAuleyPenney/mmv.git
+#1638064137
+ir
+#1638064138
+t mmv/
+#1638064151
+cp ~/.config/shell/scripts/mmv.sh .
+#1638064153
+t mmv.sh 
+#1638064169
+git add .
+#1638064172
+git status
+#1638064179
+git commit
+#1638064468
+t
+#1638064471
+t .gitconfig 
+#1638064517
+work
+#1638064521
+aliases
+#1638064570
+reload
+#1638064571
+ci
+#1638064572
+ir
+#1638064573
+files
+#1638064578
+t nonwork/
+#1638064579
+t mmv/
+#1638064581
+git commit
+#1638064620
+shs
+#1638064620
+..
+#1638064624
+t git/
+#1638064630
+cppath commitmsg.txt 
+#1638064649
+git config --global commit.template git commitmsg.txt 
+#1638064651
+ci
+#1638064652
+t
+#1638064654
+t .gitconfig 
+#1638064670
+ci
+#1638064672
+t .config/
+#1638064674
+t git/
+#1638064678
+cppath commitmsg.txt 
+#1638064688
+git config --global commit.template /home/m/.config/git/commitmsg.txt
+#1638064691
+ci
+#1638064691
+ir
+#1638064697
+t commitmsg.txt 
+#1638064794
+ci
+#1638065444
+t
+#1638065446
+t .gitconfig 
+#1638065472
+git config --global commit.status false
+#1638065474
+t .gitconfig 
+#1638065476
+ci
+#1638065516
+ir
+#1638065547
+git config --global credential.username "mcauley-penney"
+#1638065550
+t .gitconfig 
+#1638065552
+ci
+#1638065569
+t .config/
+#1638065572
+t git/
+#1638065578
+touch pat.txt
+#1638065580
+t pat.txt 
+#1638065826
+git config --global alias.commit com
+#1638066372
+enable pipewire.service
+#1638066379
+which pipewire
+#1638066414
+aliases
+#1638066580
+uninstall pipewire
+#1638066587
+install also
+#1638066588
+install alsa
+#1638066661
+install pulseaudio-alsa
+#1638066667
+clear
+#1638066670
+install alsa-utils
+#1638066709
+mixer
+#1638066716
+uninstall alsa-utils
+#1638066721
+install pulsemixer
+#1638066724
+mixer
+#1638066734
+start pulseaudio.service
+#1638066737
+reboot
+#1638066811
+ir
+#1638066875
+start pulseaudio.socket
+#1638066882
+start pulseaudio.service
+#1638066886
+enable pulseaudio.service
+#1638066905
+install pulseaudio
+#1638066910
+install pulseaudio-alsa
+#1638066917
+clear
+#1638066918
+ls
+#1638066920
+start pulseaudio.service
+#1638066923
+ci
+#1638066948
+xinitrc
+#1638067003
+mixer
+#1638067042
+i3conf
+#1638067080
+xinitrc
+#1638067173
+ir
+#1638067174
+i3conf
+#1638067186
+install flameshot peek
+#1638067199
+i3conf
+#1638067258
+ci
+#1638067279
+xinitrc
+#1638067333
+ci
+#1638067512
+vimrc
+#1638067514
+t plugs/init.lua 
+#1638068065
+ci
+#1638068066
+t plugs/init.lua 
+#1638068101
+ci
+#1638068102
+t plugs/init.lua 
+#1638068156
+ci
+#1638068157
+t plugs/init.lua 
+#1638068259
+ci
+#1638068260
+t plugs/init.lua 
+#1638069660
+cd .config/
+#1638069661
+clear
+#1638069662
+ls
+#1638069666
+mkdir fonts
+#1638069667
+ls
+#1638069668
+cd fonts/
+#1638069674
+git clone https://aur.archlinux.org/otf-openmoji.git
+#1638069680
+cd otf-openmoji/
+#1638069681
+ls
+#1638069684
+mkpkg -si
+#1638069706
+t /usr/share/font
+#1638069708
+t /usr/share/fonts
+#1638069710
+t openmoji/
+#1638069721
+termconf
+#1638069762
+rm OpenMoji-Black.ttf 
+#1638069763
+clear
+#1638069764
+ls
+#1638069771
+ci
+#1638069772
+termconf
+#1638069835
+ci
+#1638069852
+..
+#1638069854
+rm openmoji/
+#1638069859
+uninstall openmoji
+#1638069870
+cd ~/.config/
+#1638069871
+ci
+#1638069872
+lr
+#1638069873
+ir
+#1638069875
+cd fonts/
+#1638069875
+ls
+#1638069878
+rm -r *
+#1638069878
+ci
+#1638069879
+ir
+#1638069967
+# 1. Download the latest version
+#1638069967
+wget https://github.com/eosrei/twemoji-color-font/releases/download/v13.1.0/TwitterColorEmoji-SVGinOT-Linux-13.1.0.tar.gz
+#1638069967
+# 2. Uncompress the file
+#1638069967
+tar zxf TwitterColorEmoji-SVGinOT-Linux-13.1.0.tar.gz
+#1638069967
+# 3. Run the installer
+#1638069967
+cd TwitterColorEmoji-SVGinOT-Linux-13.1.0
+#1638069967
+./install.sh
+#1638069972
+install wget
+#1638069979
+wget https://github.com/eosrei/twemoji-color-font/releases/download/v13.1.0/TwitterColorEmoji-SVGinOT-Linux-13.1.0.tar.gz
+#1638069983
+clear
+#1638069984
+ls
+#1638069989
+tar zxf TwitterColorEmoji-SVGinOT-Linux-13.1.0.tar.gz
+#1638069994
+cd TwitterColorEmoji-SVGinOT-Linux-13.1.0
+#1638069996
+ls
+#1638070001
+./install.sh 
+#1638070010
+ls
+#1638070011
+..
+#1638070014
+rm -r *
+#1638070015
+ci
+#1638070112
+git config --global alias.clone clo
+#1638070115
+git clo https://aur.archlinux.org/ttf-twemoji.git
+#1638070122
+clear
+#1638070123
+ls
+#1638070128
+git clo https://aur.archlinux.org/ttf-twemoji.git
+#1638070132
+t .gitconfig 
+#1638070153
+reload
+#1638070167
+t .config/f
+#1638070170
+t .config/fonts/
+#1638070172
+clear
+#1638070172
+ls
+#1638070177
+git clone https://aur.archlinux.org/ttf-twemoji.git
+#1638070182
+cd ttf-twemoji/
+#1638070183
+ir
+#1638070188
+mkpkg -si
+#1638070233
+clear
+#1638070234
+ls
+#1638070236
+..
+#1638070238
+rm -r *
+#1638070239
+clear
+#1638070240
+ls
+#1638070241
+..
+#1638070244
+rm -r fonts
+#1638070245
+ci
+#1638070248
+note
+#1638070267
+termconf
+#1638070286
+ci
+#1638070295
+lsfonts
+#1638070305
+t /usr/share/font
+#1638070307
+t /usr/share/fonts
+#1638070308
+ci
+#1638070309
+ir
+#1638070310
+t twemoji/
+#1638070332
+ci
+#1638070334
+termconf
+#1638070364
+ci
+#1638070365
+note
+#1638070382
+ci
+#1638069427
+t lsp.lua 
+#1638070385
+ci
+#1638070412
+termconf
+#1638070537
+ci
+#1638070575
+termconf
+#1638070999
+ci
+#1638071000
+ir
+#1638071011
+inputrc
+#1638071109
+ci
+#1638071116
+ls
+#1638071118
+ir
+#1638071128
+t bashrc
+#1638071177
+inputrc
+#1638071209
+clear
+#1638071210
+ls
+#1638071220
+date
+#1638071257
+install xorg-xrdb
+#1638071277
+xrdb ~/.Xresources 
+#1638071282
+t .Xresources 
+#1638071287
+xrdb ~/.Xresources 
+#1638071318
+xrdb -h
+#1638071332
+ci
+#1638071335
+t .Xresources 
+#1638071339
+install xcursor
+#1638071374
+ir
+#1638071376
+t .Xresources 
+#1638071384
+xrdb ~/.Xresources 
+#1638071391
+t .Xresources 
+#1638071396
+xrdb ~/.Xresources 
+#1638071400
+t .Xresources 
+#1638071464
+t .bash_profile 
+#1638071572
+t /etc/
+#1638071575
+t mkinitcpio.
+#1638071577
+t mkinitcpio.conf 
+#1638071582
+ci
+#1638071584
+ls
+#1638071605
+ir
+#1638071607
+aliases
+#1638071709
+ls -C
+#1638071712
+clear
+#1638071712
+ls
+#1638071716
+ls -C
+#1638071784
+aliases
+#1638071789
+reload
+#1638071790
+ir
+#1638071793
+ci
+#1638071793
+ir
+#1638071800
+ci
+#1638071801
+ls
+#1638071802
+ir
+#1638071803
+ci
+#1638071805
+t
+#1638071806
+ir
+#1638071810
+aliases
+#1638071813
+reload
+#1638071813
+ci
+#1638072057
+reboot
+#1638072369
+ls
+#1638072376
+ir
+#1638072378
+t .xinitrc 
+#1638072402
+clear
+#1638072402
+ls
+#1638072407
+ir
+#1638072414
+bashrc
+#1638072417
+clear
+#1638072418
+ls
+#1638072430
+ir
+#1638072440
+t .bash_profile 
+#1638072445
+clear
+#1638072446
+exit
+#1638072472
+t .xinitrc 
+#1638072613
+clear
+#1638072613
+ls
+#1638072618
+i3conf
+#1638072660
+xrandr
+#1638072676
+ir
+#1638072680
+t .xinitrc 
+#1638072751
+reboot
+#1638072668
+startx
+#1638073010
+xrandr
+#1638073119
+ci
+#1638072905
+t .xinitrc 
+#1638073184
+reboot
+#1638073235
+xinitrc
+#1638073267
+reboot
+#1638073313
+t .xinitrc 
+#1638073402
+reboot
+#1638073451
+xinitrc
+#1638073478
+ci
+#1638073534
+t .gitconfig 
+#1638073540
+git clo 
+#1638073593
+t .gitconfig 
+#1638073606
+git clo
+#1638073607
+t .gitconfig 
+#1638073630
+t .config/
+#1638073633
+t dotfiles/
+#1638073639
+..
+#1638073640
+ci
+#1638073640
+ir
+#1638073644
+t user-dirs.dirs 
+#1638073671
+ci
+#1638073671
+ir
+#1638073686
+vimrc
+#1638073688
+t lsp.lua 
+#1638073713
+ci
+#1638073713
+ir
+#1638073718
+t plugs/init.lua 
+#1638074090
+ci
+#1638074091
+t plugs/init.lua 
+#1638074119
+mkdir lsp
+#1638074120
+ls
+#1638074121
+ir
+#1638074124
+t 1 
+#1638074137
+t options/init.lua 
+#1638074147
+rm 1 
+#1638074150
+ir
+#1638074151
+..
+#1638074153
+t lua/
+#1638074161
+mv lsp.lua lsp/init.lua
+#1638074162
+..
+#1638074163
+t init.lua 
+#1638074171
+ci
+#1638074171
+ir
+#1638074173
+t lua/
+#1638074174
+t lsp/
+#1638074180
+t init.lua 
+#1638074207
+t servers.lua
+#1638074242
+ci
+#1638074242
+ir
+#1638074244
+t servers.lua 
+#1638074471
+t dwnlds/
+#1638074472
+ls
+#1638074475
+extract Terminus.zip 
+#1638074477
+ir
+#1638074486
+rm Termin*
+#1638074488
+ci
+#1638074488
+ir
+#1638074246
+t init.lua 
+#1638074514
+..
+#1638074517
+t plugs/init.lua 
+#1638074541
+ci
+#1638074541
+ir
+#1638074545
+..
+#1638074547
+t init.lua 
+#1638074551
+ci
+#1638074551
+t init.lua 
+#1638074552
+ci
+#1638074553
+ir
+#1638074556
+t lua/
+#1638074557
+t lsp/
+#1638074559
+t init.lua 
+#1638074598
+ci
+#1638074599
+t init.lua 
+#1638074601
+..
+#1638074604
+t init.lua 
+#1638074606
+ci
+#1638074607
+t init.lua 
+#1638074608
+ci
+#1638074609
+ir
+#1638074612
+t lua/lsp/
+#1638074613
+t init.lua 
+#1638074686
+..
+#1638074687
+t plugs/init.lua 
+#1638074745
+ci
+#1638074746
+t plugs/init.lua 
+#1638074747
+ci
+#1638074747
+ir
+#1638074753
+t lsp/init.lua 
+#1638074761
+ci
+#1638074761
+ir
+#1638074764
+t lsp/init.lua 
+#1638074765
+ci
+#1638074766
+ir
+#1638074768
+t plugs/init.lua 
+#1638074804
+ci
+#1638074804
+t plugs/init.lua 
+#1638074828
+ci
+#1638074829
+ir
+#1638075652
+vimrc
+#1638075654
+t plugs/cfgs/
+#1638075661
+touch lsp_installer.lua
+#1638075663
+t lsp_installer.lua 
+#1638074833
+t lsp/init.lua 
+#1638076282
+ci
+#1638076283
+t lsp/init.lua 
+#1638076331
+vimrc
+#1638076337
+rm 1 
+#1638076341
+t lsp/
+#1638076344
+t servers.lua 
+#1638076391
+ci
+#1638076392
+t servers.lua 
+#1638076426
+ci
+#1638076427
+t servers.lua 
+#1638076298
+t plugs/init.lua 
+#1638076532
+ci
+#1638076533
+t plugs/init.lua 
+#1638076546
+ci
+#1638076509
+t init.lua 
+#1638076571
+ci
+#1638076571
+ir
+#1638076547
+t plugs/init.lua 
+#1638076640
+ci
+#1638076662
+plugs
+#1638076665
+t opt/
+#1638076667
+t tidy.nvim/
+#1638076668
+t lua/
+#1638076641
+t plugs/init.lua 
+#1638076810
+ci
+#1638076811
+t plugs/init.lua 
+#1638076919
+ci
+#1638076920
+t plugs/init.lua 
+#1638076967
+ci
+#1638076967
+t plugs/init.lua 
+#1638077091
+ci
+#1638077092
+t plugs/init.lua 
+#1638077119
+ci
+#1638077120
+t plugs/init.lua 
+#1638077125
+ci
+#1638077126
+t plugs/init.lua 
+#1638077149
+ci
+#1638076579
+t servers.lua 
+#1638076671
+t tidy/init.lua 
+#1638077185
+ci
+#1638077186
+ir
+#1638077187
+vimrc
+#1638077189
+rm 1
+#1638077191
+ci
+#1638077192
+ir
+#1638077195
+t options/
+#1638077196
+t init.lua 
+#1638077214
+ir
+#1638077215
+..
+#1638077221
+t init.lua 
+#1638077236
+ci
+#1638077237
+t init.lua 
+#1638077258
+ci
+#1638077259
+ir
+#1638077262
+t init.lua 
+#1638077149
+t plugs/init.lua 
+#1638077449
+ci
+#1638077449
+t plugs/init.lua 
+#1638077482
+ci
+#1638077483
+t plugs/init.lua 
+#1638077496
+ci
+#1638077497
+t plugs/init.lua 
+#1638077523
+ci
+#1638077524
+t plugs/init.lua 
+#1638077569
+ci
+#1638077570
+t plugs/init.lua 
+#1638077587
+ci
+#1638077427
+t servers.lua 
+#1638077615
+ir
+#1638077617
+t init.lua 
+#1638077587
+t plugs/init.lua 
+#1638077692
+ci
+#1638077662
+t servers.lua 
+#1638077712
+ir
+#1638077693
+t plugs/init.lua 
+#1638077810
+ci
+#1638077811
+t plugs/init.lua 
+#1638077713
+t init.lua 
+#1638078301
+ci
+#1638078301
+ir
+#1638078305
+..
+#1638078323
+git clone https://github.com/McAuleyPenney/dotfiles.git new_dots
+#1638078326
+cd new_dots/
+#1638078330
+cd .config/nvim/
+#1638078331
+ls
+#1638078336
+cd lua/
+#1638078336
+ci
+#1638078336
+ir
+#1638078359
+..
+#1638078361
+t lua/
+#1638078370
+mv lsp/init.lua ./lsp.lua
+#1638078370
+ci
+#1638078371
+ir
+#1638078374
+rm -r lsp
+#1638078376
+ci
+#1638078377
+ir
+#1638078379
+t lsp.lua 
+#1638078390
+ci
+#1638078391
+..
+#1638078392
+t init.lua 
+#1638078400
+ci
+#1638078401
+t init.lua 
+#1638078407
+ci
+#1638078408
+ir
+#1638078410
+t init.lua 
+#1638078413
+ci
+#1638078414
+t init.lua 
+#1638078415
+ci
+#1638078415
+ir
+#1638078439
+t lua/
+#1638078441
+t lsp.lua 
+#1638078465
+t plugs/init.lua 
+#1638078471
+ci
+#1638078472
+t plugs/init.lua 
+#1638078473
+ci
+#1638078473
+ir
+#1638078339
+t lsp.lua 
+#1638078537
+vimrc
+#1638078545
+t options/init.lua 
+#1638078592
+ci
+#1638078592
+ir
+#1638078599
+t
+#1638078601
+t .local/
+#1638078603
+t share/
+#1638078738
+ci
+#1638078738
+ir
+#1638078740
+t nvim/
+#1638078875
+git clone https://github.com/sumneko/lua-language-server sumneko
+#1638078881
+cd sumneko
+#1638078881
+git submodule update --init --recursive
+#1638078909
+cd 3rd/luamake
+#1638078909
+./compile/install.sh
+#1638078909
+cd ../..
+#1638078909
+./3rd/luamake/luamake rebuild
+#1638078919
+cd 3rd/luamake
+#1638078938
+./compile/install.sh 
+#1638078944
+install ninja
+#1638078950
+./compile/install.sh 
+#1638078958
+cd ../..
+#1638078973
+./3rd/luamake/luamake rebuild
+#1638078992
+ci
+#1638078993
+ir
+#1638078478
+t lsp.lua 
+#1638078997
+ci
+#1638078997
+t lsp.lua 
+#1638079006
+ci
+#1638079006
+t lsp.lua 
+#1638079026
+t
+#1638079029
+t .local/share/
+#1638079030
+t nvim/
+#1638079032
+t sumneko/
+#1638079034
+./bin/Linux/lua-language-server
+#1638079043
+vimrc
+#1638079044
+t lsp.lua 
+#1638079057
+ci
+#1638079068
+ir
+#1638079075
+t bin/Linux/
+#1638079081
+..
+#1638079088
+ci
+#1638079088
+ir
+#1638079090
+..
+#1638079093
+rm -r sumneko/
+#1638079095
+ci
+#1638079108
+git clone https://github.com/sumneko/lua-language-server
+#1638079114
+cd lua-language-server
+#1638079114
+git submodule update --init --recursive
+#1638079147
+cd 3rd/luamake
+#1638079147
+./compile/install.sh
+#1638079151
+cd ../..
+#1638079151
+./3rd/luamake/luamake rebuild
+#1638079170
+./bin/Linux/lua-language-server
+#1638079208
+vimrc
+#1638079209
+t lsp.lua 
+#1638079221
+ci
+#1638079237
+ci
+#1638079222
+t lsp.lua 
+#1638079260
+..
+#1638079262
+t init.lua 
+#1638079265
+ci
+#1638079266
+ir
+#1638079267
+t lua/
+#1638079269
+t plugs/
+#1638079271
+..
+#1638079286
+..
+#1638079291
+mv lua-language-server/ sumneko
+#1638079272
+t lsp.lua 
+#1638079298
+ci
+#1638079298
+t lsp.lua 
+#1638079058
+t lsp.lua 
+#1638079312
+t plugs/init.lua 
+#1638079346
+ci
+#1638079347
+t plugs/init.lua 
+#1638079359
+ci
+#1638079360
+t plugs/init.lua 
+#1638079378
+ci
+#1638079378
+ir
+#1638079379
+t
+#1638079379
+ci
+#1638079380
+ir
+#1638079384
+work
+#1638079386
+files
+#1638079388
+t nonwork/mmv/
+#1638079389
+ci
+#1638079389
+ir
+#1638079390
+t mmv.sh 
+#1638079399
+ci
+#1638079400
+ir
+#1638079439
+vimrc
+#1638079443
+t options/
+#1638079444
+t init.lua 
+#1638079473
+..
+#1638079474
+t lsp.lua 
+#1638079478
+ci
+#1638079482
+shs
+#1638079483
+t mmv.sh 
+#1638079485
+ci
+#1638079487
+t lsp.lua 
+#1638079490
+ci
+#1638079502
+shutdown
+#1638112059
+t plugs/init.lua 
+#1638112093
+ci
+#1638112094
+t plugs/init.lua 
+#1638112158
+ci
+#1638112159
+t plugs/init.lua 
+#1638112630
+ci
+#1638112631
+t plugs/init.lua 
+#1638112646
+ci
+#1638112683
+plugs
+#1638112685
+t start/cacophony.nvim/
+#1638112688
+t colors/
+#1638112689
+t cacophony.lua 
+#1638112731
+ci
+#1638112732
+ir
+#1638112736
+vimrc
+#1638112647
+t plugs/init.lua 
+#1638112789
+vimrc
+#1638112790
+t options/init.lua 
+#1638112841
+ci
+#1638112738
+t aucmd.lua 
+#1638113177
+plugs
+#1638113180
+t start/
+#1638113184
+t virt-column.nvim/
+#1638113185
+ci
+#1638113187
+ir
+#1638113190
+t lua/virt-column/
+#1638112841
+t options/init.lua 
+#1638113198
+ci
+#1638113191
+t init.lua 
+#1638113217
+ci
+#1638113217
+ir
+#1638113218
+..
+#1638113225
+t lua/
+#1638113226
+t virt-column/
+#1638113198
+t options/init.lua 
+#1638113275
+ci
+#1638113227
+t init.lua 
+#1638113316
+ci
+#1638113275
+t options/init.lua 
+#1638113824
+ci
+#1638113825
+ir
+#1638113827
+t plugs/init.lua 
+#1638113832
+ci
+#1638113833
+t plugs/init.lua 
+#1638113859
+ci
+#1638113860
+t plugs/init.lua 
+#1638113317
+t init.lua 
+#1638113897
+ci
+#1638113898
+t init.lua 
+#1638113910
+ci
+#1638113913
+vimrc
+#1638113914
+t plugs/init.lua 
+#1638113945
+ci
+#1638113946
+t plugs/init.lua 
+#1638113959
+ci
+#1638113870
+t aucmd.lua 
+#1638113963
+ci
+#1638113964
+ir
+#1638113966
+plugs
+#1638113968
+t start/
+#1638113980
+ci
+#1638113959
+t plugs/init.lua 
+#1638113987
+ci
+#1638113988
+t plugs/init.lua 
+#1638113999
+ci
+#1638114002
+ir
+#1638114005
+..
+#1638114006
+ci
+#1638114006
+ir
+#1638114007
+t opt/
+#1638114000
+t plugs/init.lua 
+#1638114013
+ci
+#1638114028
+..
+#1638114030
+t start/
+#1638114033
+t vi
+#1638114036
+t virt-column.nvim/
+#1638114039
+t lua/
+#1638114041
+t virt-column/
+#1638114042
+t init.lua 
+#1638114112
+ci
+#1638114014
+t plugs/init.lua 
+#1638114122
+ci
+#1638114113
+t init.lua 
+#1638114169
+ci
+#1638114123
+t plugs/init.lua 
+#1638114246
+ci
+#1638114247
+t plugs/init.lua 
+#1638114371
+ci
+#1638114371
+ir
+#1638114374
+t plugs/cfgs/
+#1638114378
+t trouble.lua 
+#1638114454
+ci
+#1638114454
+ir
+#1638114455
+..
+#1638114457
+t init.lua 
+#1638114723
+ci
+#1638114723
+t init.lua 
+#1638114734
+ci
+#1638114734
+t init.lua 
+#1638114743
+ci
+#1638114743
+t init.lua 
+#1638114867
+ci
+#1638114868
+t init.lua 
+#1638114877
+ci
+#1638114878
+t init.lua 
+#1638114964
+ci
+#1638114965
+t init.lua 
+#1638115010
+ci
+#1638114170
+t init.lua 
+#1638115069
+ci
+#1638115011
+t init.lua 
+#1638115071
+ci
+#1638115085
+plugs
+#1638115091
+t start/cacophony.nvim/
+#1638115072
+t init.lua 
+#1638115119
+ci
+#1638115093
+t colors/cacophony.lua 
+#1638115152
+ci
+#1638115120
+t init.lua 
+#1638115312
+ci
+#1638115313
+t init.lua 
+#1638115330
+ci
+#1638115330
+t init.lua 
+#1638115347
+ci
+#1638115348
+t init.lua 
+#1638115368
+ci
+#1638115368
+t init.lua 
+#1638115376
+ci
+#1638115377
+t init.lua 
+#1638115435
+ci
+#1638115435
+ir
+#1638115153
+t colors/cacophony.lua 
+#1638115444
+ci
+#1638115445
+t colors/cacophony.lua 
+#1638115078
+t init.lua 
+#1638115455
+ci
+#1638115455
+ir
+#1638115457
+..
+#1638115582
+files
+#1638115587
+aliases
+#1638115596
+reload
+#1638115598
+ci
+#1638115598
+ir
+#1638115600
+t nonwork/
+#1638115638
+git clone https://github.com/mcauley-penney/tidy.nvim.git
+#1638115642
+t tidy.nvim/lua/
+#1638115642
+ci
+#1638115644
+t tidy/init.lua 
+#1638115676
+ci
+#1638115677
+t tidy/init.lua 
+#1638115711
+ci
+#1638115712
+t tidy/init.lua 
+#1638115773
+ci
+#1638115774
+t tidy/init.lua 
+#1638115783
+ir
+#1638115785
+..
+#1638115788
+rm -r tidy.nvim/
+#1638115790
+ci
+#1638115790
+ir
+#1638115458
+t aucmd.lua 
+#1638115876
+t plugs/init.lua 
+#1638115902
+plugs
+#1638115904
+t start/
+#1638115906
+t virt-column.nvim/
+#1638115909
+t lua/
+#1638115911
+t virt-column/init.lua 
+#1638115915
+ci
+#1638115916
+t virt-column/init.lua 
+#1638115918
+ci
+#1638115922
+vimrc
+#1638115925
+t plugs/init.lua 
+#1638115930
+ci
+#1638115930
+t plugs/init.lua 
+#1638115983
+ci
+#1638115983
+t plugs/init.lua 
+#1638116131
+ci
+#1638116132
+ir
+#1638117448
+s plugs/init.lua 
+#1638117568
+plugs
+#1638117570
+t start/
+#1638117451
+t plugs/init.lua 
+#1638117865
+ci
+#1638117865
+ir
+#1638117874
+plugs
+#1638117875
+t start/
+#1638117883
+t virt-column.nvim/
+#1638117919
+ir
+#1638117920
+vimrc
+#1638117921
+t plugs/init.lua 
+#1638117949
+ci
+#1638117964
+t test.c
+#1638117950
+t plugs/init.lua 
+#1638118061
+ci
+#1638118061
+t plugs/init.lua 
+#1638118207
+ci
+#1638117887
+t lua/virt-column/init.lua 
+#1638118359
+ci
+#1638118208
+t plugs/init.lua 
+#1638118381
+ci
+#1638118400
+ir
+#1638118361
+t lua/virt-column/init.lua 
+#1638118405
+ci
+#1638118382
+t plugs/init.lua 
+#1638118451
+ci
+#1638118406
+t lua/virt-column/init.lua 
+#1638118462
+ci
+#1638118452
+t plugs/init.lua 
+#1638118466
+ci
+#1638118467
+t plugs/init.lua 
+#1638118523
+ci
+#1638118524
+t plugs/init.lua 
+#1638118583
+ci
+#1638118584
+t plugs/init.lua 
+#1638118672
+ci
+#1638118800
+vimrc
+#1638118802
+t plugs/disable.lua 
+#1638118852
+ci
+#1638118853
+t plugs/disable.lua 
+#1638118990
+ci
+#1638118991
+t plugs/disable.lua 
+#1638119041
+ci
+#1638119041
+t plugs/disable.lua 
+#1638119051
+ci
+#1638119052
+t plugs/disable.lua 
+#1638119060
+ci
+#1638119061
+vimrc
+#1638118672
+t plugs/init.lua 
+#1638119909
+ci
+#1638119909
+t plugs/init.lua 
+#1638119918
+ci
+#1638119919
+ir
+#1638119921
+..
+#1638119926
+rm -r plugin/
+#1638119930
+ci
+#1638119930
+ir
+#1638119931
+t lua/
+#1638119933
+t plugs/init.lua 
+#1638119943
+t
+#1638119945
+t .cache/
+#1638119951
+t nvim/
+#1638119954
+t packer
+#1638119956
+t
+#1638119957
+vimrc
+#1638119958
+ci
+#1638119958
+ir
+#1638120115
+t plugs/init.lua 
+#1638120163
+ci
+#1638120163
+ir
+#1638120165
+..
+#1638120167
+t .gitignore 
+#1638120177
+rm .gitignore 
+#1638120178
+ci
+#1638120178
+ir
+#1638120180
+t lua/
+#1638120183
+t plugs/
+#1638120746
+ir
+#1638120750
+t init.lua 
+#1638120766
+ci
+#1638120766
+t init.lua 
+#1638120903
+..
+#1638120907
+t lua/
+#1638120908
+t plugs/init.lua 
+#1638120956
+ci
+#1638120956
+t plugs/init.lua 
+#1638120985
+ci
+#1638120995
+vimrc
+#1638120997
+..
+#1638120986
+t plugs/init.lua 
+#1638121211
+ci
+#1638121211
+t plugs/init.lua 
+#1638121283
+ci
+#1638121283
+t plugs/init.lua 
+#1638121351
+ci
+#1638121008
+t lua/aucmd.lua 
+#1638121352
+t plugs/init.lua 
+#1638121571
+ci
+#1638121622
+t .cache/nvim/
+#1638121624
+t packer
+#1638121571
+t plugs/init.lua 
+#1638121705
+ci
+#1638121705
+t plugs/init.lua 
+#1638121712
+ci
+#1638121713
+t plugs/init.lua 
+#1638121719
+ci
+#1638121729
+vimrcc
+#1638121731
+vimrc
+#1638121732
+t aucmd.lua 
+#1638121780
+ci
+#1638121780
+t aucmd.lua 
+#1638121719
+t plugs/init.lua 
+#1638122061
+ci
+#1638122074
+vimrc
+#1638122074
+..
+#1638122077
+ci
+#1638122078
+ir
+#1638122079
+t
+#1638122080
+t .cache/
+#1638122082
+t nvim/
+#1638122085
+t packer
+#1638122061
+t plugs/init.lua 
+#1638122605
+ci
+#1638122606
+t plugs/init.lua 
+#1638122612
+ci
+#1638122613
+t plugs/init.lua 
+#1638122701
+ci
+#1638122702
+t plugs/init.lua 
+#1638122706
+ci
+#1638122713
+vimrc
+#1638122714
+..
+#1638122716
+rm plugin/
+#1638122718
+ci
+#1638122707
+t plugs/init.lua 
+#1638122722
+ci
+#1638122722
+t plugs/init.lua 
+#1638123152
+ci
+#1638123153
+t plugs/init.lua 
+#1638123215
+ci
+#1638123215
+t plugs/init.lua 
+#1638123219
+ic
+#1638123219
+ci
+#1638123220
+t plugs/init.lua 
+#1638123281
+ci
+#1638123281
+t plugs/init.lua 
+#1638123287
+ci
+#1638123287
+t plugs/init.lua 
+#1638123361
+ci
+#1638123362
+t plugs/init.lua 
+#1638123435
+ci
+#1638123436
+t plugs/init.lua 
+#1638123448
+ci
+#1638123449
+t plugs/init.lua 
+#1638124038
+ci
+#1638124039
+t plugs/init.lua 
+#1638124094
+ci
+#1638124095
+t plugs/init.lua 
+#1638124319
+t aucmd.lua 
+#1638124322
+ci
+#1638124640
+vimrc
+#1638124323
+t aucmd.lua 
+#1638124673
+ci
+#1638124673
+t aucmd.lua 
+#1638124692
+ci
+#1638124692
+t aucmd.lua 
+#1638124696
+ci
+#1638124697
+t aucmd.lua 
+#1638124729
+ci
+#1638124730
+t aucmd.lua 
+#1638124742
+ci
+#1638124743
+t aucmd.lua 
+#1638124745
+ci
+#1638124747
+t aucmd.lua 
+#1638124760
+ci
+#1638124782
+ir
+#1638124785
+..
+#1638124787
+t utils/
+#1638124789
+ci
+#1638124789
+ir
+#1638124790
+..
+#1638124791
+t init.lua 
+#1638124793
+ci
+#1638124793
+ir
+#1638124794
+t lua/
+#1638124796
+t mappings/
+#1638124797
+t init.lua 
+#1638124802
+ci
+#1638124803
+ir
+#1638124804
+..
+#1638124806
+t plugs/init.lua 
+#1638124910
+ci
+#1638124910
+t plugs/init.lua 
+#1638124914
+ci
+#1638124914
+t plugs/init.lua 
+#1638124930
+ci
+#1638124931
+t plugs/init.lua 
+#1638124935
+ci
+#1638124935
+t plugs/init.lua 
+#1638124944
+ci
+#1638124945
+t plugs/init.lua 
+#1638124970
+ci
+#1638124971
+t plugs/init.lua 
+#1638124976
+ci
+#1638124976
+t plugs/init.lua 
+#1638125144
+ci
+#1638125145
+t plugs/init.lua 
+#1638125152
+ci
+#1638125226
+t
+#1638125228
+t .gitconfig 
+#1638125236
+ci
+#1638125236
+ir
+#1638125258
+vimrc
+#1638125259
+..
+#1638125265
+ci
+#1638125267
+t
+#1638125374
+work
+#1638125376
+t nonwork/mmv/
+#1638125382
+git status
+#1638125394
+git commit --amend
+#1638125401
+git add .
+#1638125403
+git commit
+#1638125415
+git branch
+#1638125427
+git pull
+#1638125435
+cp mmv ..
+#1638125437
+ir
+#1638125440
+cp mmv.sh ..
+#1638125442
+..
+#1638125447
+rm -r mmv
+#1638125468
+git clone https://github.com/mcauley-penney/mmv.git
+#1638125471
+cd mmv
+#1638125472
+ls
+#1638125479
+ci
+#1638125479
+ir
+#1638125485
+cp ../mmv.sh .
+#1638125487
+t mmv.sh 
+#1638125560
+ci
+#1638125560
+ir
+#1638125568
+git status
+#1638125570
+git add .
+#1638125573
+git commit
+#1638125610
+git push
+#1638125666
+ci
+#1638125666
+ir
+#1638125667
+..
+#1638125693
+install xscreensaver
+#1638125697
+update
+#1638125714
+clear
+#1638125714
+ls
+#1638125717
+ci
+#1638125718
+ir
+#1638125994
+vimrc
+#1638125996
+t plugs/init.lua 
+#1638128296
+ci
+#1638128296
+ir
+#1638128301
+t plugs/init.lua 
+#1638128399
+ci
+#1638128415
+vimrc
+#1638128417
+plugs
+#1638128420
+t start/cacophony.nvim/
+#1638128422
+t colors/cacophony.lua 
+#1638128435
+ci
+#1638128435
+t colors/cacophony.lua 
+#1638128400
+t plugs/init.lua 
+#1638128441
+ci
+#1638128442
+t plugs/init.lua 
+#1638128590
+ir
+#1638128641
+install dunst
+#1638128927
+ci
+#1638128593
+t aucmd.lua 
+#1638129077
+mkdir aucmd
+#1638129084
+mv aucmd.lua aucmd/init.lua
+#1638129091
+..
+#1638129092
+t init.lua 
+#1638129099
+ci
+#1638129100
+t init.lua 
+#1638129101
+ci
+#1638129102
+ir
+#1638129103
+t lua/
+#1638129105
+t aucmd/init.lua 
+#1638129115
+t aucmd/functions.lua
+#1638129122
+ci
+#1638129122
+ir
+#1638129125
+t mappings/functions.lua 
+#1638129204
+t aucmd/init.lua 
+#1638129304
+vimrc
+#1638129305
+t mappings/
+#1638129207
+t aucmd/functions.lua 
+#1638129347
+ci
+#1638129347
+t aucmd/functions.lua 
+#1638129359
+ci
+#1638129307
+t init.lua 
+#1638129359
+t aucmd/functions.lua 
+#1638129380
+t mappings/functions.lua 
+#1638129388
+ci
+#1638129389
+t mappings/functions.lua 
+#1638129423
+ci
+#1638129424
+t mappings/functions.lua 
+#1638129450
+ci
+#1638129451
+t mappings/functions.lua 
+#1638129467
+ci
+#1638129467
+t mappings/functions.lua 
+#1638129507
+ci
+#1638129508
+t mappings/functions.lua 
+#1638129519
+ci
+#1638129520
+t mappings/functions.lua 
+#1638129538
+ci
+#1638129538
+ir
+#1638129540
+t mappings/init.lua 
+#1638129544
+ci
+#1638129548
+t mappings/functions.lua 
+#1638129896
+ir
+#1638129898
+t aucmd/functions.lua 
+#1638129902
+ci
+#1638129903
+ir
+#1638129907
+t aucmd/init.lua 
+#1638129925
+ci
+#1638129926
+t aucmd/init.lua 
+#1638129937
+ci
+#1638129938
+ir
+#1638129942
+t mappings/init.lua 
+#1638129947
+ci
+#1638129948
+t mappings/init.lua 
+#1638129950
+ci
+#1638129951
+ir
+#1638129953
+t mappings/functions.lua 
+#1638129956
+ci
+#1638129956
+ir
+#1638129963
+t aucmd/functions.lua 
+#1638130011
+ci
+#1638130011
+ir
+#1638130013
+t aucmd/init.lua 
+#1638130022
+ci
+#1638130022
+t aucmd/init.lua 
+#1638130027
+t mappings/init.lua 
+#1638130030
+ci
+#1638130032
+ir
+#1638130033
+t aucmd/init.lua 
+#1638130062
+ci
+#1638130062
+t aucmd/init.lua 
+#1638130066
+ci
+#1638130066
+ir
+#1638130068
+t aucmd/functions.lua 
+#1638130074
+ci
+#1638130075
+ir
+#1638130078
+t aucmd/init.lua 
+#1638130106
+ci
+#1638130106
+t aucmd/init.lua 
+#1638130121
+ci
+#1638130122
+t aucmd/init.lua 
+#1638130126
+t aucmd/functions.lua 
+#1638130134
+ci
+#1638130134
+ir
+#1638130137
+t mappings/functions.lua 
+#1638130142
+t options/functions.lua 
+#1638130154
+ci
+#1638130155
+ir
+#1638130157
+t aucmd/functions.lua 
+#1638130195
+ci
+#1638130196
+ir
+#1638130197
+t options/init.lua 
+#1638130237
+vimrc
+#1638130213
+t aucmd/init.lua 
+#1638130246
+ci
+#1638130238
+t options/init.lua 
+#1638130247
+t aucmd/init.lua 
+#1638130266
+ci
+#1638130267
+ir
+#1638130269
+t aucmd/functions.lua 
+#1638130473
+ci
+#1638130485
+vimrc
+#1638130891
+plugs
+#1638130893
+t opt/
+#1638130894
+t tidy.nvim/
+#1638130897
+t plugin/
+#1638130487
+t aucmd/init.lua 
+#1638130943
+ci
+#1638130898
+t tidy.vim 
+#1638130973
+ir
+#1638130973
+..
+#1638130975
+t lua/tidy/
+#1638130944
+t aucmd/init.lua 
+#1638130999
+ci
+#1638130976
+t init.lua 
+#1638131008
+ci
+#1638130474
+t aucmd/functions.lua 
+#1638131013
+ci
+#1638131000
+t aucmd/init.lua 
+#1638131041
+ci
+#1638131013
+t aucmd/functions.lua 
+#1638131069
+ci
+#1638131070
+t aucmd/functions.lua 
+#1638131109
+ci
+#1638131044
+t plugs/init.lua 
+#1638131113
+ci
+#1638131113
+ir
+#1638131109
+t aucmd/functions.lua 
+#1638131125
+ci
+#1638131126
+t aucmd/functions.lua 
+#1638131147
+t aucmd/init.lua 
+#1638131226
+t aucmd/functions.lua 
+#1638131241
+ci
+#1638131254
+ci
+#1638131412
+plugs
+#1638131416
+t start/cacophony.nvim/colors/
+#1638131417
+t cacophony.lua 
+#1638131437
+ci
+#1638131438
+t cacophony.lua 
+#1638131449
+ci
+#1638131242
+t aucmd/functions.lua 
+#1638131502
+ci
+#1638131502
+ir
+#1638131450
+t cacophony.lua 
+#1638132025
+ci
+#1638132025
+t cacophony.lua 
+#1638131558
+t options/init.lua 
+#1638132052
+ci
+#1638132053
+ir
+#1638132054
+t aucmd/init.lua 
+#1638132083
+ci
+#1638132083
+ir
+#1638132085
+t aucmd/functions.lua 
+#1638132143
+ci
+#1638132148
+ir
+#1638132154
+t mappings/init.lua 
+#1638132159
+ci
+#1638132160
+ir
+#1638132161
+t options/init.lua 
+#1638132171
+ci
+#1638132171
+ir
+#1638132172
+t lsp.lua 
+#1638132176
+ci
+#1638132176
+ir
+#1638132178
+t plugs/init.lua 
+#1638132208
+ci
+#1638132208
+t plugs/init.lua 
+#1638132222
+ci
+#1638132222
+ir
+#1638132224
+..
+#1638132228
+t init.lua 
+#1638132237
+ci
+#1638132237
+ir
+#1638132241
+ci
+#1638132241
+ir
+#1638133305
+t
+#1638133306
+ci
+#1638133306
+ir
+#1638133310
+t .config/
+#1638133315
+rm -r new_dots/ dotfiles/
+#1638133318
+ci
+#1638133319
+ir
+#1638133329
+git clone https://github.com/mcauley-penney/dotfiles.git
+#1638133332
+t dotfiles/
+#1638133335
+t .config/
+#1638133342
+cp -r ~/.config/nvim/ .
+#1638133345
+ci
+#1638133345
+ir
+#1638133350
+t shell/
+#1638133352
+t scripts/
+#1638133353
+rm -r cha
+#1638133356
+rm -r change_theme.sh 
+#1638133356
+ci
+#1638133356
+ir
+#1638133359
+..
+#1638133374
+cp -r shell/ dotfiles/.config/
+#1638133376
+jmp
+#1638133379
+ci
+#1638133379
+ir
+#1638133383
+..
+#1638133391
+t dotfiles/.config/shell/
+#1638133394
+rm shell_hist 
+#1638133394
+ci
+#1638133395
+ir
+#1638133409
+t aliases/
+#1638133411
+t aliases.sh 
+#1638133413
+ci
+#1638133414
+ir
+#1638133439
+t .local/
+#1638133441
+t share/
+#1638133511
+t
+#1638133513
+t .cache/
+#1638133415
+bashrc
+#1638133558
+ci
+#1638133561
+ci
+#1638133561
+ir
+#1638133565
+clear
+#1638133565
+ls
+#1638133566
+ir
+#1638133559
+bashrc
+#1638133645
+ci
+#1638133646
+bashrc
+#1638136504
+ci
+#1638136504
+ir
+#1638136506
+vimrc
+#1638136508
+t plugs/
+#1638136523
+t
+#1638136535
+cp .xscreensaver .config/dotfiles/
+#1638136536
+ci
+#1638136536
+ir
+#1638136546
+jmp
+#1638136547
+ir
+#1638136551
+..
+#1638136552
+ci
+#1638136552
+ir
+#1638136561
+vimrc
+#1638136563
+t aucmd/init.lua 
+#1638136572
+ci
+#1638136572
+ir
+#1638136574
+t aucmd/
+#1638136575
+t functions.lua 
+#1638137964
+ci
+#1638137965
+t functions.lua 
+#1638137974
+ci
+#1638137974
+t functions.lua 
+#1638138002
+ci
+#1638138002
+t functions.lua 
+#1638138046
+ci
+#1638138046
+t functions.lua 
+#1638138073
+ci
+#1638138074
+t functions.lua 
+#1638138234
+ci
+#1638138235
+t functions.lua 
+#1638138242
+ci
+#1638138243
+t functions.lua 
+#1638138249
+ci
+#1638138250
+t functions.lua 
+#1638138268
+ci
+#1638138269
+t functions.lua 
+#1638138291
+ci
+#1638138292
+t functions.lua 
+#1638138387
+ci
+#1638138387
+t functions.lua 
+#1638138400
+ci
+#1638138401
+t functions.lua 
+#1638138567
+ci
+#1638138568
+t functions.lua 
+#1638138582
+ci
+#1638138583
+t functions.lua 
+#1638138586
+ci
+#1638138586
+t functions.lua 
+#1638138645
+ci
+#1638138646
+t functions.lua 
+#1638138648
+ci
+#1638138649
+t functions.lua 
+#1638138710
+ci
+#1638138711
+t functions.lua 
+#1638138716
+ci
+#1638138716
+t functions.lua 
+#1638138739
+ci
+#1638138740
+t functions.lua 
+#1638138801
+ci
+#1638138802
+t functions.lua 
+#1638138970
+ci
+#1638138971
+t functions.lua 
+#1638138995
+ci
+#1638138996
+t functions.lua 
+#1638139004
+ci
+#1638139004
+t functions.lua 
+#1638139026
+ci
+#1638139026
+t functions.lua 
+#1638139040
+ci
+#1638139040
+t functions.lua 
+#1638139101
+ci
+#1638139102
+t functions.lua 
+#1638139114
+ci
+#1638139115
+t functions.lua 
+#1638139126
+ci
+#1638139127
+t functions.lua 
+#1638139136
+ci
+#1638139136
+t functions.lua 
+#1638139161
+ci
+#1638139161
+t functions.lua 
+#1638139212
+ci
+#1638139213
+t functions.lua 
+#1638139258
+ci
+#1638139259
+t functions.lua 
+#1638139297
+ci
+#1638139298
+t functions.lua 
+#1638139303
+ci
+#1638139303
+t functions.lua 
+#1638139439
+ci
+#1638139439
+t functions.lua 
+#1638139488
+ci
+#1638139489
+t functions.lua 
+#1638139512
+ci
+#1638139513
+t functions.lua 
+#1638139789
+ci
+#1638139790
+t functions.lua 
+#1638139840
+ci
+#1638139841
+ir
+#1638139841
+ci
+#1638139843
+t functions.lua 
+#1638139947
+ci
+#1638139948
+ir
+#1638139950
+t init.lua 
+#1638140002
+ci
+#1638140003
+ir
+#1638140004
+t init.lua 
+#1638140129
+ci
+#1638140129
+t init.lua 
+#1638140161
+ci
+#1638140162
+t init.lua 
+#1638140166
+ci
+#1638140167
+t init.lua 
+#1638140168
+ci
+#1638140169
+ir
+#1638140170
+..
+#1638140174
+t options/
+#1638140175
+t init.lua 
+#1638140181
+ci
+#1638140181
+ir
+#1638140182
+t functions.lua 
+#1638140230
+ci
+#1638140231
+ir
+#1638140235
+ci
+#1638140236
+ir
+#1638140238
+..
+#1638140241
+t mappings/functions.lua 
+#1638140386
+t mappings/init.lua 
+#1638140433
+t mappings/functions.lua 
+#1638140455
+ci
+#1638140455
+t mappings/functions.lua 
+#1638140680
+ci
+#1638140681
+t mappings/functions.lua 
+#1638140731
+ci
+#1638140732
+t mappings/functions.lua 
+#1638141047
+ci
+#1638141047
+t mappings/functions.lua 
+#1638141190
+ci
+#1638141191
+t mappings/functions.lua 
+#1638141227
+ci
+#1638141227
+t mappings/functions.lua 
+#1638141237
+ci
+#1638141238
+t mappings/functions.lua 
+#1638141269
+ci
+#1638141270
+t mappings/functions.lua 
+#1638141476
+ci
+#1638141477
+t mappings/functions.lua 
